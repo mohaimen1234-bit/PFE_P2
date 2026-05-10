@@ -1,0 +1,6 @@
+ALTER TABLE tasks 
+ADD COLUMN is_ad_hoc BOOLEAN NOT NULL DEFAULT FALSE,
+ADD COLUMN created_by_user_id INTEGER,
+ADD COLUMN approval_status VARCHAR(20),
+ADD COLUMN approved_by_user_id INTEGER,
+ADD COLUMN approved_at TIMESTAMP;

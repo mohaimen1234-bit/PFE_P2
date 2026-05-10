@@ -1,0 +1,80 @@
+server:
+  port: ${SERVER_PORT:8081}
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: identity-service
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5432/cmms_db?stringtype=unspecified}
+    username: ${DB_USERNAME:mohaimen}
+    password: ${DB_PASSWORD:mohaimen1234}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      # validate = check schema matches entities; use 'none' if migrations manage schema
+      ddl-auto: ${HIBERNATE_DDL_AUTO:update}
+      
+  flyway:
+    baseline-on-migrate: true
+    validate-on-migrate: false
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        default_schema: public
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# ─── Storage Configuration ──────────────────────────────────────────────────
+storage:
+  location: ${STORAGE_LOCATION:uploads/documents}
+  claim-photos-location: ${CLAIM_PHOTOS_STORAGE_LOCATION:uploads/claim-photos}
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:3001,http://localhost:5173}
+  bootstrap-admin:
+    enabled: ${BOOTSTRAP_ADMIN_ENABLED:false}
+    email: ${BOOTSTRAP_ADMIN_EMAIL:admin@hospital.com}
+    password: ${BOOTSTRAP_ADMIN_PASSWORD:}
+    force: ${BOOTSTRAP_ADMIN_FORCE:false}
+
+# ─── JWT Configuration ───────────────────────────────────────────────────────
+jwt:
+  # Use a strong, Base64-encoded 256-bit secret in production.
+  # Generate with: openssl rand -base64 32
+  secret: ${JWT_SECRET:ZmFsbGJhY2stc2VjcmV0LWtleS1mb3ItY21tcy1pZGVudGl0eS1zZXJ2aWNlLTI1Ng==}
+  expiration-ms: 86400000   # 24 hours
+  issuer: cmms-identity-service
+
+# ─── Springdoc / Swagger UI ──────────────────────────────────────────────────
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+# ─── Logging ─────────────────────────────────────────────────────────────────
+logging:
+  level:
+    com.cmms.identity: DEBUG
+    com.cmms.equipment: DEBUG
+    org.springframework.security: INFO
+    org.hibernate.SQL: WARN

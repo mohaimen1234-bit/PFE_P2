@@ -1,0 +1,201 @@
+id,timestamp,userId,actionType,entityName,entityId,details
+329,2026-04-12T12:50:49.023429,,DELETE_DEPT,Department,9,admin@hospital.com Deleted department: azeaze
+328,2026-04-12T12:50:46.739334,,CREATE_DEPT,Department,9,admin@hospital.com Created department: azeaze
+327,2026-04-12T12:50:28.436944,,CREATE_ROLE,Role,13,admin@hospital.com Created role: heellop
+326,2026-04-12T12:50:20.322448,,DELETE_ROLE,Role,12,admin@hospital.com Deleted role: hellooopp
+325,2026-04-12T12:50:15.855614,,CREATE_ROLE,Role,12,admin@hospital.com Created role: hellooopp
+324,2026-04-12T12:49:49.525523,,CREATE_USER,User,16,admin@hospital.com Created user: l@gm.com
+323,2026-04-12T12:49:27.284258,,UPDATE_USER,User,7,admin@hospital.com Updated user details for: michael.brown@hospital.com
+322,2026-04-12T12:49:22.610511,,UPDATE_USER,User,6,admin@hospital.com Updated user details for: emma.wilson@hospital.com
+321,2026-04-12T12:35:04.629968,,CREATE_DEPT,Department,8,admin@hospital.com Created department: hello
+320,2026-04-12T12:13:02.197291,,UPDATE_USER,User,5,admin@hospital.com Updated user details for: david.carter@hospital.com
+319,2026-04-12T11:30:26.060688,1,LOGIN,auth,1,Admin User logged in
+318,2026-04-12T11:13:55.39826,1,LOGIN,auth,1,Admin User logged in
+317,2026-04-12T10:03:09.829264,1,LOGIN,auth,1,Admin User logged in
+316,2026-04-11T20:45:18.54173,1,LOGIN,auth,1,Admin User logged in
+315,2026-04-11T05:00:53.85193,,CREATE_USER,User,15,admin@hospital.com Created user: english.akira69@gmail.com
+314,2026-04-11T05:00:21.973648,1,LOGIN,auth,1,Admin User logged in
+313,2026-04-11T05:00:12.144817,,LOGIN_FAILED,auth,,admin@hospital.com Login failed: Bad credentials
+312,2026-04-11T04:57:49.332967,1,LOGIN,auth,1,Admin User logged in
+311,2026-04-11T04:57:36.707916,1,LOGIN,auth,1,Admin User logged in
+310,2026-04-11T04:57:20.712891,1,LOGIN,auth,1,Admin User logged in
+309,2026-04-10T18:29:53.65699,1,LOGIN,auth,1,Admin User logged in
+308,2026-04-10T17:25:21.684549,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+307,2026-04-10T17:25:21.627684,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+306,2026-04-10T17:25:18.642363,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+305,2026-04-10T17:25:18.618914,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+304,2026-04-10T17:20:40.399695,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+303,2026-04-10T17:20:40.318607,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=9)
+302,2026-04-10T17:17:48.692179,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,11,Viewed photos for claim 11 (count=0)
+301,2026-04-10T17:17:48.678261,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,11,Viewed status history for claim 11 (count=1)
+300,2026-04-10T17:17:48.671617,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,11,Viewed status history for claim 11 (count=1)
+299,2026-04-10T17:17:48.668206,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,11,Viewed photos for claim 11 (count=0)
+298,2026-04-10T17:17:48.625356,,CREATE_CLAIM,CLAIM,11,Created claim for requester 1 on equipment 5
+297,2026-04-10T17:17:34.455029,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=8)
+296,2026-04-10T17:17:34.390084,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=8)
+295,2026-04-10T17:15:59.006278,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=8)
+294,2026-04-10T17:15:58.956517,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=8)
+293,2026-04-10T17:15:52.657919,,VIEW_EQUIPMENT_CLAIMS,EQUIPMENT,2,Viewed claims for equipment 2 (count=1)
+292,2026-04-10T17:15:40.756704,,VIEW_REQUESTER_CLAIMS,REQUESTER,1,Viewed claims for requester 1 (count=4)
+291,2026-04-10T17:15:17.038629,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,10,Viewed status history for claim 10 (count=2)
+290,2026-04-10T17:15:17.033769,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,10,Viewed photos for claim 10 (count=0)
+289,2026-04-10T17:15:16.959835,,PATCH_CLAIM_STATUS,CLAIM,10,Patched status of claim 10 from CREATED to QUALIFIED
+288,2026-04-10T17:14:48.652347,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,10,Viewed status history for claim 10 (count=1)
+287,2026-04-10T17:14:48.64663,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,10,Viewed photos for claim 10 (count=0)
+286,2026-04-10T17:14:48.627987,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,10,Viewed status history for claim 10 (count=1)
+285,2026-04-10T17:14:48.627987,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,10,Viewed photos for claim 10 (count=0)
+284,2026-04-10T17:14:48.563477,,CREATE_CLAIM,CLAIM,10,Created claim for requester 1 on equipment 7
+283,2026-04-10T17:13:48.073894,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+282,2026-04-10T17:13:47.881984,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+281,2026-04-10T16:27:30.155345,,CREATE_USER,User,14,admin@hospital.com Created user: aa@hospital.com
+280,2026-04-10T14:34:49.343544,1,LOGIN,auth,1,Admin User logged in
+279,2026-04-10T14:29:58.407887,13,LOGIN,auth,13,tbib User logged in
+278,2026-04-10T14:29:44.382166,1,LOGIN,auth,1,Admin User logged in
+277,2026-04-10T14:29:35.958971,,LOGIN_FAILED,auth,,admin@hospital.com Login failed: Bad credentials
+276,2026-04-10T14:29:24.584776,,LOGIN_FAILED,auth,,tb@hpspital.com Login failed: Bad credentials
+275,2026-04-10T14:29:07.227561,,LOGIN_FAILED,auth,,tbib@hospital.com Login failed: Bad credentials
+274,2026-04-10T14:28:50.235115,,CREATE_USER,User,13,admin@hospital.com Created user: tb@hospital.com
+273,2026-04-10T14:26:16.032387,1,LOGIN,auth,1,Admin User logged in
+272,2026-04-08T18:38:56.347071,,SOFT_DELETE_USER,User,11,admin@hospital.com Soft deleted user account (deactivated): ziko@gmail.com
+271,2026-04-08T18:38:40.339502,,SOFT_DELETE_USER,User,11,admin@hospital.com Soft deleted user account (deactivated): ziko@gmail.com
+270,2026-04-08T18:37:47.189983,,ENABLE_USER,User,1,admin@hospital.com Enabled account: admin@hospital.com
+269,2026-04-08T18:37:32.891997,,SOFT_DELETE_USER,User,1,admin@hospital.com Soft deleted user account (deactivated): admin@hospital.com
+268,2026-04-08T18:36:57.63045,,SOFT_DELETE_USER,User,3,admin@hospital.com Soft deleted user account (deactivated): mohaimen@gmail.com
+267,2026-04-08T18:36:33.996822,,SOFT_DELETE_USER,User,11,admin@hospital.com Soft deleted user account (deactivated): ziko@gmail.com
+266,2026-04-08T18:36:16.058024,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+265,2026-04-08T18:36:11.915208,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+264,2026-04-08T18:18:35.372811,1,LOGIN,auth,1,Admin User logged in
+263,2026-04-07T00:35:34.057331,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+262,2026-04-07T00:29:18.51616,,DELETE_DEPT,Department,7,admin@hospital.com Deleted department: azeaz
+261,2026-04-07T00:29:15.243248,,CREATE_DEPT,Department,7,admin@hospital.com Created department: azeaz
+260,2026-04-07T00:21:27.782239,1,LOGIN,auth,1,Admin User logged in
+259,2026-04-07T00:14:51.744588,,DELETE_DEPT,Department,6,admin@hospital.com Deleted department: TEMP_VALIDATION_DEPT
+258,2026-04-07T00:14:51.723759,,CREATE_DEPT,Department,6,admin@hospital.com Created department: TEMP_VALIDATION_DEPT
+257,2026-04-07T00:14:51.656529,,DELETE_ROLE,Role,11,admin@hospital.com Deleted role: TEMP_VALIDATION_ROLE
+256,2026-04-07T00:14:51.595176,,CREATE_ROLE,Role,11,admin@hospital.com Created role: TEMP_VALIDATION_ROLE
+255,2026-04-07T00:14:09.382974,,SOFT_DELETE_USER,User,4,admin@hospital.com Soft deleted user account (deactivated): sarah.mitchell@hospital.com
+254,2026-04-07T00:13:55.89718,1,LOGIN,auth,1,Admin User logged in
+253,2026-04-07T00:11:56.109125,,SOFT_DELETE_USER,User,3,admin@hospital.com Soft deleted user account (deactivated): mohaimen@gmail.com
+252,2026-04-07T00:11:37.281234,1,LOGIN,auth,1,Admin User logged in
+251,2026-04-07T00:11:12.3874,1,LOGIN,auth,1,Admin User logged in
+250,2026-04-06T23:38:17.226277,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+249,2026-04-06T23:37:56.740598,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+248,2026-04-06T23:37:46.346605,,SOFT_DELETE_USER,User,12,admin@hospital.com Soft deleted user account (deactivated): zizo@gmail.com
+247,2026-04-06T23:37:26.396388,,CREATE_USER,User,12,admin@hospital.com Created user: zizo@gmail.com
+246,2026-04-06T23:37:02.986433,,CREATE_ROLE,Role,10,admin@hospital.com Created role: NOTHING
+245,2026-04-06T23:36:54.839479,,DELETE_ROLE,Role,9,admin@hospital.com Deleted role: NOTHING
+244,2026-04-06T23:36:50.809248,,CREATE_ROLE,Role,9,admin@hospital.com Created role: NOTHING
+243,2026-04-06T23:36:28.524146,,CREATE_USER,User,11,admin@hospital.com Created user: ziko@gmail.com
+242,2026-04-06T23:35:34.092213,1,LOGIN,auth,1,Admin User logged in
+241,2026-04-06T23:33:21.004553,1,LOGIN,auth,1,Admin User logged in
+240,2026-04-06T23:23:34.849633,1,LOGIN,auth,1,Admin User logged in
+239,2026-04-06T23:01:09.562364,1,LOGIN,auth,1,Admin User logged in
+238,2026-04-06T17:41:41.349531,10,LOGIN,auth,10,Ayoub Bougacha User logged in
+237,2026-04-06T17:41:21.257755,,CREATE_USER,User,10,admin@hospital.com Created user: Gacha@gmail.com
+236,2026-04-06T17:39:35.026438,1,LOGIN,auth,1,Admin User logged in
+235,2026-04-06T16:44:39.572335,1,LOGIN,auth,1,Admin User logged in
+234,2026-04-04T17:17:38.069492,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+233,2026-04-04T17:17:38.06798,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=5)
+232,2026-04-04T17:17:37.953557,,PATCH_CLAIM_STATUS,CLAIM,4,Patched status of claim 4 from CREATED to CANCELLED
+231,2026-04-04T17:17:25.092682,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+230,2026-04-04T17:17:25.090175,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=4)
+228,2026-04-04T17:17:24.968089,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+229,2026-04-04T17:17:24.968089,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=4)
+226,2026-04-04T17:15:24.309575,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+227,2026-04-04T17:15:24.309575,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=4)
+224,2026-04-04T17:15:24.264997,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+225,2026-04-04T17:15:24.264997,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=4)
+223,2026-04-04T17:08:34.974096,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+222,2026-04-04T17:08:34.377114,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+221,2026-04-04T17:08:31.929745,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+220,2026-04-04T17:05:37.443899,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+219,2026-04-04T17:03:43.353509,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+218,2026-04-04T17:03:40.925533,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=4)
+217,2026-04-04T17:03:40.923342,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+216,2026-04-04T17:03:40.91981,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+215,2026-04-04T17:03:40.863422,,PATCH_CLAIM_STATUS,CLAIM,4,Patched status of claim 4 from new description to CREATED
+214,2026-04-04T17:03:24.154456,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+213,2026-04-04T17:03:04.483108,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+212,2026-04-04T17:03:04.479164,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=3)
+211,2026-04-04T17:03:04.469588,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+209,2026-04-04T17:03:04.459902,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,4,Viewed photos for claim 4 (count=0)
+210,2026-04-04T17:03:04.459902,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,4,Viewed status history for claim 4 (count=3)
+208,2026-04-04T17:03:04.453566,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,4,Checked eligibility for claim 4: eligible=false
+207,2026-04-04T17:02:14.581297,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+206,2026-04-04T17:02:14.520071,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+205,2026-04-04T16:58:53.701686,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,7,Viewed status history for claim 7 (count=3)
+204,2026-04-04T16:58:53.698468,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,7,Viewed photos for claim 7 (count=0)
+203,2026-04-04T16:58:53.692864,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,7,Checked eligibility for claim 7: eligible=false
+202,2026-04-04T16:58:53.613554,,PATCH_CLAIM_STATUS,CLAIM,7,Patched status of claim 7 from CANCELLED to CANCELLED
+201,2026-04-04T16:58:52.111015,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,7,Viewed status history for claim 7 (count=2)
+200,2026-04-04T16:58:52.1053,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,7,Viewed photos for claim 7 (count=0)
+199,2026-04-04T16:58:52.097727,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,7,Checked eligibility for claim 7: eligible=false
+198,2026-04-04T16:58:52.003006,,PATCH_CLAIM_STATUS,CLAIM,7,Patched status of claim 7 from pending to CANCELLED
+196,2026-04-04T16:58:41.393469,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,7,Viewed photos for claim 7 (count=0)
+197,2026-04-04T16:58:41.393469,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,7,Viewed status history for claim 7 (count=1)
+195,2026-04-04T16:58:41.365096,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,7,Viewed status history for claim 7 (count=1)
+194,2026-04-04T16:58:41.364455,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,7,Viewed photos for claim 7 (count=0)
+193,2026-04-04T16:58:40.757862,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,7,Checked eligibility for claim 7: eligible=false
+192,2026-04-04T16:58:40.733797,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,7,Checked eligibility for claim 7: eligible=false
+191,2026-04-04T16:58:37.732003,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+190,2026-04-04T16:58:37.685138,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+189,2026-04-04T16:57:58.072991,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+188,2026-04-04T16:57:57.722527,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+187,2026-04-04T16:56:16.53134,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+186,2026-04-04T16:56:04.33105,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+185,2026-04-04T16:48:29.378065,,DELETE_CLAIM,CLAIM,6,Deleted claim 6
+184,2026-04-04T16:48:27.004026,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,6,Viewed status history for claim 6 (count=2)
+183,2026-04-04T16:48:27.004026,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,6,Viewed photos for claim 6 (count=1)
+182,2026-04-04T16:48:27.001495,,VIEW_CLAIM,CLAIM,6,Viewed claim 6
+181,2026-04-04T16:48:26.993318,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,6,Checked eligibility for claim 6: eligible=true
+180,2026-04-04T16:48:26.98926,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,6,Viewed photos for claim 6 (count=1)
+179,2026-04-04T16:48:26.98826,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,6,Viewed status history for claim 6 (count=2)
+178,2026-04-04T16:48:26.98826,,VIEW_CLAIM,CLAIM,6,Viewed claim 6
+177,2026-04-04T16:48:26.98826,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,6,Checked eligibility for claim 6: eligible=true
+176,2026-04-04T16:48:11.414298,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+175,2026-04-04T16:48:11.401635,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+174,2026-04-04T16:44:23.45514,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=true
+172,2026-04-04T16:44:23.45414,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,3,Viewed photos for claim 3 (count=0)
+173,2026-04-04T16:44:23.45414,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,3,Viewed status history for claim 3 (count=1)
+171,2026-04-04T16:44:23.453135,,VIEW_CLAIM,CLAIM,3,Viewed claim 3
+170,2026-04-04T16:44:23.43682,,QUALIFY_CLAIM,CLAIM,3,Qualified claim 3 from open to QUALIFIED
+169,2026-04-04T16:44:19.016183,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=false
+168,2026-04-04T16:44:14.549963,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,3,Viewed status history for claim 3 (count=0)
+167,2026-04-04T16:44:14.548956,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,3,Viewed photos for claim 3 (count=0)
+166,2026-04-04T16:44:14.54845,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=false
+165,2026-04-04T16:44:14.54845,,VIEW_CLAIM,CLAIM,3,Viewed claim 3
+164,2026-04-04T16:44:14.541261,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,3,Viewed status history for claim 3 (count=0)
+163,2026-04-04T16:44:14.541261,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,3,Viewed photos for claim 3 (count=0)
+162,2026-04-04T16:44:14.540259,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=false
+161,2026-04-04T16:44:14.537727,,VIEW_CLAIM,CLAIM,3,Viewed claim 3
+160,2026-04-04T16:44:12.726272,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+159,2026-04-04T16:44:12.689145,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+158,2026-04-04T16:43:47.290081,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+157,2026-04-04T16:43:47.278912,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+156,2026-04-04T16:43:47.223864,,DELETE_CLAIM,CLAIM,9,Deleted claim 9
+155,2026-04-04T16:43:32.780859,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,9,Viewed status history for claim 9 (count=1)
+154,2026-04-04T16:43:32.779054,,VIEW_CLAIM,CLAIM,9,Viewed claim 9
+153,2026-04-04T16:43:32.775723,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,9,Viewed photos for claim 9 (count=0)
+152,2026-04-04T16:43:32.773225,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,9,Checked eligibility for claim 9: eligible=false
+151,2026-04-04T16:43:32.765771,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,9,Viewed status history for claim 9 (count=1)
+150,2026-04-04T16:43:32.764567,,VIEW_CLAIM,CLAIM,9,Viewed claim 9
+149,2026-04-04T16:43:32.764567,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,9,Checked eligibility for claim 9: eligible=false
+148,2026-04-04T16:43:32.764567,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,9,Viewed photos for claim 9 (count=0)
+147,2026-04-04T16:43:32.743056,,CREATE_CLAIM,CLAIM,9,Created claim for requester 1 on equipment 4
+146,2026-04-04T16:42:36.858302,,DELETE_CLAIM,CLAIM,3,Deleted claim 3
+145,2026-04-04T16:42:34.920467,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,3,Viewed status history for claim 3 (count=0)
+144,2026-04-04T16:42:34.920467,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,3,Viewed photos for claim 3 (count=0)
+143,2026-04-04T16:42:34.914937,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=false
+142,2026-04-04T16:42:34.914937,,VIEW_CLAIM,CLAIM,3,Viewed claim 3
+141,2026-04-04T16:42:34.911197,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,3,Viewed photos for claim 3 (count=0)
+140,2026-04-04T16:42:34.908825,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,3,Viewed status history for claim 3 (count=0)
+139,2026-04-04T16:42:34.90663,,CHECK_CLAIM_ELIGIBILITY,CLAIM_ELIGIBILITY,3,Checked eligibility for claim 3: eligible=false
+138,2026-04-04T16:42:34.90663,,VIEW_CLAIM,CLAIM,3,Viewed claim 3
+137,2026-04-04T16:42:32.027726,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+136,2026-04-04T16:42:31.980669,,VIEW_ALL_CLAIMS,CLAIM,,Viewed all claims (count=7)
+135,2026-04-04T16:42:22.671201,,DELETE_CLAIM,CLAIM,2,Deleted claim 2
+134,2026-04-04T16:42:19.172773,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,2,Viewed status history for claim 2 (count=1)
+133,2026-04-04T16:42:19.16921,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,2,Viewed photos for claim 2 (count=0)
+131,2026-04-04T16:42:19.156031,,VIEW_CLAIM_PHOTOS,CLAIM_PHOTO,2,Viewed photos for claim 2 (count=0)
+132,2026-04-04T16:42:19.156031,,VIEW_CLAIM_STATUS_HISTORY,CLAIM_STATUS_HISTORY,2,Viewed status history for claim 2 (count=1)
+130,2026-04-04T16:42:18.926226,,VIEW_CLAIM,CLAIM,2,Viewed claim 2

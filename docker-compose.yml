@@ -1,0 +1,51 @@
+services:
+  cmms-postgres:
+    image: postgres:16-alpine
+    container_name: cmms-postgres
+    environment:
+      POSTGRES_DB: cmms_db
+      POSTGRES_USER: mohaimen
+      POSTGRES_PASSWORD: mohaimen1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - cmms-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mohaimen -d cmms_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  cmms-backend:
+    build:
+      context: ./identity-service
+      dockerfile: Dockerfile
+    container_name: cmms-backend
+    environment:
+      DB_URL: jdbc:postgresql://cmms-postgres:5432/cmms_db?stringtype=unspecified
+      DB_USERNAME: mohaimen
+      DB_PASSWORD: mohaimen1234
+      SERVER_PORT: 8081
+    ports:
+      - "8081:8081"
+    depends_on:
+      cmms-postgres:
+        condition: service_healthy
+
+  cmms-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8081
+    container_name: cmms-frontend
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_URL: http://localhost:8081
+    ports:
+      - "3000:3000"
+    depends_on:
+      - cmms-backend
+
+volumes:
+  cmms-db-data:

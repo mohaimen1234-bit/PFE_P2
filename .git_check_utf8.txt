@@ -1,0 +1,696 @@
+﻿git : warning: could not open directory 'Application Data/': Permission denied
+At line:1 char:63
++ ... ktop\frontend_gmao'; git status --short > .git_check.txt 2>&1; git re ...
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: could ...rmission denied 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+ D ../../../Downloads/exam-management-system/.github/workflows/ci.yml
+ D ../../../Downloads/exam-management-system/README.md
+ D ../../../Downloads/exam-management-system/architecture.md
+ D ../../../Downloads/exam-management-system/backend/auth-service/Dockerfile
+ D ../../../Downloads/exam-management-system/backend/auth-service/pom.xml
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/AuthServiceApplication.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/controller/AuthController.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/security/JwtUtil.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/security/JwtValidator.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/security/SecurityConfig.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/user/User.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/java/com/example/ems/authservice/user/UserRepository.java
+ D ../../../Downloads/exam-management-system/backend/auth-service/src/main/resources/application.properties
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/application.properties
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/AuthServiceApplication.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/controller/AuthController.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/security/JwtUtil.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/security/JwtValidator.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/security/SecurityConfig.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/user/User$Role.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/user/User.class
+ D ../../../Downloads/exam-management-system/backend/auth-service/target/classes/com/example/ems/authservice/user/UserRepository.class
+ D ../../../Downloads/exam-management-system/backend/common-jwt-util/JwtValidator.java
+ D ../../../Downloads/exam-management-system/backend/notification-service/Dockerfile
+ D ../../../Downloads/exam-management-system/backend/notification-service/pom.xml
+ D ../../../Downloads/exam-management-system/backend/notification-service/src/main/java/com/example/ems/notificationservice/NotificationServiceApplication.java
+ D ../../../Downloads/exam-management-system/backend/notification-service/src/main/java/com/example/ems/notificationservice/kafka/KafkaConsumerService.java
+ D ../../../Downloads/exam-management-system/backend/notification-service/src/main/java/com/example/ems/notificationservice/notification/NotificationController.java
+ D ../../../Downloads/exam-management-system/backend/notification-service/src/main/java/com/example/ems/notificationservice/security/SecurityConfig.java
+ D ../../../Downloads/exam-management-system/backend/notification-service/src/main/resources/application.properties
+ D ../../../Downloads/exam-management-system/backend/notification-service/target/classes/application.properties
+ D ../../../Downloads/exam-management-system/backend/notification-service/target/classes/com/example/ems/notificationservice/NotificationServiceApplication.class
+ D ../../../Downloads/exam-management-system/backend/notification-service/target/classes/com/example/ems/notificationservice/kafka/KafkaConsumerService.class
+ D ../../../Downloads/exam-management-system/backend/notification-service/target/classes/com/example/ems/notificationservice/notification/NotificationController.class
+ D ../../../Downloads/exam-management-system/backend/notification-service/target/classes/com/example/ems/notificationservice/security/SecurityConfig.class
+ D ../../../Downloads/exam-management-system/backend/pom.xml
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/Dockerfile
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/pom.xml
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/SchedulingServiceApplication.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/kafka/KafkaProducerService.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/schedule/ExamSchedule.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/schedule/ExamScheduleController.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/schedule/ExamScheduleRepository.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/java/com/example/ems/schedulingservice/security/SecurityConfig.java
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/src/main/resources/application.properties
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/application.properties
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/com/example/ems/schedulingservice/SchedulingServiceApplication.class
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/com/example/ems/schedulingservice/kafka/KafkaProducerService.class
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/com/example/ems/schedulingservice/schedule/ExamSchedule.class
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/com/example/ems/schedulingservice/schedule/ExamScheduleController.class
+ D ../../../Downloads/exam-management-system/backend/scheduling-service/target/classes/com/example/ems/schedulingservice/schedule/ExamScheduleRepository.class
+ D ../../../Downloads/exam-management-system/backend/supervision-service/Dockerfile
+ D ../../../Downloads/exam-management-system/backend/supervision-service/pom.xml
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/java/com/example/ems/supervisionservice/SupervisionServiceApplication.java
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/java/com/example/ems/supervisionservice/assignment/SupervisionAssignment.java
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/java/com/example/ems/supervisionservice/assignment/SupervisionAssignmentRepository.java
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/java/com/example/ems/supervisionservice/assignment/SupervisionController.java
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/java/com/example/ems/supervisionservice/security/SecurityConfig.java
+ D ../../../Downloads/exam-management-system/backend/supervision-service/src/main/resources/application.properties
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/application.properties
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/com/example/ems/supervisionservice/SupervisionServiceApplication.class
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/com/example/ems/supervisionservice/assignment/SupervisionAssignment.class
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/com/example/ems/supervisionservice/assignment/SupervisionAssignmentRepository.class
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/com/example/ems/supervisionservice/assignment/SupervisionController.class
+ D ../../../Downloads/exam-management-system/backend/supervision-service/target/classes/com/example/ems/supervisionservice/security/SecurityConfig.class
+ D ../../../Downloads/exam-management-system/docker-compose.yml
+ D ../../../Downloads/exam-management-system/frontend/.dockerignore
+ D ../../../Downloads/exam-management-system/frontend/.gitignore
+ D ../../../Downloads/exam-management-system/frontend/Dockerfile
+ D ../../../Downloads/exam-management-system/frontend/README.md
+ D ../../../Downloads/exam-management-system/frontend/eslint.config.js
+ D ../../../Downloads/exam-management-system/frontend/index.html
+ D ../../../Downloads/exam-management-system/frontend/nginx.conf
+ D ../../../Downloads/exam-management-system/frontend/package-lock.json
+ D ../../../Downloads/exam-management-system/frontend/package.json
+ D ../../../Downloads/exam-management-system/frontend/public/vite.svg
+ D ../../../Downloads/exam-management-system/frontend/src/App.css
+ D ../../../Downloads/exam-management-system/frontend/src/App.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/api.ts
+ D ../../../Downloads/exam-management-system/frontend/src/assets/react.svg
+ D ../../../Downloads/exam-management-system/frontend/src/components/AdminDashboard.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/components/Login.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/components/Navbar.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/components/Notifications.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/components/Register.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/components/TeacherDashboard.tsx
+ D ../../../Downloads/exam-management-system/frontend/src/index.css
+ D ../../../Downloads/exam-management-system/frontend/src/main.tsx
+ D ../../../Downloads/exam-management-system/frontend/tsconfig.app.json
+ D ../../../Downloads/exam-management-system/frontend/tsconfig.json
+ D ../../../Downloads/exam-management-system/frontend/tsconfig.node.json
+ D ../../../Downloads/exam-management-system/frontend/vite.config.ts
+ D ../../../Downloads/exam-management-system/init-db.sql
+ M ../modern-portofolio/backend/portfolio.db
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/PortfolioApplication.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/config/DatabaseInitializer.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/config/SecurityConfig.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/config/WebConfig.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/controller/AdminController.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/controller/AuthController.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/controller/PortfolioController.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/dto/JwtResponse.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/dto/LoginRequest.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/dto/UpdateUserRequest.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/entity/Message.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/entity/Project.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/entity/Skill.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/entity/User.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/repository/MessageRepository.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/repository/ProjectRepository.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/repository/SkillRepository.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/repository/UserRepository.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/security/JwtAuthenticationFilter.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/security/JwtUtils.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/service/CustomUserDetailsService.class
+ M ../modern-portofolio/backend/target/classes/com/portfolio/backend/service/FileStorageService.class
+ M ../modern-portofolio/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+?? ../../../.VirtualBox/
+?? ../../../.antigravity/
+?? ../../../.bash_history
+?? ../../../.cache/
+?? ../../../.claude.json
+?? ../../../.claude.json.backup
+?? ../../../.claude/
+?? ../../../.codex/
+?? ../../../.conda/
+?? ../../../.config/
+?? ../../../.copilot/
+?? ../../../.cursor-sandbox/
+?? ../../../.cursor/
+?? ../../../.docker/
+?? ../../../.dotnet/
+?? ../../../.gemini/
+?? ../../../.gitconfig
+?? ../../../.gk/
+?? ../../../.gradle/
+?? ../../../.idlerc/
+?? ../../../.ipython/
+?? ../../../.jdks/
+?? ../../../.jupyter/
+?? ../../../.kube/
+?? ../../../.lemminx/
+?? ../../../.lesshst
+?? ../../../.m2/
+?? ../../../.matplotlib/
+?? ../../../.minikube/
+?? ../../../.n8n/
+?? ../../../.node_repl_history
+?? ../../../.npmrc
+?? ../../../.ollama/
+?? ../../../.p2/
+?? ../../../.packettracer
+?? ../../../.pv/
+?? ../../../.pyenv/
+?? ../../../.redhat/
+?? ../../../.rest-client/
+?? ../../../.sbx-denybin/
+?? ../../../.skiko/
+?? ../../../.sonarlint/
+?? ../../../.ssh/
+?? ../../../.streamlit/
+?? ../../../.sts4/
+?? ../../../.viminfo
+?? ../../../.vscode/
+?? ../../../.yarnrc
+?? "../../../10 -45  88 -99.txt"
+?? ../../../AndroidStudioProjects/
+?? ../../../AppData/
+?? ../../../BookShoppingCartMvc.mdf
+?? ../../../BookShoppingCartMvc_log.ldf
+?? ../../../CSProductC.mdf
+?? ../../../CSProductC_log.ldf
+?? ../../../CSproduct.mdf
+?? ../../../CSproduct_log.ldf
+?? ../../../Contacts/
+?? "../../../Demon's Souls.lnk"
+?? ../../../Documents/
+?? ../../../Downloads/0c1a859eee14a6b0a8e8861e92380b2fad1358b5.png
+?? "../../../Downloads/1 (1).pdf"
+?? "../../../Downloads/1 (2).pdf"
+?? "../../../Downloads/1 (3).pdf"
+?? ../../../Downloads/1.pdf
+?? ../../../Downloads/100++Plug-and-Play+n8n+Templates.zip
+?? ../../../Downloads/21b8d06c886bf87c372b6201c0b6836f.jpg
+?? ../../../Downloads/30-Day+AI+Automation+Agency+Roadmap.pdf
+?? ../../../Downloads/367d6b0a-b48a-4ff4-8e29-0f36f17e6c13.jpg
+?? "../../../Downloads/3\303\250me-GLSI-ANG-Semestre-1-\303\251tudiant.pdf"
+?? ../../../Downloads/4f4f189775a43b7689ab820c1c60c6f5.jpg
+?? ../../../Downloads/5899780100033547399.jpg
+?? ../../../Downloads/5eaadaf975d693dcde2e973ac0faee81a505b145.png
+?? ../../../Downloads/656802274_1965858190686431_419131943636286115_n.jpg
+?? ../../../Downloads/99957101559063892f92a5f9b05f66ef.jpg
+?? ../../../Downloads/AI+Resume+Analyzer+-+Instructions.pdf
+?? ../../../Downloads/AI.pdf
+?? ../../../Downloads/AI.pdf.png
+?? "../../../Downloads/ALWAHA Mobile Banking API Details.xlsx"
+?? ../../../Downloads/ALWAHA_Mobile_Banking_Postman_Collection.json
+?? ../../../Downloads/ALWAHA_Mobile_Banking_Postman_Environment.json
+?? "../../../Downloads/Accepted Salaries(Sheet1).csv"
+?? "../../../Downloads/Accepted Salaries.xlsx"
+?? "../../../Downloads/AlWaha_Accounts_Extracted (1).xlsx"
+?? "../../../Downloads/AlWaha_Accounts_Extracted (2).xlsx"
+?? ../../../Downloads/AlWaha_Accounts_Extracted.xlsx
+?? "../../../Downloads/AlWaha_Global_ledger_2026-03-30 (1).xlsx"
+?? ../../../Downloads/AlWaha_Global_ledger_2026-03-30.xlsx
+?? ../../../Downloads/Antigravity.exe
+?? ../../../Downloads/Average-True-Range-(ATR)-Indicator-(HowToTrade-cheat-sheet).pdf
+?? "../../../Downloads/BankDash - Dashboard UI Kit - Admin Template Dashboard - Admin Dashboard (Community).zip"
+?? "../../../Downloads/Bank_Performance_Report_2026-03-13 (1).xlsx"
+?? ../../../Downloads/Bank_Performance_Report_2026-03-13.xlsx
+?? ../../../Downloads/Book1.xlsx
+?? "../../../Downloads/Build a modern.pdf"
+?? ../../../Downloads/CA-RGM_TransFL.pos
+?? "../../../Downloads/CAHIER DES CHARGES GMAO (1) (1).pdf"
+?? "../../../Downloads/CAHIER DES CHARGES GMAO (1).pdf"
+?? "../../../Downloads/CAHIER DES CHARGES GMAO.pdf"
+?? ../../../Downloads/Card_Charges_Report_2026-03-31.xlsx
+?? "../../../Downloads/ChatGPT Image Apr 9, 2026, 02_33_32 AM.png"
+?? "../../../Downloads/ChatGPT Image Mar 29, 2026, 03_46_46 AM.png"
+?? ../../../Downloads/Core+Nodes+in+n8n.pdf
+?? "../../../Downloads/CortexApiServEnglish_00 (1) (1).pdf"
+?? "../../../Downloads/CortexApiServEnglish_00 (1).pdf"
+?? "../../../Downloads/CortexApiServEnglish_00 (2).pdf"
+?? ../../../Downloads/CortexApiServEnglish_00.pdf
+?? ../../../Downloads/Create+a+Telegram+Chatbot.pdf
+?? "../../../Downloads/Crypto Wallet - NFT - Jarek Pastuszak.jpg"
+?? ../../../Downloads/CursorUserSetup-x64-2.6.14.exe
+?? ../../../Downloads/Deep+Dive+into+APIs+in+n8n.pdf
+?? "../../../Downloads/DevOps Diagram Generator _ Digital_ai.jpg"
+?? "../../../Downloads/Document 6.pdf"
+?? "../../../Downloads/Document 7.pdf"
+?? "../../../Downloads/Document 8.pdf"
+?? "../../../Downloads/Edu Center - Dashboard _ Education Management System - MD_HASIBUL ISLAM.jpg"
+?? ../../../Downloads/Exercise+-+Create+Your+First+Workflow.pdf
+?? "../../../Downloads/Expense Management SaaS Software Design _ Admin Portal - Pentaclay Studio.jpg"
+?? "../../../Downloads/Explore High-Quality CrossFit_ Visualizing Your.jpg"
+?? "../../../Downloads/FCMS APIs.html"
+?? "../../../Downloads/FCMS APIs_files/"
+?? "../../../Downloads/FX_Requests_pending_2026-04-01 (1).xlsx"
+?? "../../../Downloads/FX_Requests_pending_2026-04-01 (2).xlsx"
+?? "../../../Downloads/FX_Requests_pending_2026-04-01 (3).xlsx"
+?? ../../../Downloads/FX_Requests_pending_2026-04-01.xlsx
+?? ../../../Downloads/False-Breakout-(HowToTrade-cheat-sheet).pdf
+?? "../../../Downloads/Financial app design with reimagined design \360\237\222\263__#appdesign #banking #uidesign #uxdesign #uiux.jpg"
+?? ../../../Downloads/Flight-booking.zip
+?? "../../../Downloads/Formato moderno para web original.jpg"
+?? ../../../Downloads/FortiClientVPNInstaller.exe
+?? "../../../Downloads/GETList Bank Accounts (1) (1).pdf"
+?? "../../../Downloads/GETList Bank Accounts (1).pdf"
+?? "../../../Downloads/GETList Bank Accounts.pdf"
+?? ../../../Downloads/Gemini_Generated_Image_ihcl3nihcl3nihcl.png
+?? ../../../Downloads/Git.jpg
+?? "../../../Downloads/Glossary+of+Key+Terms+in+n8n+in+AI+Automation (1).pdf"
+?? ../../../Downloads/Glossary+of+Key+Terms+in+n8n+in+AI+Automation.pdf
+?? "../../../Downloads/Grafana _ analytics and interactive visualization.jpg"
+?? ../../../Downloads/HandsOnML1.pdf
+?? ../../../Downloads/IIT_Sfax_Template.pdf
+?? ../../../Downloads/IIT_Sfax_Template.zip
+?? "../../../Downloads/INTRODUCTION TO AI.png"
+?? ../../../Downloads/IRD09_FCMS_TCR_V.0.1.docx
+?? "../../../Downloads/Introduction+to+APIs+in+n8n (1).pdf"
+?? ../../../Downloads/Introduction+to+APIs+in+n8n.pdf
+?? ../../../Downloads/Introduction+to+Automation.pdf
+?? "../../../Downloads/Kubernetes Consulting.jpg"
+?? "../../../Downloads/LOGO-COLORS-FONT.WAHA (1).pdf"
+?? "../../../Downloads/LOGO-COLORS-FONT.WAHA (2).pdf"
+?? "../../../Downloads/LOGO-COLORS-FONT.WAHA (3).pdf"
+?? ../../../Downloads/LOGO-COLORS-FONT.WAHA.pdf
+?? "../../../Downloads/Lab1_Haddop Mapreduce.pdf"
+?? ../../../Downloads/Lab_docker.pdf
+?? "../../../Downloads/MASAFA_SMS HTTP API DOUMENT V3_2026 (1).docx"
+?? "../../../Downloads/MASAFA_SMS HTTP API DOUMENT V3_2026 (1).pdf"
+?? "../../../Downloads/MASAFA_SMS HTTP API DOUMENT V3_2026.docx"
+?? "../../../Downloads/Make The Invisible Visible from Space.pdf"
+?? ../../../Downloads/Memurai-for-Redis-v4.2.1.msi
+?? "../../../Downloads/Modern Minimalist CV Resume.pdf"
+?? ../../../Downloads/Motivaitonal+Quotes+Automation.json
+?? ../../../Downloads/Moving-Averages-(HowToTrade-cheat-sheet).pdf
+?? "../../../Downloads/My workflow 2.json"
+?? ../../../Downloads/NIA_Verification_APIs.docx
+?? ../../../Downloads/NID.postman_collection.json
+?? ../../../Downloads/Naked-Trading-Strategy-(HowToTrade-cheat-sheet).pdf
+?? "../../../Downloads/Notes App UI (Community) (Copy).zip"
+?? "../../../Downloads/OpenAPI 3.0 Spec \342\200\224 Sales + Invoice + Payment SaaS.pdf"
+?? ../../../Downloads/OperaGXSetup.exe
+?? "../../../Downloads/PFE HOUCEM CHHAIDAR.pdf"
+?? "../../../Downloads/Person crud api classes-20251119.zip"
+?? ../../../Downloads/Pivot-Point-Indicator-(HowToTrade-cheat-sheet).pdf
+?? ../../../Downloads/REV.txt
+?? "../../../Downloads/React JS Training in Chandigarh.jpg"
+?? ../../../Downloads/Recommended+Tools+for+This+Course.pdf
+?? "../../../Downloads/Recording 2026-02-17 234415.mp4"
+?? ../../../Downloads/Relative-Strength-Index-RSI-(HowToTrade-cheat-sheet).pdf
+?? ../../../Downloads/Risk-On-Risk-Off-(HowToTrade-cheat-sheet).pdf
+?? "../../../Downloads/SMC poster.png"
+?? "../../../Downloads/Screenshot 2025-10-16 203257.png"
+?? "../../../Downloads/Screenshot 2025-10-16 210231.png"
+?? "../../../Downloads/Screenshot 2025-10-16 210503.png"
+?? "../../../Downloads/Screenshot 2025-10-17 095925.png"
+?? "../../../Downloads/Screenshot 2025-10-17 101536.png"
+?? "../../../Downloads/Screenshot 2025-10-17 101555.png"
+?? "../../../Downloads/Screenshot 2025-10-22 093708.png"
+?? "../../../Downloads/Screenshot 2026-02-06 125340.png"
+?? "../../../Downloads/Screenshot 2026-02-06 125355.png"
+?? "../../../Downloads/Screenshot 2026-02-06 125427.png"
+?? "../../../Downloads/Screenshot 2026-02-06 125448.png"
+?? "../../../Downloads/Screenshot 2026-02-06 125621.png"
+?? "../../../Downloads/Screenshot 2026-02-21 003055.png"
+?? "../../../Downloads/Screenshot 2026-03-29 014020.png"
+?? ../../../Downloads/Screenshot_21-2-2026_21231_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_21336_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_21348_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_21356_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_2136_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_21419_localhost.jpeg
+?? ../../../Downloads/Screenshot_21-2-2026_2145_localhost.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_12143_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_12328_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_12514_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_12610_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_12616_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_1346_code.earthengine.google.com.jpeg
+?? ../../../Downloads/Screenshot_29-3-2026_281_code.earthengine.google.com.jpeg
+?? "../../../Downloads/Self-Host+n8n+with+Hostinger+VPS+\342\200\223+10%+Discount.pdf"
+?? "../../../Downloads/Smart Home App Exploration - S_ Datta.jpg"
+?? ../../../Downloads/Statement_LYD_2026-04-08.csv
+?? ../../../Downloads/Stochastic-Oscillator-(HowToTrade-cheat-sheet).pdf
+?? ../../../Downloads/Triggers+in+n8n.pdf
+?? "../../../Downloads/Tunisia_Risk_2020_2026 (1).tif"
+?? ../../../Downloads/Tunisia_Risk_2020_2026.tif
+?? "../../../Downloads/USECASE.drawio (1).png"
+?? ../../../Downloads/Understanding+Large+Language+Models+(LLMs).pdf
+?? ../../../Downloads/Understanding+Nodes+in+n8n.pdf
+?? ../../../Downloads/Understanding+Three+Ways+to+Run+n8n.pdf
+?? "../../../Downloads/Untitled design.png"
+?? "../../../Downloads/Untitled video - Made with Clipchamp (2).mp4"
+?? ../../../Downloads/Untitled.csv
+?? "../../../Downloads/Visual Studio Code logo in vector format - Brandlogos_net.jpg"
+?? ../../../Downloads/WHITE.png
+?? ../../../Downloads/WINDOWS.X64_193000_db_home.zip
+?? "../../../Downloads/Wallet Finance.jpg"
+?? ../../../Downloads/Webhooks+in+n8n.pdf
+?? "../../../Downloads/What is a Container_ _ Docker.jpg"
+?? "../../../Downloads/WhatsApp Image 2026-02-06 at 1.50.07 AM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-06 at 1.50.08 AM (1).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-06 at 1.50.08 AM (2).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-06 at 1.50.08 AM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-06 at 3.16.55 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-07 at 1.31.31 AM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.55 PM (1).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.55 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.56 PM (1).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.56 PM (2).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.56 PM (3).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.56 PM (4).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-13 at 4.32.56 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-14 at 4.29.14 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-17 at 5.27.59 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-18 at 2.15.59 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 10.45.46 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 10.46.16 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 11.11.59 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 2.16.19 PM (1).jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 2.16.19 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-02-19 at 2.16.32 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-14 at 10.08.47 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-14 at 9.56.33 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-17 at 8.38.38 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-19 at 3.24.13 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-19 at 4.52.26 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-19 at 4.53.32 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-22 at 3.40.28 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-23 at 6.41.46 PM.jpeg"
+?? "../../../Downloads/WhatsApp Image 2026-03-30 at 9.20.31 AM.jpeg"
+?? "../../../Downloads/WhatsApp Video 2026-03-14 at 6.29.59 AM.mp4"
+?? ../../../Downloads/Workflows,+Triggers,+Actions+&+Conditions.pdf
+?? ../../../Downloads/XML.txt
+?? ../../../Downloads/ZAP_2_17_0_windows.exe
+?? ../../../Downloads/aabfa20cb2ec10c9b29c0a6fccb523667169ab35.png
+?? ../../../Downloads/api.pdf
+?? ../../../Downloads/app.pdf
+?? ../../../Downloads/archive.zip
+?? ../../../Downloads/b_CgkQIsUkPOu.zip
+?? "../../../Downloads/ca-OBR_TransFL (1).pos"
+?? ../../../Downloads/ca-OBR_TransFL.pos
+?? ../../../Downloads/ca_dat_TransFL.POS
+?? "../../../Downloads/cbl_audit_report (1).json"
+?? "../../../Downloads/cbl_audit_report (2).json"
+?? ../../../Downloads/cbl_audit_report.json
+?? "../../../Downloads/cloudflared-windows-amd64 (1).exe"
+?? ../../../Downloads/cmms_database_commands.sql
+?? ../../../Downloads/cmms_database_documentation.docx
+?? ../../../Downloads/cmms_full_audit.md
+?? ../../../Downloads/compliance_report.json
+?? ../../../Downloads/config.yml
+?? ../../../Downloads/conversational_interviews_with_ai_agents_and_n8n_forms.json
+?? ../../../Downloads/dashboardTest.mp4
+?? ../../../Downloads/data-1775048782514.csv
+?? ../../../Downloads/data-1775048816205.csv
+?? ../../../Downloads/data-1775049144187.csv
+?? ../../../Downloads/data-1775083401067.csv
+?? ../../../Downloads/database.pdf
+?? ../../../Downloads/desktop.ini
+?? "../../../Downloads/download (1).jpg"
+?? "../../../Downloads/download (2).jpg"
+?? "../../../Downloads/download (3).jpg"
+?? "../../../Downloads/download (4).jpg"
+?? ../../../Downloads/download.jpg
+?? ../../../Downloads/download.webp
+?? ../../../Downloads/e8d565a0f3e1a7afa585a13af73c1f5b.jpg
+?? ../../../Downloads/favicon.png
+?? ../../../Downloads/fusionmarkets5setup.exe
+?? ../../../Downloads/fx_accepted_requests.csv
+?? ../../../Downloads/fx_approved_requests.csv
+?? ../../../Downloads/fx_pending_requests.csv
+?? "../../../Downloads/fx_pending_requests_2026-04-01 (1).csv"
+?? ../../../Downloads/fx_pending_requests_2026-04-01.csv
+?? ../../../Downloads/gcapi.dll
+?? ../../../Downloads/generate_instagram_content_from_top_trends_with_ai_image_generation.json
+?? ../../../Downloads/github-recovery-codes.txt
+?? ../../../Downloads/gl.xlsx
+?? ../../../Downloads/hitchhiker_scalp_cheat_sheet.pdf
+?? ../../../Downloads/loginTest.mp4
+?? "../../../Downloads/logo (1).png"
+?? "../../../Downloads/logo (2).png"
+?? "../../../Downloads/logo-\331\205\330\263\330\247\330\261\330\247\330\252 (1).pdf"
+?? "../../../Downloads/logo-\331\205\330\263\330\247\330\261\330\247\330\252.pdf"
+?? ../../../Downloads/logo.png
+?? ../../../Downloads/medimaintain-gmao.zip
+?? ../../../Downloads/mon-premiersiteweb-reference2.zip
+?? ../../../Downloads/mt5setup.exe
+?? ../../../Downloads/mvp.pdf
+?? ../../../Downloads/my-pro-9e816-firebase-adminsdk-fbsvc-8a746c249f.json
+?? ../../../Downloads/my-pro-9e816-firebase-adminsdk-fbsvc-c1529c361b.json
+?? ../../../Downloads/n8n+Basic+Information.pdf
+?? ../../../Downloads/n8n+Cheat+Sheet.png
+?? ../../../Downloads/n8n-CheatSheet+Dashboard.pdf
+?? "../../../Downloads/new planning (1).pdf"
+?? "../../../Downloads/new planning (2).pdf"
+?? "../../../Downloads/new planning.pdf"
+?? ../../../Downloads/nexus-ai-studio.zip
+?? "../../../Downloads/nid phoneWahabank API.txt"
+?? ../../../Downloads/nid_middleware.docx
+?? ../../../Downloads/node-v20.19.5-x64.msi
+?? ../../../Downloads/node-v20.19.5.tar.xz
+?? ../../../Downloads/node-v22.20.0-x64.msi
+?? ../../../Downloads/node-v24.11.1-x64.msi
+?? "../../../Downloads/notes_app_iit-main (1).zip"
+?? ../../../Downloads/notes_app_iit-main.zip
+?? ../../../Downloads/pending_salary.xlsx
+?? ../../../Downloads/pgadmin4-9.13-x64.exe
+?? ../../../Downloads/python-3.11.8-amd64.exe
+?? ../../../Downloads/python-manager-25.0.msix
+?? "../../../Downloads/quickbooks_ai_n_8_n_workflow (1).json"
+?? ../../../Downloads/quickbooks_ai_n_8_n_workflow.json
+?? ../../../Downloads/react-logo.png
+?? ../../../Downloads/requirements.pdf
+?? ../../../Downloads/resume_9eaef29007d5495981c9d121a5658c64.docx
+?? "../../../Downloads/sales project.docx"
+?? ../../../Downloads/scalp.pdf
+?? ../../../Downloads/securebank-customer-portal.zip
+?? ../../../Downloads/seed-data.pdf
+?? ../../../Downloads/service.conf.lock
+?? "../../../Downloads/soapEnvelope xmlnssoap=httpwww.w3.o.txt"
+?? ../../../Downloads/softsys.jpg
+?? "../../../Downloads/springboot logo - Search Images_files/"
+?? ../../../Downloads/ss.xlsx
+?? "../../../Downloads/system Architecture-security overview.pdf"
+?? ../../../Downloads/system.conf.lock
+?? ../../../Downloads/temenos_project.pdf
+?? ../../../Downloads/texstudio-4.9.3-win-qt6-signed.exe
+?? ../../../Downloads/triangular_arbitrage_case_study.docx
+?? ../../../Downloads/usecase.png
+?? ../../../Downloads/vc-main.zip
+?? ../../../Downloads/winrar-x64-713.exe
+?? "../../../Downloads/\320\246\320\262\320\265\321\202\320\276\320\262\320\260\321\217 \320\277\320\260\320\273\320\270\321\202\321\200\320\260, \320\272\320\270\320\275\320\276\321\210\320\275\321\213\320\271 \321\215\321\204\321\204\320\265\320\272\321\202.jpg"
+?? "../../../Downloads/\330\245\357\273\213\357\273\274\331\206 \357\273\263\357\272\250\357\273\240\357\273\264\357\273\232 \357\273\223\357\273\262 \330\247\357\273\237\357\273\256\330\247\357\272\237\357\273\254\357\272\224 (3).pdf"
+?? "../../../Downloads/\330\245\357\273\213\357\273\274\331\206 \357\273\263\357\272\250\357\273\240\357\273\264\357\273\232 \357\273\223\357\273\262 \330\247\357\273\237\357\273\256\330\247\357\272\237\357\273\254\357\272\224 (4) (1).pdf"
+?? "../../../Downloads/\330\245\357\273\213\357\273\274\331\206 \357\273\263\357\272\250\357\273\240\357\273\264\357\273\232 \357\273\223\357\273\262 \330\247\357\273\237\357\273\256\330\247\357\272\237\357\273\254\357\272\224 (4) (2).pdf"
+?? "../../../Downloads/\330\245\357\273\213\357\273\274\331\206 \357\273\263\357\272\250\357\273\240\357\273\264\357\273\232 \357\273\223\357\273\262 \330\247\357\273\237\357\273\256\330\247\357\272\237\357\273\254\357\272\224 (4).pdf"
+?? "../../../Downloads/\330\252\330\261\331\205\331\212\330\262 \330\265\331\203\331\210\331\203 (1).xls"
+?? "../../../Downloads/\330\252\330\261\331\205\331\212\330\262 \330\265\331\203\331\210\331\203.xls"
+?? "../../../Downloads/\330\252\331\202\330\261\331\212\330\261_\330\247\331\204\330\261\331\210\330\247\330\252\330\250_2025_8.csv"
+?? "../../../Downloads/\330\252\331\202\330\261\331\212\330\261_\330\247\331\204\330\261\331\210\330\247\330\252\330\250_2026_0.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206 (1).csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\245\330\271\330\247\330\257\330\251_\330\247\331\204\331\205\330\267\330\247\330\250\331\202\330\251_2026-02-07.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\247\331\204\331\205\330\261\331\201\331\210\330\266\330\251_2026-02-07.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\247\331\204\331\205\330\261\331\201\331\210\330\266\330\251_2026-02-11.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\247\331\204\331\205\330\267\330\247\330\250\331\202\330\251_2026-02-07.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\247\331\204\331\205\330\271\331\204\331\202\330\251_2026-02-07.csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\272\331\212\330\261_\330\247\331\204\331\205\330\267\330\247\330\250\331\202\330\251_2026-02-07 (1).csv"
+?? "../../../Downloads/\330\255\330\263\330\247\330\250\330\247\330\252_\330\247\331\204\331\205\330\263\330\252\330\256\330\257\331\205\331\212\331\206_\330\272\331\212\330\261_\330\247\331\204\331\205\330\267\330\247\330\250\331\202\330\251_2026-02-07.csv"
+?? "../../../Downloads/\330\257\331\204\331\212\331\204 \330\247\331\204\331\202\330\257\331\212\330\261.pdf"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_completed_2026_0.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_completed_2026_1.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_completed_2026_2.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_completed_2026_3.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_1.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2 (1).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2 (2) 1.xlsx"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2 (2).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2 (3).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_pending_2026_2.xlsx"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_rejected_2026_0.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_rejected_2026_1 (1).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_rejected_2026_1 (2).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_rejected_2026_1.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_\330\247\331\204\331\203\331\204_2026_0 (1).csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_\330\247\331\204\331\203\331\204_2026_0.csv"
+?? "../../../Downloads/\330\261\331\210\330\247\330\252\330\250_\330\247\331\204\331\203\331\204_2026_3.csv"
+?? "../../../Downloads/\330\263\330\254\331\204_\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (1).csv"
+?? "../../../Downloads/\330\263\330\254\331\204_\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (2).csv"
+?? "../../../Downloads/\330\263\330\254\331\204_\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (3).csv"
+?? "../../../Downloads/\330\263\330\254\331\204_\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262.csv"
+?? "../../../Downloads/\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (1).csv"
+?? "../../../Downloads/\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (2).csv"
+?? "../../../Downloads/\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262 (3).csv"
+?? "../../../Downloads/\330\267\331\204\330\250\330\247\330\252_\330\247\331\204\330\255\330\254\330\262.csv"
+?? "../../../Downloads/\331\201\330\261\331\210\330\271 \330\247\331\204\331\210\330\247\330\255\330\251.xlsx"
+?? ../../../Favorites/
+?? "../../../Google Chrome.lnk"
+?? ../../../IdeaProjects/
+?? "../../../Install VALORANT.exe"
+?? ../../../IntelGraphicsProfiles/
+?? ../../../LAB4.pdf
+?? ../../../Links/
+?? "../../../Microsoft Edge.lnk"
+?? ../../../Microsoft/
+?? ../../../Minikube/
+?? ../../../Music/
+?? "../../../My project (1)/"
+?? "../../../My project/"
+?? ../../../MyDATAbase.db
+?? ../../../MyDATAbase.sqbpro
+?? ../../../NTUSER.DAT
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf.cnpf
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms.cnpf
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms
+?? ../../../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms.cnpf
+?? "../../../Network - Shortcut (2).lnk"
+?? "../../../Network - Shortcut.lnk"
+?? "../../../OneDrive - North American Private University/"
+?? ../../.849C9593-D756-4E56-8D6E-42412F2A707B
+?? "../2024-02-10 passport/"
+?? ../2D-GAMEV/
+?? ../4.jpg
+?? ../Antigravity.lnk
+?? "../Chapter 2.docx"
+?? ../Cursor.lnk
+?? "../Docker Desktop-asus92.lnk"
+?? "../Docker Desktop.lnk"
+?? ../FMCS/
+?? ../Freelance/
+?? "../GEO (2).zip"
+?? ../GEO.zip
+?? ../N8N/
+?? ../NID.postman_collection.json
+?? ../NOTES/
+?? "../New folder (2)/"
+?? "../Our system design is actually very good already.pdf"
+?? ../PFA/
+?? ../PFU_PROJECT/
+?? "../Postman Agent.lnk"
+?? ../Postman-asus92.lnk
+?? ../Postman.lnk
+?? ../REPORT-PFA.pdf
+?? "../Screenshot 2026-03-25 133907.png"
+?? ../TOS_DI-20200219_1130-V7.3.1.zip
+?? "../Untitled Diagram.drawio"
+?? "../Visual Studio Code-asus92.lnk"
+?? "../Visual Studio Code.lnk"
+?? "../WhatsApp Image 2026-03-30 at 9.20.31 AM.jpeg"
+?? ../alwahaTest/
+?? ../alwahaprod/
+?? ../arbtrage-system/
+?? ../chapter1.docx
+?? ../clothing-store-website-master/
+?? "../cs lab3/"
+?? ../customerAlwaHA/
+?? ../desktop.ini
+?? "../devops qcm/"
+?? ./
+?? ../github/
+?? ../gradution_project/
+?? "../live object/"
+?? ../mabrouk/
+?? ../maven/
+?? ../metarader/
+?? ../personal-portofolio.zip
+?? ../php/
+?? ../pyproject/
+?? ../react-project/
+?? ../sequenceDiagram.drawio
+?? ../server_manual/
+?? ../ssss.mp4
+?? ../staff_portal_db.dump
+?? ../staff_portal_db.sql
+?? ../stage/
+?? ../temenos/
+?? ../validation.db
+?? ../validation.sqbpro
+?? ../../Documents/
+?? ../../Pictures/
+?? ../../architet.cdl
+?? ../../desktop.ini
+?? ../../../OpenJDK21U-jdk_x64_windows_hotspot_21.0.7_6.msi
+?? "../../../Opera GX Browser.lnk"
+?? ../../../Oracle/
+?? ../../../PyCharmMiscProject/
+?? ../../../PycharmProjects/
+?? "../../../RENTAL CAR.db"
+?? "../../../RENTAL CAR.sqbpro"
+?? "../../../Riot Client.lnk"
+?? ../../../SOA-Project-Description.pdf
+?? "../../../Saved Games/"
+?? "../../../Screenshot 2025-12-06 113108.png"
+?? ../../../Searches/
+?? ../../../TD25.db
+?? ../../../TP2/
+?? "../../../Ubisoft Connect.lnk"
+?? ../../../Untitled.csv
+?? ../../../Videos/
+?? ../../../Workshop-SOA-07.pdf
+?? ../../../ZAP/
+?? ../../../anaconda3/
+?? ../../../app1/
+?? ../../../cmms.sql
+?? ../../../customer_service_db.dump
+?? ../../../customer_service_db.sql
+?? ../../../daemon.json
+?? ../../../data.sql
+?? ../../../database.1.db
+?? ../../../database.1.sqbpro
+?? ../../../database_backup.sql
+?? ../../../database_backup_clean.sql
+?? ../../../edb_languagepack_4.exe
+?? ../../../edb_psqlodbc.exe
+?? ../../../firstapp/
+?? ../../../go-web-app/
+?? ../../../go/
+?? ../../../harbor.crt
+?? ../../../harbor.key
+?? ../../../index.html/
+?? ../../../java_error_in_pycharm_25540.log
+?? ../../../java_error_in_pycharm_27644.log
+?? ../../../java_error_in_pycharm_29620.log
+?? ../../../lab.db
+?? ../../../mabrouk.db
+?? ../../../mabrouk.sqbpro
+?? ../../../maven/
+?? ../../../mohaimen.py
+?? ../../../my-app/
+?? ../../../net
+?? "../../../new database.db"
+?? ../../../ntuser.dat.LOG1
+?? ../../../ntuser.dat.LOG2
+?? ../../../ntuser.ini
+?? ../../../object-detect/
+?? ../../../output.txt
+?? ../../../package-lock.json
+?? ../../../personal-portofolio/
+?? ../../../pop.py
+?? ../../../react-product-app-ci-cd/
+?? ../../../react-product-app-main/
+?? ../../../react-project/
+?? ../../../revision.db
+?? ../../../shop.sqbpro
+?? ../../../sitetest/
+?? ../../../source/
+?? "../../../td1\303\251.db"
+?? ../../../temenos-project.pdf
+?? ../../../test-react/
+?? ../../../windows-amd64/
+?? ../../../wp2746137.jpg
+C:/Users/mohai/.git

@@ -1,0 +1,1 @@
+-- Replaced with empty migration to fix boot failure

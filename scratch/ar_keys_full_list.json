@@ -1,0 +1,862 @@
+[
+  {
+    "key": "commitRecord",
+    "val": "commit Record"
+  },
+  {
+    "key": "efficiencyInsights",
+    "val": "efficiency Insights"
+  },
+  {
+    "key": "everyRecurrence",
+    "val": "every Recurrence"
+  },
+  {
+    "key": "executing",
+    "val": "executing"
+  },
+  {
+    "key": "exportPdf",
+    "val": "export Pdf"
+  },
+  {
+    "key": "interventionState",
+    "val": "intervention State"
+  },
+  {
+    "key": "kpis",
+    "val": "kpis"
+  },
+  {
+    "key": "languagesSupported",
+    "val": "languages Supported"
+  },
+  {
+    "key": "mtbf",
+    "val": "mtbf"
+  },
+  {
+    "key": "mttr",
+    "val": "mttr"
+  },
+  {
+    "key": "on_hold",
+    "val": "on hold"
+  },
+  {
+    "key": "operational",
+    "val": "operational"
+  },
+  {
+    "key": "operationalHealthCheck",
+    "val": "operational Health Check"
+  },
+  {
+    "key": "operationalIndicator",
+    "val": "operational Indicator"
+  },
+  {
+    "key": "operationalUptime",
+    "val": "operational Uptime"
+  },
+  {
+    "key": "originatingFrom",
+    "val": "originating From"
+  },
+  {
+    "key": "outcome",
+    "val": "outcome"
+  },
+  {
+    "key": "overridden",
+    "val": "overridden"
+  },
+  {
+    "key": "override",
+    "val": "override"
+  },
+  {
+    "key": "overrideAISuggestion",
+    "val": "override A I Suggestion"
+  },
+  {
+    "key": "parentStep",
+    "val": "parent Step"
+  },
+  {
+    "key": "pauseWork",
+    "val": "pause Work"
+  },
+  {
+    "key": "pausing",
+    "val": "pausing"
+  },
+  {
+    "key": "percentOfTotal",
+    "val": "percent Of Total"
+  },
+  {
+    "key": "percentTotal",
+    "val": "percent Total"
+  },
+  {
+    "key": "period",
+    "val": "period"
+  },
+  {
+    "key": "permissions",
+    "val": "permissions"
+  },
+  {
+    "key": "permissionsAreNotExp",
+    "val": "permissions Are Not Exp"
+  },
+  {
+    "key": "previewUnavailable",
+    "val": "preview Unavailable"
+  },
+  {
+    "key": "prioritization",
+    "val": "prioritization"
+  },
+  {
+    "key": "protectYourAccountWi",
+    "val": "protect Your Account Wi"
+  },
+  {
+    "key": "purchase",
+    "val": "purchase"
+  },
+  {
+    "key": "putOnHold",
+    "val": "put On Hold"
+  },
+  {
+    "key": "qualification",
+    "val": "qualification"
+  },
+  {
+    "key": "qualificationFailed",
+    "val": "qualification Failed"
+  },
+  {
+    "key": "qualified",
+    "val": "qualified"
+  },
+  {
+    "key": "qualifiedSuccessfully",
+    "val": "qualified Successfully"
+  },
+  {
+    "key": "qualify",
+    "val": "qualify"
+  },
+  {
+    "key": "qualifyClaim",
+    "val": "qualify Claim"
+  },
+  {
+    "key": "reScheduledTo",
+    "val": "re Scheduled To"
+  },
+  {
+    "key": "reactiveWorkPressure",
+    "val": "reactive Work Pressure"
+  },
+  {
+    "key": "readingRecorded",
+    "val": "reading Recorded"
+  },
+  {
+    "key": "readyToTransform",
+    "val": "ready To Transform"
+  },
+  {
+    "key": "realTimeHealthIndic",
+    "val": "real Time Health Indic"
+  },
+  {
+    "key": "reasonForFollowOn",
+    "val": "reason For Follow On"
+  },
+  {
+    "key": "reasonForPause",
+    "val": "reason For Pause"
+  },
+  {
+    "key": "reasonForPostponement",
+    "val": "reason For Postponement"
+  },
+  {
+    "key": "reasonForReplanning",
+    "val": "reason For Replanning"
+  },
+  {
+    "key": "reasonForStopping",
+    "val": "reason For Stopping"
+  },
+  {
+    "key": "reasoning",
+    "val": "reasoning"
+  },
+  {
+    "key": "reasons",
+    "val": "reasons"
+  },
+  {
+    "key": "recalculate",
+    "val": "recalculate"
+  },
+  {
+    "key": "receivePushNotificat",
+    "val": "receive Push Notificat"
+  },
+  {
+    "key": "receiveUpdatesViaEma",
+    "val": "receive Updates Via Ema"
+  },
+  {
+    "key": "recentClaims",
+    "val": "recent Claims"
+  },
+  {
+    "key": "recentWorkOrders",
+    "val": "recent Work Orders"
+  },
+  {
+    "key": "recommendation",
+    "val": "recommendation"
+  },
+  {
+    "key": "recommendedAction",
+    "val": "recommended Action"
+  },
+  {
+    "key": "record",
+    "val": "record"
+  },
+  {
+    "key": "recordFailed",
+    "val": "record Failed"
+  },
+  {
+    "key": "recordReading",
+    "val": "record Reading"
+  },
+  {
+    "key": "recurrence",
+    "val": "recurrence"
+  },
+  {
+    "key": "refreshAnalysis",
+    "val": "refresh Analysis"
+  },
+  {
+    "key": "regulatoryPlans",
+    "val": "regulatory Plans"
+  },
+  {
+    "key": "regulatoryStandards",
+    "val": "regulatory Standards"
+  },
+  {
+    "key": "reject",
+    "val": "reject"
+  },
+  {
+    "key": "replanRequest",
+    "val": "replan Request"
+  },
+  {
+    "key": "reportedSeverity",
+    "val": "reported Severity"
+  },
+  {
+    "key": "requested",
+    "val": "requested"
+  },
+  {
+    "key": "requiresRestock",
+    "val": "requires Restock"
+  },
+  {
+    "key": "reschedule",
+    "val": "reschedule"
+  },
+  {
+    "key": "rescheduleMaintenanc",
+    "val": "reschedule Maintenanc"
+  },
+  {
+    "key": "rescheduleNote",
+    "val": "reschedule Note"
+  },
+  {
+    "key": "resetMeterToZero",
+    "val": "reset Meter To Zero"
+  },
+  {
+    "key": "resource",
+    "val": "resource"
+  },
+  {
+    "key": "restock",
+    "val": "restock"
+  },
+  {
+    "key": "restore",
+    "val": "restore"
+  },
+  {
+    "key": "restoreFailed",
+    "val": "restore Failed"
+  },
+  {
+    "key": "retired",
+    "val": "retired"
+  },
+  {
+    "key": "reviewYourHistoricAl",
+    "val": "review Your Historic Al"
+  },
+  {
+    "key": "roles",
+    "val": "roles"
+  },
+  {
+    "key": "rulesThresholds",
+    "val": "rules Thresholds"
+  },
+  {
+    "key": "safe",
+    "val": "safe"
+  },
+  {
+    "key": "safetyCheckRate",
+    "val": "safety Check Rate"
+  },
+  {
+    "key": "safetyIncidents",
+    "val": "safety Incidents"
+  },
+  {
+    "key": "sat",
+    "val": "sat"
+  },
+  {
+    "key": "saveChanges",
+    "val": "save Changes"
+  },
+  {
+    "key": "saveFailed",
+    "val": "save Failed"
+  },
+  {
+    "key": "savesViaTheUsersAPI",
+    "val": "saves Via The Users A P I"
+  },
+  {
+    "key": "saving",
+    "val": "saving"
+  },
+  {
+    "key": "scheduled",
+    "val": "scheduled"
+  },
+  {
+    "key": "scheduledWos",
+    "val": "scheduled Wos"
+  },
+  {
+    "key": "scheduling",
+    "val": "scheduling"
+  },
+  {
+    "key": "scrollForMoreColu",
+    "val": "scroll For More Colu"
+  },
+  {
+    "key": "searchAlerts",
+    "val": "search Alerts"
+  },
+  {
+    "key": "searchClaims",
+    "val": "search Claims"
+  },
+  {
+    "key": "searchLogs",
+    "val": "search Logs"
+  },
+  {
+    "key": "searchMeters",
+    "val": "search Meters"
+  },
+  {
+    "key": "searchPlans",
+    "val": "search Plans"
+  },
+  {
+    "key": "searchUsers",
+    "val": "search Users"
+  },
+  {
+    "key": "searchViaUsersSearch",
+    "val": "search Via Users Search"
+  },
+  {
+    "key": "searchWorkOrders",
+    "val": "search Work Orders"
+  },
+  {
+    "key": "searching",
+    "val": "searching"
+  },
+  {
+    "key": "secureLogin",
+    "val": "secure Login"
+  },
+  {
+    "key": "security",
+    "val": "security"
+  },
+  {
+    "key": "securityLogs",
+    "val": "security Logs"
+  },
+  {
+    "key": "select",
+    "val": "select"
+  },
+  {
+    "key": "selectATechnician",
+    "val": "select A Technician"
+  },
+  {
+    "key": "selectInspectionResult",
+    "val": "select Inspection Result"
+  },
+  {
+    "key": "selectPrimaryTechnician",
+    "val": "select Primary Technician"
+  },
+  {
+    "key": "selectSeverity",
+    "val": "select Severity"
+  },
+  {
+    "key": "selectSite",
+    "val": "select Site"
+  },
+  {
+    "key": "selectTechnician",
+    "val": "select Technician"
+  },
+  {
+    "key": "selectTemplate",
+    "val": "select Template"
+  },
+  {
+    "key": "severity",
+    "val": "severity"
+  },
+  {
+    "key": "showArchived",
+    "val": "show Archived"
+  },
+  {
+    "key": "sla",
+    "val": "sla"
+  },
+  {
+    "key": "slideForMore",
+    "val": "slide For More"
+  },
+  {
+    "key": "standard",
+    "val": "standard"
+  },
+  {
+    "key": "start",
+    "val": "start"
+  },
+  {
+    "key": "startWork",
+    "val": "start Work"
+  },
+  {
+    "key": "starting",
+    "val": "starting"
+  },
+  {
+    "key": "startingWork",
+    "val": "starting Work"
+  },
+  {
+    "key": "state",
+    "val": "state"
+  },
+  {
+    "key": "steps",
+    "val": "steps"
+  },
+  {
+    "key": "stockoutsImaging",
+    "val": "stockouts Imaging"
+  },
+  {
+    "key": "strategicKPIsProject",
+    "val": "strategic K P Is Project"
+  },
+  {
+    "key": "submit",
+    "val": "submit"
+  },
+  {
+    "key": "submitRestock",
+    "val": "submit Restock"
+  },
+  {
+    "key": "submitting",
+    "val": "submitting"
+  },
+  {
+    "key": "subtract",
+    "val": "subtract"
+  },
+  {
+    "key": "suggested",
+    "val": "suggested"
+  },
+  {
+    "key": "suggestedSeverity",
+    "val": "suggested Severity"
+  },
+  {
+    "key": "suggestionAccepted",
+    "val": "suggestion Accepted"
+  },
+  {
+    "key": "suggestionRejected",
+    "val": "suggestion Rejected"
+  },
+  {
+    "key": "sumOfWoCosts",
+    "val": "sum Of Wo Costs"
+  },
+  {
+    "key": "summary",
+    "val": "summary"
+  },
+  {
+    "key": "sun",
+    "val": "sun"
+  },
+  {
+    "key": "suspiciousPatterns",
+    "val": "suspicious Patterns"
+  },
+  {
+    "key": "syncAll",
+    "val": "sync All"
+  },
+  {
+    "key": "syncFailed",
+    "val": "sync Failed"
+  },
+  {
+    "key": "synced",
+    "val": "synced"
+  },
+  {
+    "key": "system",
+    "val": "system"
+  },
+  {
+    "key": "systemAvailability",
+    "val": "system Availability"
+  },
+  {
+    "key": "systemColors",
+    "val": "system Colors"
+  },
+  {
+    "key": "tasks",
+    "val": "tasks"
+  },
+  {
+    "key": "technical",
+    "val": "technical"
+  },
+  {
+    "key": "technicalDocumentati",
+    "val": "technical Documentati"
+  },
+  {
+    "key": "technicianProductivity",
+    "val": "technician Productivity"
+  },
+  {
+    "key": "technicianWorkload",
+    "val": "technician Workload"
+  },
+  {
+    "key": "templateCode",
+    "val": "template Code"
+  },
+  {
+    "key": "templatePreview",
+    "val": "template Preview"
+  },
+  {
+    "key": "templateSteps",
+    "val": "template Steps"
+  },
+  {
+    "key": "thisQuarter",
+    "val": "this Quarter"
+  },
+  {
+    "key": "threshold",
+    "val": "threshold"
+  },
+  {
+    "key": "thresholdAdded",
+    "val": "threshold Added"
+  },
+  {
+    "key": "thresholdN",
+    "val": "threshold N"
+  },
+  {
+    "key": "thresholdNotSet",
+    "val": "threshold Not Set"
+  },
+  {
+    "key": "thresholds",
+    "val": "thresholds"
+  },
+  {
+    "key": "thu",
+    "val": "thu"
+  },
+  {
+    "key": "timeRange",
+    "val": "time Range"
+  },
+  {
+    "key": "timestamp",
+    "val": "timestamp"
+  },
+  {
+    "key": "toDo",
+    "val": "to Do"
+  },
+  {
+    "key": "trackChangesAndActio",
+    "val": "track Changes And Actio"
+  },
+  {
+    "key": "trustedByLeading",
+    "val": "trusted By Leading"
+  },
+  {
+    "key": "tryAdjustingYourSear",
+    "val": "try Adjusting Your Sear"
+  },
+  {
+    "key": "tue",
+    "val": "tue"
+  },
+  {
+    "key": "twoFactorAuthenticat",
+    "val": "two Factor Authenticat"
+  },
+  {
+    "key": "unassigned",
+    "val": "unassigned"
+  },
+  {
+    "key": "unconfirmed",
+    "val": "unconfirmed"
+  },
+  {
+    "key": "units",
+    "val": "units"
+  },
+  {
+    "key": "unknown",
+    "val": "unknown"
+  },
+  {
+    "key": "updateFailed",
+    "val": "update Failed"
+  },
+  {
+    "key": "updateTemplateDetail",
+    "val": "update Template Detail"
+  },
+  {
+    "key": "updated",
+    "val": "updated"
+  },
+  {
+    "key": "updating",
+    "val": "updating"
+  },
+  {
+    "key": "upload",
+    "val": "upload"
+  },
+  {
+    "key": "uploadError",
+    "val": "upload Error"
+  },
+  {
+    "key": "uploadFailed",
+    "val": "upload Failed"
+  },
+  {
+    "key": "uploading",
+    "val": "uploading"
+  },
+  {
+    "key": "urgent",
+    "val": "urgent"
+  },
+  {
+    "key": "urgentRestocksNeeded",
+    "val": "urgent Restocks Needed"
+  },
+  {
+    "key": "useTemplate",
+    "val": "use Template"
+  },
+  {
+    "key": "users",
+    "val": "users"
+  },
+  {
+    "key": "validate",
+    "val": "validate"
+  },
+  {
+    "key": "validateAndAccept",
+    "val": "validate And Accept"
+  },
+  {
+    "key": "validateIntervention",
+    "val": "validate Intervention"
+  },
+  {
+    "key": "validatedSeverity",
+    "val": "validated Severity"
+  },
+  {
+    "key": "validationError",
+    "val": "validation Error"
+  },
+  {
+    "key": "validationRemarks",
+    "val": "validation Remarks"
+  },
+  {
+    "key": "validationRules",
+    "val": "validation Rules"
+  },
+  {
+    "key": "value",
+    "val": "value"
+  },
+  {
+    "key": "ventilators",
+    "val": "ventilators"
+  },
+  {
+    "key": "visualizeTimelineAn",
+    "val": "visualize Timeline An"
+  },
+  {
+    "key": "wait",
+    "val": "wait"
+  },
+  {
+    "key": "warning",
+    "val": "warning"
+  },
+  {
+    "key": "watchers",
+    "val": "watchers"
+  },
+  {
+    "key": "wed",
+    "val": "wed"
+  },
+  {
+    "key": "wide",
+    "val": "wide"
+  },
+  {
+    "key": "woCancelledBanner",
+    "val": "wo Cancelled Banner"
+  },
+  {
+    "key": "woGenerated",
+    "val": "wo Generated"
+  },
+  {
+    "key": "woGeneratedSuccessfully",
+    "val": "wo Generated Successfully"
+  },
+  {
+    "key": "woHash",
+    "val": "wo Hash"
+  },
+  {
+    "key": "woOnHoldBanner",
+    "val": "wo On Hold Banner"
+  },
+  {
+    "key": "wo_open",
+    "val": "wo open"
+  },
+  {
+    "key": "workOrderAssigned",
+    "val": "work Order Assigned"
+  },
+  {
+    "key": "workOrderEfficiency",
+    "val": "work Order Efficiency"
+  },
+  {
+    "key": "workOrderMovedTo",
+    "val": "work Order Moved To"
+  },
+  {
+    "key": "workOrderScheduled",
+    "val": "work Order Scheduled"
+  },
+  {
+    "key": "workOrderTrends",
+    "val": "work Order Trends"
+  },
+  {
+    "key": "workOrdersLinkedToTh",
+    "val": "work Orders Linked To Th"
+  },
+  {
+    "key": "workload",
+    "val": "workload"
+  },
+  {
+    "key": "youCan",
+    "val": "you Can"
+  },
+  {
+    "key": "youCannotDeactivateYourOwn",
+    "val": "you Cannot Deactivate Your Own"
+  },
+  {
+    "key": "youCannotDeleteYourOwn",
+    "val": "you Cannot Delete Your Own"
+  }
+]
