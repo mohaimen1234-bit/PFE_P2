@@ -27,7 +27,7 @@ spec:
         - name: cmms-frontend
           # Local Minikube image: pfe_p2-cmms-frontend:v4
           # Registry image: DOCKERHUB_USERNAME/cmms-frontend:latest
-          image: DOCKERHUB_USERNAME/cmms-frontend:latest
+          image: mohaimen22/cmms-frontend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000    # Next.js default port

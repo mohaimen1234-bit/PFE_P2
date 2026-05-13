@@ -27,7 +27,7 @@ spec:
         - name: cmms-backend
           # Local Minikube image: pfe_p2-cmms-backend:v8
           # Registry image: DOCKERHUB_USERNAME/cmms-backend:latest
-          image: DOCKERHUB_USERNAME/cmms-backend:latest
+          image: mohaimen22/cmms-backend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8081    # Must match your Spring Boot server.port
