@@ -76,5 +76,5 @@ logging:
   level:
     com.cmms.identity: DEBUG
     com.cmms.equipment: DEBUG
-    org.springframework.security: INFO
+    org.springframework.security: DEBUG
     org.hibernate.SQL: WARN

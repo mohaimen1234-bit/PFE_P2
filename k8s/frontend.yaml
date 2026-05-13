@@ -1,0 +1,97 @@
+# =============================================================
+# frontend.yaml
+# Creates 2 resources for the Next.js frontend:
+#   1. Deployment — runs 2 replicas of the frontend container
+#   2. Service (NodePort) — exposes frontend to local Minikube
+# =============================================================
+
+# --- 1. Deployment ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cmms-frontend
+  namespace: cmms
+  labels:
+    app: cmms-frontend
+spec:
+  replicas: 2    # Run 2 frontend instances for load balancing
+  selector:
+    matchLabels:
+      app: cmms-frontend
+  template:
+    metadata:
+      labels:
+        app: cmms-frontend
+    spec:
+      containers:
+        - name: cmms-frontend
+          # Local Minikube image: pfe_p2-cmms-frontend:v4
+          # Registry image: DOCKERHUB_USERNAME/cmms-frontend:latest
+          image: DOCKERHUB_USERNAME/cmms-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000    # Next.js default port
+
+          env:
+            # Use relative /api path — the browser resolves this via Ingress (cmms.local/api → backend)
+            # NOTE: If this value was baked into the Docker image at build time, you must rebuild the image.
+            - name: NEXT_PUBLIC_API_URL
+              value: "/api"
+            # Node environment
+            - name: NODE_ENV
+              value: "production"
+            # BACKEND_URL is used by next.config.mjs server-side proxy (NOT the browser).
+            # Inside Kubernetes, 'backend-service' resolves to the Spring Boot backend pod.
+            - name: BACKEND_URL
+              value: "http://backend-service:8081"
+
+          # --- Readiness Probe ---
+          # Kubernetes waits until this passes before sending traffic.
+          # Using TCP socket probe since Next.js may not expose /health.
+          readinessProbe:
+            tcpSocket:
+              port: 3000
+            initialDelaySeconds: 15    # Wait 15s after container starts
+            periodSeconds: 10          # Check every 10 seconds
+            failureThreshold: 5
+
+          # --- Liveness Probe ---
+          # Kubernetes restarts the container if this keeps failing.
+          livenessProbe:
+            tcpSocket:
+              port: 3000
+            initialDelaySeconds: 30    # Next.js needs a moment to boot
+            periodSeconds: 20
+            failureThreshold: 3
+
+          # --- Resource Limits ---
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "125m"
+            limits:
+              memory: "512Mi"
+              cpu: "250m"
+
+---
+# --- 2. Service (NodePort) ---
+# NodePort makes the frontend accessible from your local machine via:
+#   minikube service frontend-service -n cmms
+# This opens a tunnel URL like http://127.0.0.1:<random-port>
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: cmms
+  labels:
+    app: cmms-frontend
+spec:
+  type: NodePort    # Exposes the service on each Node's IP at a static port
+  selector:
+    app: cmms-frontend    # Routes to all frontend pods
+  ports:
+    - port: 3000          # Service port (internal)
+      targetPort: 3000    # Pod container port
+      protocol: TCP
+      # nodePort: 30000   # Uncomment to set a fixed NodePort (30000–32767)
+      #                     Leave commented to let Kubernetes assign one automatically

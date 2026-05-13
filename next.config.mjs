@@ -9,8 +9,9 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        // Proxy all /api/* requests to the backend service inside Kubernetes
         source: '/api/:path*',
-        destination: 'http://localhost:8081/api/:path*',
+        destination: 'http://backend-service:8081/api/:path*',
       },
     ]
   },

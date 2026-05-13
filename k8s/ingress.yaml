@@ -1,0 +1,55 @@
+# =============================================================
+# ingress.yaml
+# Routes external HTTP traffic into the cluster:
+#   - cmms.local/      → frontend-service:3000
+#   - cmms.local/api   → backend-service:8081
+#
+# Prerequisites:
+#   1. Enable NGINX ingress addon:
+#        minikube addons enable ingress
+#   2. Add to Windows hosts file (C:\Windows\System32\drivers\etc\hosts):
+#        <MINIKUBE_IP> cmms.local
+#      Get MINIKUBE_IP with: minikube ip
+# =============================================================
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cmms-ingress
+  namespace: cmms
+  labels:
+    app: cmms
+  annotations:
+    # Use the NGINX ingress controller (enabled via minikube addons)
+    kubernetes.io/ingress.class: "nginx"
+    # Strip the /api prefix before forwarding to the backend
+    # e.g. /api/work-orders → /work-orders on the backend
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # Allow cross-origin requests (useful during development)
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    # Increase timeouts for slow Spring Boot startup responses
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+spec:
+  rules:
+    - host: cmms.local    # Must match the entry in your Windows hosts file
+      http:
+        paths:
+          # --- Route /api/* to the backend ---
+          # The regex capture group ($2) strips /api from the path
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 8081
+
+          # --- Route / to the frontend ---
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: frontend-service
+                port:
+                  number: 3000

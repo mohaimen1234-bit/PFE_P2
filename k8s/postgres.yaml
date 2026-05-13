@@ -1,0 +1,129 @@
+# =============================================================
+# postgres.yaml
+# Creates 3 resources for PostgreSQL:
+#   1. PersistentVolumeClaim — reserves 1Gi storage for DB data
+#   2. Deployment — runs the postgres:16 container
+#   3. Service (ClusterIP) — exposes postgres inside the cluster
+# =============================================================
+
+# --- 1. PersistentVolumeClaim ---
+# Requests 1Gi of storage from Minikube's default storage class.
+# Data is persisted across pod restarts.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: cmms
+  labels:
+    app: postgres
+spec:
+  accessModes:
+    - ReadWriteOnce    # Only one pod can mount this at a time
+  resources:
+    requests:
+      storage: 1Gi     # 1 Gigabyte of storage
+
+---
+# --- 2. Deployment ---
+# Runs a single PostgreSQL replica using the postgres:16 image.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: cmms
+  labels:
+    app: postgres
+spec:
+  replicas: 1    # Only 1 replica — PostgreSQL is stateful
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432    # Default PostgreSQL port
+          # Inject credentials from the Secret
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_DB
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            # Required by postgres image to avoid permission errors
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          # Mount the persistent volume to the postgres data directory
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+          # Health probes to ensure postgres is ready before accepting traffic
+          readinessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - mohaimen
+                - -d
+                - cmms_db
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - mohaimen
+                - -d
+                - cmms_db
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          # Resource limits to prevent runaway consumption on local Minikube
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc    # Bind to the PVC created above
+
+---
+# --- 3. Service (ClusterIP) ---
+# Exposes PostgreSQL inside the cluster under the DNS name:
+# postgres-service.cmms.svc.cluster.local
+# The backend uses DB_HOST=postgres-service to reach it.
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: cmms
+  labels:
+    app: postgres
+spec:
+  type: ClusterIP    # Only accessible within the cluster
+  selector:
+    app: postgres    # Routes traffic to pods with this label
+  ports:
+    - port: 5432
+      targetPort: 5432
+      protocol: TCP

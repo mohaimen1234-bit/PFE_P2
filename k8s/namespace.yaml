@@ -1,0 +1,12 @@
+# =============================================================
+# namespace.yaml
+# Creates an isolated Kubernetes namespace for the CMMS app.
+# All other resources will be deployed inside this namespace.
+# =============================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cmms
+  labels:
+    app: cmms
+    environment: local

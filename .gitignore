@@ -17,3 +17,32 @@ yarn-error.log*
 .vscode
 .idea
 dist
+
+# Maven
+target/
+**/target/
+.mvn/
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IDEs
+.project
+.classpath
+.factorypath
+.settings/
+*.iml
+*.ipr
+*.iws
+
+# OS
+Thumbs.db
+
+# Kubernetes real secrets
+k8s/secrets.yaml
+
+# Temporary files
+scratch/

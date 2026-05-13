@@ -1,4 +1,4 @@
-const DEFAULT_API_BASE_URL = 'http://localhost:8081/api'
+const DEFAULT_API_BASE_URL = '/api'
 const AUTH_TOKEN_STORAGE_KEY = 'cmms.auth.token'
 
 export class ApiError extends Error {

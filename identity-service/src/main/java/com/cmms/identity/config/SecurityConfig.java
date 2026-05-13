@@ -52,8 +52,7 @@ public class SecurityConfig {
 
             .authorizeHttpRequests(auth -> auth
                     // Public endpoints
-                    .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/auth/hash").permitAll()
+                    .requestMatchers("/api/auth/**").permitAll()
                     // allow Internal Microservice-to-Microservice traffic
                     .requestMatchers("/api/internal/**").permitAll()
                     // Swagger / OpenAPI
@@ -83,14 +82,18 @@ public class SecurityConfig {
     @Bean
     public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-        java.util.List<String> origins = java.util.Arrays.stream(allowedOrigins.split(","))
-            .map(String::trim)
-            .filter(origin -> !origin.isEmpty())
-            .toList();
-        configuration.setAllowedOrigins(origins);
+        
+        configuration.setAllowedOriginPatterns(java.util.List.of(
+            "http://127.0.0.1:*",
+            "http://localhost:*",
+            "http://192.168.*.*:*"
+        ));
+        
         configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(java.util.List.of("*"));
+        configuration.setExposedHeaders(java.util.List.of("Authorization"));
         configuration.setAllowCredentials(true);
+        
         org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

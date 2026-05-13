@@ -80,6 +80,7 @@ export const tasksApi = {
     }),
 
   getPhotoUrl: (taskId: number, photoId: number) => {
-    return `http://localhost:8081/api/tasks/${taskId}/photos/${photoId}/download`
+    // Use relative path — routes through Next.js proxy → backend-service in Kubernetes
+    return `/api/tasks/${taskId}/photos/${photoId}/download`
   }
 }

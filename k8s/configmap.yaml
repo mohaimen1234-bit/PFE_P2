@@ -1,0 +1,44 @@
+# =============================================================
+# configmap.yaml
+# Stores non-sensitive configuration values for the CMMS app.
+# These are injected as environment variables into the backend
+# and can be referenced by any pod in the cmms namespace.
+# =============================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmms-config
+  namespace: cmms
+  labels:
+    app: cmms
+data:
+  # --- Database connection config ---
+  # The Kubernetes Service name for PostgreSQL (DNS resolved inside cluster)
+  DB_HOST: "host.minikube.internal"
+  DB_PORT: "5432"
+
+  # --- Application ports ---
+  BACKEND_PORT: "8081"
+  FRONTEND_PORT: "3000"
+
+  # --- Spring Boot / JPA connection properties ---
+  # JDBC URL for Spring Boot backend to connect to PostgreSQL
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://host.minikube.internal:5432/cmms_db"
+  SPRING_DATASOURCE_DRIVER: "org.postgresql.Driver"
+
+  # --- JPA / Hibernate settings ---
+  SPRING_JPA_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
+  SPRING_JPA_DDL_AUTO: "none"
+
+  # --- Flyway migration (if used) ---
+  SPRING_FLYWAY_ENABLED: "true"
+  SPRING_FLYWAY_BASELINE_ON_MIGRATE: "true"
+
+  # --- CORS and API settings ---
+  FRONTEND_URL: "http://cmms.local"
+  CORS_ALLOWED_ORIGINS: "*"
+
+  BOOTSTRAP_ADMIN_ENABLED: "true"
+
+  # --- Frontend proxy target ---
+  BACKEND_URL: "http://backend-service:8081"

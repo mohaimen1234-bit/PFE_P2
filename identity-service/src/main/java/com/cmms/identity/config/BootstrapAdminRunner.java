@@ -1,6 +1,8 @@
 package com.cmms.identity.config;
 
+import com.cmms.identity.entity.Role;
 import com.cmms.identity.entity.User;
+import com.cmms.identity.repository.RoleRepository;
 import com.cmms.identity.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,7 @@ public class BootstrapAdminRunner implements CommandLineRunner {
 
     private final BootstrapAdminProperties properties;
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -40,18 +43,40 @@ public class BootstrapAdminRunner implements CommandLineRunner {
 
         User user = userRepository.findByEmail(email).orElse(null);
         if (user == null) {
-            log.warn("Bootstrap admin password reset enabled, but no user found with email {}; skipping.", email);
-            return;
+            log.info("Bootstrap admin: User {} not found. Creating new admin user.", email);
+            user = new User();
+            user.setEmail(email);
         }
 
-        if (!properties.isForce() && passwordEncoder.matches(password, user.getPasswordHash())) {
-            log.info("Bootstrap admin password reset: password already matches for {}; no changes applied.", email);
+        // Always ensure these fields are correct for the bootstrap user
+        user.setFullName("System Admin");
+        user.setIsActive(true);
+
+        // Ensure the ADMIN role is assigned
+        Role adminRole = roleRepository.findByRoleNameIgnoreCase("ADMIN")
+                .orElseGet(() -> {
+                    log.info("Bootstrap admin: ADMIN role not found. Creating it.");
+                    Role newRole = new Role();
+                    newRole.setRoleName("ADMIN");
+                    return roleRepository.save(newRole);
+                });
+
+        if (user.getRoles() == null) {
+            user.setRoles(new java.util.HashSet<>());
+        }
+        if (user.getRoles().stream().noneMatch(r -> r.getRoleName().equalsIgnoreCase("ADMIN"))) {
+            user.getRoles().add(adminRole);
+        }
+
+        if (!properties.isForce() && user.getPasswordHash() != null && passwordEncoder.matches(password, user.getPasswordHash())) {
+            log.info("Bootstrap admin: Password already matches for {}; saving state (active/roles) if changed.", email);
+            userRepository.save(user);
             return;
         }
 
         user.setPasswordHash(passwordEncoder.encode(password));
         userRepository.save(user);
 
-        log.info("Bootstrap admin password reset: updated password hash for {} (userId={}).", email, user.getUserId());
+        log.info("Bootstrap admin: Successfully updated/created {} (active=true, roles=[ADMIN]).", email);
     }
 }

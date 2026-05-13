@@ -1,4 +1,5 @@
-target
+target/**
+!target/identity-service-0.0.1-SNAPSHOT.jar
 uploads
 *.log
 .git

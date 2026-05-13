@@ -1,0 +1,143 @@
+# =============================================================
+# backend.yaml
+# Creates 2 resources for the Spring Boot backend:
+#   1. Deployment — runs 2 replicas of the backend container
+#   2. Service (ClusterIP) — exposes backend inside the cluster
+# =============================================================
+
+# --- 1. Deployment ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cmms-backend
+  namespace: cmms
+  labels:
+    app: cmms-backend
+spec:
+  replicas: 2    # Run 2 backend instances for load balancing
+  selector:
+    matchLabels:
+      app: cmms-backend
+  template:
+    metadata:
+      labels:
+        app: cmms-backend
+    spec:
+      containers:
+        - name: cmms-backend
+          # Local Minikube image: pfe_p2-cmms-backend:v8
+          # Registry image: DOCKERHUB_USERNAME/cmms-backend:latest
+          image: DOCKERHUB_USERNAME/cmms-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081    # Must match your Spring Boot server.port
+
+          # --- Environment Variables from ConfigMap ---
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: cmms-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: cmms-config
+                  key: DB_PORT
+            # Spring Boot datasource URL (built from configmap)
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: cmms-config
+                  key: SPRING_DATASOURCE_URL
+            # --- Environment Variables from Secret ---
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_DB
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            # Spring Boot datasource credentials
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            # Flyway settings from configmap
+            - name: SPRING_FLYWAY_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: cmms-config
+                  key: SPRING_FLYWAY_ENABLED
+            - name: BOOTSTRAP_ADMIN_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: cmms-config
+                  key: BOOTSTRAP_ADMIN_ENABLED
+            - name: BOOTSTRAP_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: BOOTSTRAP_ADMIN_PASSWORD
+
+          # --- Readiness Probe ---
+          # Kubernetes waits until this passes before sending traffic.
+          # Using TCP socket since the backend may not have a /health endpoint.
+          readinessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 180   # Wait 180s after container starts
+            periodSeconds: 10          # Check every 10 seconds
+            failureThreshold: 5        # Allow 5 failures before marking unready
+
+          # --- Liveness Probe ---
+          # Kubernetes restarts the container if this keeps failing.
+          livenessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 240   # Give Spring Boot 4 minutes to start
+            periodSeconds: 10          # Check every 10 seconds
+            failureThreshold: 3        # Restart after 3 consecutive failures
+
+          # --- Resource Limits ---
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+
+---
+# --- 2. Service (ClusterIP) ---
+# Exposes the backend inside the cluster.
+# The ingress routes /api traffic to this service.
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: cmms
+  labels:
+    app: cmms-backend
+spec:
+  type: ClusterIP    # Internal only — accessed via Ingress from outside
+  selector:
+    app: cmms-backend    # Routes to all backend pods
+  ports:
+    - port: 8081
+      targetPort: 8081
+      protocol: TCP
