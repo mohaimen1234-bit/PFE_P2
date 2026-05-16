@@ -1,0 +1,72 @@
+# =============================================================
+# ollama.yaml
+# Deploys the AI model server (Ollama) with pre-baked models.
+# =============================================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ollama-service
+  namespace: cmms
+  labels:
+    app: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ollama
+  template:
+    metadata:
+      labels:
+        app: ollama
+    spec:
+      containers:
+        - name: ollama
+          # Use your custom built image here
+          image: mohaimen22/ollama-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 11434
+          resources:
+            requests:
+              memory: "2Gi"   # AI models need more RAM
+              cpu: "1000m"
+            limits:
+              memory: "4Gi"
+              cpu: "2000m"
+          volumes:
+            - name: ollama-storage
+              persistentVolumeClaim:
+                claimName: ollama-pvc
+
+      volumes:
+        - name: ollama-storage
+          persistentVolumeClaim:
+            claimName: ollama-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama-service
+  namespace: cmms
+spec:
+  type: ClusterIP
+  selector:
+    app: ollama
+  ports:
+    - port: 11434
+      targetPort: 11434
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ollama-pvc
+  namespace: cmms
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

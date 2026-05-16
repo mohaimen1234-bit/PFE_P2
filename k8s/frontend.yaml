@@ -44,6 +44,8 @@ spec:
             # Inside Kubernetes, 'backend-service' resolves to the Spring Boot backend pod.
             - name: BACKEND_URL
               value: "http://backend-service:8081"
+            - name: RAG_SERVICE_URL
+              value: "http://rag-service:8000"
 
           # --- Readiness Probe ---
           # Kubernetes waits until this passes before sending traffic.

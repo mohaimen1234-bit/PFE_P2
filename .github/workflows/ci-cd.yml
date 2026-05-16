@@ -53,3 +53,21 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/cmms-frontend:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
+
+    - name: Build and Push RAG Service Image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./rag-service
+        push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/rag-service:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Build and Push Ollama Service Image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./ollama-service
+        push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/ollama-service:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max

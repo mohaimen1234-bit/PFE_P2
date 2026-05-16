@@ -1,0 +1,74 @@
+# =============================================================
+# rag-service.yaml
+# Deploys the Python RAG (Retrieval-Augmented Generation) service.
+# =============================================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-service
+  namespace: cmms
+  labels:
+    app: rag-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-service
+  template:
+    metadata:
+      labels:
+        app: rag-service
+    spec:
+      containers:
+        - name: rag-service
+          image: mohaimen22/rag-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: OLLAMA_HOST
+              value: "http://ollama-service:11434"
+            - name: DB_URL
+              value: "jdbc:postgresql://postgres-service:5432/cmms_db?stringtype=unspecified"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          volumeMounts:
+            - name: chroma-storage
+              mountPath: /app/vector_store/chroma
+      volumes:
+        - name: chroma-storage
+          persistentVolumeClaim:
+            claimName: rag-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-service
+  namespace: cmms
+spec:
+  type: ClusterIP
+  selector:
+    app: rag-service
+  ports:
+    - port: 8000
+      targetPort: 8000
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rag-pvc
+  namespace: cmms
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
