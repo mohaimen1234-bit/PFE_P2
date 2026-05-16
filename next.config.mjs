@@ -7,11 +7,12 @@ const nextConfig = {
     unoptimized: true,
   },
   async rewrites() {
+    const backendUrl = process.env.BACKEND_URL || 'http://localhost:8081';
     return [
       {
-        // Proxy all /api/* requests to the backend service inside Kubernetes
+        // Proxy all /api/* requests to the backend service
         source: '/api/:path*',
-        destination: 'http://backend-service:8081/api/:path*',
+        destination: `${backendUrl}/api/:path*`,
       },
     ]
   },

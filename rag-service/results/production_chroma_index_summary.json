@@ -1,0 +1,28 @@
+{
+  "collection": "maintenance_records_nomic",
+  "embedding_model": "nomic-embed-text",
+  "records_path": "output\\records.jsonl",
+  "chroma_path": "vector_store/chroma",
+  "records_loaded": 10350,
+  "records_indexed": 10350,
+  "collection_count": 10350,
+  "record_type_counts": {
+    "claims": 650,
+    "claim_status_history": 650,
+    "work_orders": 500,
+    "work_order_status_history": 1000,
+    "wo_checklists": 500,
+    "tasks": 1500,
+    "sub_tasks": 3000,
+    "task_audit_logs": 1500,
+    "equipment": 160,
+    "equipment_history": 160,
+    "equipment_documents": 40,
+    "maintenance_plans": 160,
+    "regulatory_plans": 80,
+    "ai_priority_suggestions": 450
+  },
+  "elapsed_seconds": 21969.683,
+  "batch_size": 100,
+  "recreate_collection": true
+}

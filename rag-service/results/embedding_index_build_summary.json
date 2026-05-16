@@ -1,0 +1,26 @@
+[
+  {
+    "collection": "maintenance_records_nomic",
+    "model": "nomic-embed-text",
+    "records_indexed": 1060,
+    "time_seconds": 2272.126
+  },
+  {
+    "collection": "maintenance_records_bge_m3",
+    "model": "bge-m3",
+    "records_indexed": 1060,
+    "time_seconds": 2431.997
+  },
+  {
+    "collection": "maintenance_records_e5_large",
+    "model": "intfloat/multilingual-e5-large",
+    "records_indexed": 1060,
+    "time_seconds": 280.201
+  },
+  {
+    "collection": "maintenance_records_minilm",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "records_indexed": 1060,
+    "time_seconds": 14.477
+  }
+]

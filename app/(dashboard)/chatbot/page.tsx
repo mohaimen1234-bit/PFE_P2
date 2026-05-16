@@ -267,12 +267,26 @@ function ChatbotPageContent() {
       { id: tid, role: "assistant", content: "", ts: new Date(), typing: true }
     ])
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1400))
-    setMsgs(p => [...p.filter(m => m.id !== tid),
-      { id: Date.now() + "-a", role: "assistant", content: ui.demoReply(t), ts: new Date() }
-    ])
-    setLoading(false)
-  }, [loading, ui])
+    
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: t })
+      })
+      const data = await res.json()
+      
+      setMsgs(p => [...p.filter(m => m.id !== tid),
+        { id: Date.now() + "-a", role: "assistant", content: data.answer || "No response", ts: new Date() }
+      ])
+    } catch(err) {
+      setMsgs(p => [...p.filter(m => m.id !== tid),
+        { id: Date.now() + "-a", role: "assistant", content: "Error connecting to AI.", ts: new Date() }
+      ])
+    } finally {
+      setLoading(false)
+    }
+  }, [loading])
 
   const reset = () => { setMsgs([]); setWelcome(true); setInput("") }
 
@@ -314,21 +328,6 @@ function ChatbotPageContent() {
 
               {/* History List */}
               <div className="flex-1 overflow-y-auto space-y-6 pr-2 -mr-2 custom-scrollbar">
-                <div>
-                  <p className="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] px-2 mb-3">{ui.history}</p>
-                  <div className="space-y-1">
-                    {ui.histItems.map((item, i) => (
-                      <button key={i} className={cn(
-                        "w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all group relative overflow-hidden",
-                        i === 0 ? "bg-violet-500/10 dark:bg-violet-500/5 text-violet-600 dark:text-violet-400" : "hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-400"
-                      )}>
-                        <MessageSquare className="w-3.5 h-3.5 shrink-0 opacity-70" />
-                        <span className="text-[11px] font-bold truncate tracking-tight">{item}</span>
-                        {i === 0 && <div className="absolute inset-y-0 left-0 w-1 bg-violet-500 rounded-full" />}
-                      </button>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Sidebar Footer */}

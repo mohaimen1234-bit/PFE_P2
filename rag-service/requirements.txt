@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+requests
+chromadb
+psycopg2-binary
+pandas
+openpyxl
+numpy
+python-multipart
+python-dotenv
+dateparser

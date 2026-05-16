@@ -1,0 +1,156 @@
+run_id,question_id,question,benchmark_category,question_type,expected_answer_type,model,embedding_name,embedding_model,embedding_collection,selected_record_types,retrieved_sources,expected_sources,cited_sources,invalid_cited_sources,expected_keywords,must_not_include,retrieval_time_seconds,generation_time_seconds,total_latency_seconds,eval_count,eval_duration,prompt_eval_count,prompt_eval_duration,tokens_per_second,prompt_char_count,context_char_count,answer_word_count,keyword_score,source_score,must_not_include_violations,not_enough_info,not_enough_info_expected,not_enough_info_correct,overall_auto_score,answer,manual_accuracy_0_1,manual_hallucination_0_1,manual_citation_quality_0_1,manual_notes
+20260509_010042,q001,Why was the surgical light work order cancelled?,Core semantic retrieval/extraction,,specific_reason,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"work_orders,equipment,claims","work_orders_136,work_orders_76,work_orders_56,claims_536,claims_596,claims_636,equipment_55,equipment_91,equipment_19",work_orders_136,work_orders_136,,cancelled|higher priority|same equipment,probably|maybe,2.084,9.272,11.357,278,2773138900,2761,645144900,100.247,9096,8217,35,1.0,1.0,0,False,False,,1.0,"The surgical light work order (WO 136) was cancelled because the issue was merged into a higher priority work order for the same equipment. This is explicitly stated in the cancellation_notes of work_orders_136. 
+
+**Source:** work_orders_136",,,,
+20260509_010042,q001,Why was the surgical light work order cancelled?,Core semantic retrieval/extraction,,specific_reason,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"work_orders,equipment,claims","work_orders_136,work_orders_76,work_orders_56,claims_536,claims_596,claims_636,equipment_55,equipment_91,equipment_19",work_orders_136,work_orders_136,,cancelled|higher priority|same equipment,probably|maybe,2.084,41.373,43.457,217,24166120000,2761,3779405500,8.98,9096,8217,25,1.0,1.0,0,False,False,,1.0,"The work order WO 136 was cancelled because the issue was merged into a higher priority work order for the same equipment. 
+
+**Source ID:** work_orders_136",,,,
+20260509_010042,q001,Why was the surgical light work order cancelled?,Core semantic retrieval/extraction,,specific_reason,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"work_orders,equipment,claims","work_orders_136,work_orders_76,work_orders_56,claims_536,claims_596,claims_636,equipment_55,equipment_91,equipment_19",work_orders_136,work_orders_136,,cancelled|higher priority|same equipment,probably|maybe,2.084,13.393,15.478,33,1012980200,2924,1480432200,32.577,9096,8217,24,1.0,1.0,0,False,False,,1.0,The surgical light work order was cancelled because it was merged into a higher priority work order for the same equipment. Source ID: work_orders_136,,,,
+20260509_010042,q002,Which task is waiting for an oxygen cell?,Core semantic retrieval/extraction,,specific_record,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_131,tasks_11,tasks_251,work_orders_104,work_orders_4,work_orders_224",tasks_11,"tasks_11,tasks_131",,oxygen cell|waiting|blocked,UPS battery,3.478,11.227,14.706,400,3812688300,1805,408108200,104.913,5939,5113,63,1.0,1.0,0,False,False,,1.0,"The tasks waiting for an oxygen cell are **tasks_131** and **tasks_11**.  
+- **tasks_131**: Blocked reason states ""Waiting for Oxygen cell from spare parts store; current stock is below minimum level.""  
+- **tasks_11**: Similarly, the blocked reason mentions ""Waiting for Oxygen cell from spare parts store.""  
+
+Both tasks are marked as **BLOCKED** and require the oxygen cell to proceed.  
+
+**Source IDs cited**: tasks_131, tasks_11.",,,,
+20260509_010042,q002,Which task is waiting for an oxygen cell?,Core semantic retrieval/extraction,,specific_record,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_131,tasks_11,tasks_251,work_orders_104,work_orders_4,work_orders_224",tasks_11,"tasks_11,tasks_131",,oxygen cell|waiting|blocked,UPS battery,3.478,55.48,58.958,371,39671481900,1805,2554514700,9.352,5939,5113,34,1.0,1.0,0,False,False,,1.0,"The tasks waiting for an oxygen cell are **tasks_11** and **tasks_131**. Both have the blocked reason: ""Waiting for Oxygen cell from spare parts store; current stock is below minimum level.""  
+
+**Source IDs:** tasks_11, tasks_131",,,,
+20260509_010042,q002,Which task is waiting for an oxygen cell?,Core semantic retrieval/extraction,,specific_record,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_131,tasks_11,tasks_251,work_orders_104,work_orders_4,work_orders_224",tasks_11,"tasks_11,tasks_131",,oxygen cell|waiting|blocked,UPS battery,3.478,13.207,16.686,42,1269898300,1929,1147932400,33.074,5939,5113,24,0.667,1.0,0,False,False,,0.867,"Tasks 11 and 131 are waiting for an oxygen cell from spare parts store; current stock is below minimum level.
+Source IDs: tasks_11, tasks_131",,,,
+20260509_010042,q003,Which task is waiting for an endoscope connector seal?,Core semantic retrieval/extraction,,specific_record,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_290,tasks_230,tasks_74,work_orders_39,work_orders_59,work_orders_19",tasks_74,"tasks_230,tasks_290,tasks_74",,endoscope|connector seal|waiting|blocked,oxygen cell,3.535,11.1,14.635,399,3833186900,1776,404894000,104.091,5909,5071,62,1.0,1.0,0,False,False,,1.0,"The tasks waiting for an endoscope connector seal are:  
+- **tasks_290** (Blocked reason: ""Waiting for Endoscope connector seal..."")  
+- **tasks_230** (Blocked reason: ""Waiting for Endoscope connector seal..."")  
+- **tasks_74** (Blocked reason: ""Waiting for Endoscope connector seal..."")  
+
+These tasks are all categorized under ""Corrective action"" and are blocked due to insufficient stock of the Endoscope connector seal.  
+
+**Source IDs cited:** tasks_290, tasks_230, tasks_74.",,,,
+20260509_010042,q003,Which task is waiting for an endoscope connector seal?,Core semantic retrieval/extraction,,specific_record,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_290,tasks_230,tasks_74,work_orders_39,work_orders_59,work_orders_19",tasks_74,"tasks_230,tasks_290,tasks_74",,endoscope|connector seal|waiting|blocked,oxygen cell,3.535,42.606,46.141,267,27673946100,1776,2423389500,9.648,5909,5071,52,1.0,1.0,0,False,False,,1.0,"The following tasks are waiting for an Endoscope connector seal:  
+- **tasks_290** (blocked_reason: ""Waiting for Endoscope connector seal from spare parts store; current stock is below minimum level."")  
+- **tasks_230** (same blocked_reason as tasks_290)  
+- **tasks_74** (same blocked_reason as the other tasks)  
+
+All three tasks are blocked due to the same shortage.",,,,
+20260509_010042,q003,Which task is waiting for an endoscope connector seal?,Core semantic retrieval/extraction,,specific_record,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,work_orders","tasks_290,tasks_230,tasks_74,work_orders_39,work_orders_59,work_orders_19",tasks_74,"tasks_230,tasks_290",,endoscope|connector seal|waiting|blocked,oxygen cell,3.535,12.103,15.639,40,1253664100,1904,1075984600,31.906,5909,5071,20,0.75,0.0,0,False,False,,0.55,"Tasks 290 and 230 are waiting for an endoscope connector seal from the spare parts store.
+Source IDs: tasks_290, tasks_230",,,,
+20260509_010042,q004,Which records mention running a load test?,Core semantic retrieval/extraction,,specific_record,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_96,work_orders_172,work_orders_212,work_orders_12,tasks_275,tasks_215,claims_645,claims_585,claims_545,equipment_80",tasks_155,"tasks_215,tasks_275,work_orders_12,work_orders_172,work_orders_212",,load test|battery|UPS,steam trap,3.537,13.428,16.967,574,6018716700,3126,734682600,95.369,10563,9685,64,1.0,0.0,0,False,False,,0.65,"The records mentioning running a load test are:  
+1. **work_orders_172** (WO 172: UPS battery autonomy low)  
+2. **work_orders_212** (WO 212: UPS battery autonomy low)  
+3. **work_orders_12** (WO 12: UPS battery autonomy low)  
+4. **tasks_275** (Corrective action)  
+5. **tasks_215** (Corrective action)  
+
+These records describe corrective actions involving replacing weak battery modules and running load tests, as noted in their respective task and work order descriptions.",,,,
+20260509_010042,q004,Which records mention running a load test?,Core semantic retrieval/extraction,,specific_record,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_96,work_orders_172,work_orders_212,work_orders_12,tasks_275,tasks_215,claims_645,claims_585,claims_545,equipment_80",tasks_155,"tasks_215,tasks_275,work_orders_12,work_orders_172,work_orders_212",,load test|battery|UPS,steam trap,3.537,94.34,97.878,649,77477542400,3126,4254242500,8.377,10563,9685,84,1.0,0.0,0,False,False,,0.65,"The following records mention running a load test:  
+- **work_orders_172**: ""Replace weak battery modules and run load test"" (description and completion_notes).  
+- **work_orders_212**: ""Replace weak battery modules and run load test"" (description and completion_notes).  
+- **work_orders_12**: ""Replace weak battery modules and run load test"" (description and completion_notes).  
+- **tasks_275**: ""Replace weak battery modules and run load test"" (description).  
+- **tasks_215**: ""Replace weak battery modules and run load test"" (description).  
+
+These records consistently reference load testing as part of corrective actions for UPS battery issues.",,,,
+20260509_010042,q004,Which records mention running a load test?,Core semantic retrieval/extraction,,specific_record,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_96,work_orders_172,work_orders_212,work_orders_12,tasks_275,tasks_215,claims_645,claims_585,claims_545,equipment_80",tasks_155,"tasks_275,work_orders_172,work_orders_212",,load test|battery|UPS,steam trap,3.537,14.661,18.201,111,3633960300,3332,1492494800,30.545,10563,9685,53,0.667,0.0,0,False,False,,0.517,"The following records mention running a load test:
+
+*   work_orders_172 (Source ID: work_orders_172) - “Scope: Replace weak battery modules and run load test.”
+*   work_orders_212 (Source ID: work_orders_212) - “Scope: Replace weak battery modules and run load test.”
+*   tasks_275 (Source ID: tasks_275) - “description: Replace weak battery modules and run load test”",,,,
+20260509_010042,q005,Which records mention reviewing a temperature log?,Core semantic retrieval/extraction,,specific_record,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","work_orders_13,work_orders_173,claims_553,claims_533,claims_573,work_orders_93,tasks_98,tasks_278,tasks_218,equipment_121",tasks_98,"tasks_218,tasks_278,tasks_98,work_orders_13,work_orders_173,work_orders_93",,temperature log|door gasket|sensor,oxygen cell,3.643,16.591,20.234,821,8688829500,3117,728131200,94.489,10248,9362,83,1.0,1.0,0,False,False,,1.0,"The records mentioning ""reviewing a temperature log"" are:  
+1. **work_orders_13** (WO 13: Medical refrigerator temperature excursion)  
+2. **work_orders_173** (WO 173: Medical refrigerator temperature excursion)  
+3. **work_orders_93** (WO 93: Medical refrigerator temperature excursion)  
+4. **tasks_98** (Corrective action: Inspect door gasket, verify sensor, review temperature log)  
+5. **tasks_278** (Corrective action: Inspect door gasket, verify sensor, review temperature log)  
+6. **tasks_218** (Corrective action: Inspect door gasket, verify sensor, review temperature log)  
+
+All these records explicitly mention reviewing a temperature log as part of their corrective actions.",,,,
+20260509_010042,q005,Which records mention reviewing a temperature log?,Core semantic retrieval/extraction,,specific_record,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","work_orders_13,work_orders_173,claims_553,claims_533,claims_573,work_orders_93,tasks_98,tasks_278,tasks_218,equipment_121",tasks_98,"tasks_218,tasks_278,tasks_98,work_orders_13,work_orders_173,work_orders_93",,temperature log|door gasket|sensor,oxygen cell,3.643,93.326,96.971,641,76565678400,3117,4358235400,8.372,10248,9362,79,0.333,1.0,0,False,False,,0.733,"The following records mention reviewing a temperature log:  
+- **work_orders_13**: Description and completion_notes explicitly reference reviewing the temperature log.  
+- **work_orders_173**: Description includes reviewing the temperature log.  
+- **work_orders_93**: Description and completion_notes reference reviewing the temperature log.  
+- **tasks_98**: Description and notes state ""review temperature log.""  
+- **tasks_278**: Description and notes mention ""review temperature log.""  
+- **tasks_218**: Description and notes include ""review temperature log.""  
+
+These records consistently tie the temperature log review to corrective actions for medical refrigerator issues.",,,,
+20260509_010042,q005,Which records mention reviewing a temperature log?,Core semantic retrieval/extraction,,specific_record,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","work_orders_13,work_orders_173,claims_553,claims_533,claims_573,work_orders_93,tasks_98,tasks_278,tasks_218,equipment_121",tasks_98,"tasks_218,work_orders_13,work_orders_173",,temperature log|door gasket|sensor,oxygen cell,3.643,15.156,18.8,121,3800932300,3272,1554965500,31.834,10248,9362,56,1.0,0.0,0,False,False,,0.65,"The following records mention reviewing a temperature log:
+
+*   work_orders_13 (Source ID: work_orders_13) - “Scope: Inspect door gasket, verify sensor, review temperature log.”
+*   work_orders_173 (Source ID: work_orders_173) - “Scope: Inspect door gasket, verify sensor, review temperature log.”
+*   tasks_218 (Source ID: tasks_218) - “title: Corrective action, description: Inspect door gasket, verify sensor, review temperature log”",,,,
+20260509_010042,q006,Which records mention replacing a breathing circuit seal?,Core semantic retrieval/extraction,,specific_record,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_74,work_orders_79,work_orders_219,work_orders_239,tasks_254,tasks_134,claims_559,claims_599,claims_639,equipment_138",tasks_74,"tasks_134,tasks_74",,breathing circuit seal|replace|leak test,UPS battery,3.618,11.892,15.511,401,4175080500,3151,768234200,96.046,10620,9726,76,1.0,1.0,0,False,False,,1.0,"The records mentioning replacing a breathing circuit seal are:  
+1. **tasks_74** (Record ID 74) - Description: ""Replace breathing circuit seal and repeat leak test.""  
+2. **tasks_134** (Record ID 134) - Description: ""Replace breathing circuit seal and repeat leak test.""  
+
+Both tasks are associated with work orders (WOs) 25 and 45, respectively, and are flagged as critical actions. The database does not mention any other records explicitly referencing a breathing circuit seal replacement.  
+
+Sources cited: tasks_74, tasks_134.",,,,
+20260509_010042,q006,Which records mention replacing a breathing circuit seal?,Core semantic retrieval/extraction,,specific_record,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_74,work_orders_79,work_orders_219,work_orders_239,tasks_254,tasks_134,claims_559,claims_599,claims_639,equipment_138",tasks_74,"tasks_254,tasks_74",,breathing circuit seal|replace|leak test,UPS battery,3.618,57.188,60.807,362,40354387300,3151,4333722200,8.971,10620,9726,51,1.0,1.0,0,False,False,,1.0,"The following records mention replacing a breathing circuit seal:  
+- **tasks_74**: ""Replace breathing circuit seal and repeat leak test"" (description and notes).  
+- **tasks_254**: ""Replace breathing circuit seal and repeat leak test"" (description).  
+
+These records directly reference the corrective action of replacing a breathing circuit seal.  
+
+**Source IDs cited**: tasks_74, tasks_254.",,,,
+20260509_010042,q006,Which records mention replacing a breathing circuit seal?,Core semantic retrieval/extraction,,specific_record,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"claims,work_orders,tasks,equipment","tasks_74,work_orders_79,work_orders_219,work_orders_239,tasks_254,tasks_134,claims_559,claims_599,claims_639,equipment_138",tasks_74,"tasks_134,tasks_74",,breathing circuit seal|replace|leak test,UPS battery,3.618,13.498,17.117,45,1653427600,3329,1786128300,27.216,10620,9726,19,0.333,1.0,0,False,False,,0.733,"The following records mention replacing a breathing circuit seal:
+
+*   tasks_74 (Source ID: tasks_74)
+*   tasks_134 (Source ID: tasks_134)",,,,
+20260509_010042,q007,What corrective action is mentioned for the UPS battery issue?,Core semantic retrieval/extraction,,specific_action,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","tasks_11,tasks_155,tasks_131,work_orders_292,work_orders_92,work_orders_272,claims_72,claims_92,claims_512,equipment_68",tasks_155,"tasks_11,tasks_131,tasks_155,work_orders_272,work_orders_292,work_orders_92",,replace|battery|load test|UPS,pressure sensor,3.329,14.031,17.361,623,6501305100,2981,694014600,95.827,10014,9118,61,1.0,1.0,0,False,False,,1.0,"The corrective actions mentioned for the UPS battery issue include:  
+1. **Replace weak battery modules and run load test** (tasks_155, work_orders_292, work_orders_92, work_orders_272).  
+2. **Replace oxygen cell and perform calibration** (tasks_11, tasks_131).  
+
+These actions are explicitly outlined in the work orders and tasks related to the UPS battery autonomy low issue.  
+
+**Source IDs cited**:  
+- tasks_155, tasks_11, tasks_131, work_orders_292, work_orders_92, work_orders_272.",,,,
+20260509_010042,q007,What corrective action is mentioned for the UPS battery issue?,Core semantic retrieval/extraction,,specific_action,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","tasks_11,tasks_155,tasks_131,work_orders_292,work_orders_92,work_orders_272,claims_72,claims_92,claims_512,equipment_68",tasks_155,"tasks_131,tasks_155,work_orders_272,work_orders_292,work_orders_92",,replace|battery|load test|UPS,pressure sensor,3.329,85.443,88.772,597,68946951700,2981,4074380000,8.659,10014,9118,82,1.0,1.0,0,False,False,,1.0,"The corrective action mentioned for the UPS battery issue is **""Replace weak battery modules and run load test""**. This action is referenced in the following records:  
+- **tasks_155** (blocked reason: waiting for UPS battery string)  
+- **tasks_131** (blocked reason: waiting for UPS battery string)  
+- **work_orders_292** (completion notes: technician performed corrective action)  
+- **work_orders_92** (description: scope includes replacing weak battery modules)  
+- **work_orders_272** (description: scope includes replacing weak battery modules).  
+
+These records consistently link the UPS battery issue to this corrective action.",,,,
+20260509_010042,q007,What corrective action is mentioned for the UPS battery issue?,Core semantic retrieval/extraction,,specific_action,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","tasks_11,tasks_155,tasks_131,work_orders_292,work_orders_92,work_orders_272,claims_72,claims_92,claims_512,equipment_68",tasks_155,"tasks_11,tasks_131,work_orders_272,work_orders_292",,replace|battery|load test|UPS,pressure sensor,3.329,14.88,18.209,82,2527586300,3163,1635503700,32.442,10014,9118,33,0.75,0.0,0,False,False,,0.55,"The UPS battery issue is addressed through corrective actions in tasks_11, tasks_131, and work_orders_292 and work_orders_272. Specifically, the corrective action involves replacing weak battery modules and running load tests. [tasks_11, tasks_131, work_orders_292, work_orders_272]",,,,
+20260509_010042,q008,What corrective action is mentioned for ventilator oxygen sensor problems?,Core semantic retrieval/extraction,,specific_action,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_104,work_orders_64,work_orders_224,claims_624,claims_104,claims_564,tasks_131,tasks_11,tasks_98,equipment_66",tasks_11,"tasks_11,tasks_131",,oxygen cell|calibration|replace,UPS battery,3.454,12.748,16.203,477,4912703100,3084,739374700,97.095,10277,9368,61,0.667,1.0,0,False,False,,0.867,"The corrective action mentioned for ventilator oxygen sensor problems involves **replacing the oxygen cell and performing calibration**. This is explicitly stated in the tasks_131 and tasks_11, which detail the corrective actions for the respective work orders. The tasks are blocked due to stock constraints for the oxygen cell, indicating the need for immediate action.  
+
+**Relevant Source IDs:**  
+- tasks_131  
+- tasks_11",,,,
+20260509_010042,q008,What corrective action is mentioned for ventilator oxygen sensor problems?,Core semantic retrieval/extraction,,specific_action,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_104,work_orders_64,work_orders_224,claims_624,claims_104,claims_564,tasks_131,tasks_11,tasks_98,equipment_66",tasks_11,"tasks_11,tasks_131,work_orders_104,work_orders_224,work_orders_64",,oxygen cell|calibration|replace,UPS battery,3.454,119.23,122.686,857,102176999000,3084,4604957400,8.387,10277,9368,65,1.0,1.0,0,False,False,,1.0,"The corrective action mentioned for ventilator oxygen sensor problems is **replacing the oxygen cell and performing calibration**. This is explicitly stated in multiple records:  
+- **work_orders_104**, **work_orders_64**, and **work_orders_224** (all describe the scope as replacing the oxygen cell and calibration).  
+- **tasks_131** and **tasks_11** (both list ""Corrective action: Replace oxygen cell and perform calibration"" in their notes).  
+
+This action is consistently documented across these sources.",,,,
+20260509_010042,q008,What corrective action is mentioned for ventilator oxygen sensor problems?,Core semantic retrieval/extraction,,specific_action,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_104,work_orders_64,work_orders_224,claims_624,claims_104,claims_564,tasks_131,tasks_11,tasks_98,equipment_66",tasks_11,"work_orders_104,work_orders_224,work_orders_64",,oxygen cell|calibration|replace,UPS battery,3.454,13.691,17.146,71,2211520800,3249,1440803100,32.105,10277,9368,27,0.667,0.0,0,False,False,,0.517,"The corrective action for ventilator oxygen sensor problems is described in work_orders_104, work_orders_64 and work_orders_224. It involves replacing the oxygen cell and performing calibration. [work_orders_104], [work_orders_64], [work_orders_224]",,,,
+20260509_010042,q009,What corrective action is mentioned for refrigerator temperature issues?,Core semantic retrieval/extraction,,specific_action,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_73,work_orders_213,work_orders_33,claims_73,claims_613,claims_93,tasks_221,tasks_98,tasks_101,equipment_90",tasks_98,"tasks_221,tasks_98,work_orders_213,work_orders_33,work_orders_73",,door gasket|sensor|temperature log|refrigerator,oxygen cell,3.276,11.778,15.055,429,4449335300,3029,702795000,96.419,10127,9222,72,1.0,1.0,0,False,False,,1.0,"The corrective actions mentioned for refrigerator temperature issues include:  
+1. **Inspecting door gasket, verifying sensor, and reviewing temperature logs** (e.g., work_orders_73, work_orders_213, work_orders_33).  
+2. **Cleaning the condenser coil, checking the pressure switch, and verifying refrigerant pressures** (tasks_221, tasks_98).  
+
+These actions are tied to equipment issues related to temperature excursions, with tasks blocked due to stock constraints (e.g., tasks_98).  
+
+**Cited sources:**  
+- work_orders_73, work_orders_213, work_orders_33 (corrective actions).  
+- tasks_221, tasks_98 (specific corrective steps).",,,,
+20260509_010042,q009,What corrective action is mentioned for refrigerator temperature issues?,Core semantic retrieval/extraction,,specific_action,qwen3:8b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_73,work_orders_213,work_orders_33,claims_73,claims_613,claims_93,tasks_221,tasks_98,tasks_101,equipment_90",tasks_98,"tasks_101,tasks_221,tasks_98,work_orders_213,work_orders_33,work_orders_73",,door gasket|sensor|temperature log|refrigerator,oxygen cell,3.276,89.751,93.027,624,73244967200,3029,4187962400,8.519,10127,9222,64,1.0,1.0,0,False,False,,1.0,"The corrective actions mentioned for refrigerator temperature issues include:  
+- **Inspect door gasket**  
+- **Verify sensor**  
+- **Review temperature log**  
+
+These actions are documented in multiple records (work_orders_73, work_orders_213, work_orders_33, tasks_98). Additionally, tasks_221 and tasks_101 mention cleaning condenser coils and checking pressure switches, but these are linked to refrigerant pressure issues rather than temperature excursions.  
+
+**Source IDs cited**: work_orders_73, work_orders_213, work_orders_33, tasks_98, tasks_221, tasks_101.",,,,
+20260509_010042,q009,What corrective action is mentioned for refrigerator temperature issues?,Core semantic retrieval/extraction,,specific_action,gemma3:4b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_73,work_orders_213,work_orders_33,claims_73,claims_613,claims_93,tasks_221,tasks_98,tasks_101,equipment_90",tasks_98,"work_orders_213,work_orders_33,work_orders_73",,door gasket|sensor|temperature log|refrigerator,oxygen cell,3.276,14.457,17.733,74,2276088600,3189,1686780100,32.512,10127,9222,31,1.0,0.0,0,False,False,,0.65,"The corrective actions mentioned for refrigerator temperature issues are: Inspect door gasket, verify sensor, review temperature log. These actions are detailed in work_orders_73, work_orders_213, and work_orders_33. Source IDs: work_orders_73, work_orders_213, work_orders_33",,,,
+20260509_010042,q010,What corrective action is mentioned for infusion pump keypad or occlusion problems?,Core semantic retrieval/extraction,,specific_action,qwen3:1.7b,nomic,nomic-embed-text,maintenance_records_nomic,"tasks,equipment,claims,work_orders","work_orders_42,work_orders_62,work_orders_142,tasks_65,claims_562,claims_622,claims_82,tasks_272,tasks_32,equipment_67",tasks_65,"tasks_32,tasks_65,work_orders_142,work_orders_42,work_orders_62",,infusion pump|keypad|occlusion|inspect,autoclave,3.3,12.191,15.492,457,4766734300,3258,792060800,95.873,10980,10064,79,1.0,1.0,0,False,False,,1.0,"The corrective actions mentioned for infusion pump keypad or occlusion problems include:  
+1. **Inspecting the drive mechanism** and replacing the keypad if needed.  
+2. **Running occlusion tests** to resolve intermittent warnings.  
+
+These actions are detailed in **work_orders_42, work_orders_62, and work_orders_142**, as well as **tasks_65 and tasks_32**. The corrective measures align with the scope described in the claims (e.g., ""inspect drive mechanism, replace keypad if needed, run occlusion test"").  
+
+Sources:  
+- **work_orders_42**  
+- **work_orders_62**  
+- **work_orders_142**  
+- **tasks_65**  
+- **tasks_32**",,,,

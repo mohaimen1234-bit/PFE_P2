@@ -1,0 +1,590 @@
+Full DevOps Cycle Used  
+Code changes  
+   ↓ 
+GitHub repository  
+   ↓ 
+GitHub Actions CI/CD  
+   ↓ 
+Docker build  
+   ↓ 
+Docker Hub image push  
+   ↓ 
+Kubernetes manifests  
+   ↓ 
+Argo CD GitOps sync  
+   ↓ 
+Minikube/Kubernetes deployment  
+   ↓ 
+Prometheus metrics collection  
+   ↓ 
+Grafana dashboards  
+ 
+1. Project Structure We Used  
+Your project structure is roughly:  
+PFE_P2/  
+│ 
+├── app/                         # Next.js app pages/routes  
+├── components/                  # Frontend UI components  
+├── hooks/                       # React hooks  
+├── lib/                         # Frontend API clients/helpers  
+├── public/                      # Static assets  
+├── styles/                      # CSS/styles  
+│ 
+├── identity -service/            # Spring Boot backend  
+│   ├── src/ 
+│   ├── target/  │   ├── pom.xml  
+│   ├── Dockerfile  
+│   └── .dockerignore  
+│ 
+├── k8s/                         # Kubernetes manifests  
+│   ├── namespace.yaml  
+│   ├── configmap.yaml  
+│   ├── secrets.yaml             # Local only, NOT committed  
+│   ├── secrets.yaml.example     # Safe example committed  
+│   ├── postgres.yaml  
+│   ├── backend.yaml  
+│   ├── frontend.yaml  
+│   ├── ingress.yaml  
+│   └── README.md  
+│ 
+├── .github/  
+│   └── workflows/  
+│       └── ci-cd.yml            # GitHub Actions pipeline  
+│ 
+├── Dockerfile                   # Frontend Dockerfile  
+├── docker -compose.yml  
+├── package.json  
+├── next.config.mjs  
+├── README.md  
+└── .gitignore  
+ 
+2. Important Files and Their Roles  
+.gitignore  
+Used to prevent committing unnecessary or sensitive files.  
+Important entries:  
+node_modules/  
+.next/  
+target/  
+**/target/  .env  
+.env.local  
+k8s/secrets.yaml  
+scratch/  
+*.log  
+.vscode/  
+.idea/  
+Most important line:  
+k8s/secrets.yaml  
+because it contains real passwords.  
+ 
+Dockerfile  
+This is for the Next.js frontend  at project root.  
+Used by GitHub Actions and Docker to build:  
+mohaimen22/cmms -frontend:latest  
+ 
+identity -service/Dockerfile  
+This is for the Spring Boot backend . 
+It copies the built JAR:  
+identity -service/target/identity -service -0.0.1 -SNAPSHOT.jar  
+and creates:  
+mohaimen22/cmms -backend:latest  
+ 
+k8s/namespace.yaml  
+Creates the namespace:  
+namespace: cmms  
+Command:  
+kubectl apply -f k8s/namespace.yaml   
+k8s/configmap.yaml  
+Stores non -sensitive config:  
+DB_HOST  
+DB_PORT  
+SPRING_DATASOURCE_URL  
+SPRING_FLYWAY_ENABLED  
+BOOTSTRAP_ADMIN_ENABLED  
+Command:  
+kubectl apply -f k8s/configmap.yaml  
+ 
+k8s/secrets.yaml  
+Stores sensitive values locally:  
+POSTGRES_DB  
+POSTGRES_USER  
+POSTGRES_PASSWORD  
+BOOTSTRAP_ADMIN_PASSWORD  
+Apply manually:  
+kubectl apply -f k8s/secrets.yaml  
+Do not commit this file.  
+ 
+k8s/secrets.yaml.example  
+Safe example version for GitHub.  
+This is committed so people understand the secret structure without seeing real credentials.  
+ 
+k8s/postgres.yaml  
+Creates:  PostgreSQL Deployment  
+PostgreSQL Service  
+PostgreSQL PVC  
+Command:  
+kubectl apply -f k8s/postgres.yaml  
+ 
+k8s/backend.yaml  
+Creates:  
+cmms -backend Deployment  
+backend -service ClusterIP  
+Uses image:  
+image: mohaimen22/cmms -backend:latest  
+Command:  
+kubectl apply -f k8s/backend.yaml  
+ 
+k8s/frontend.yaml  
+Creates:  
+cmms -frontend Deployment  
+frontend -service NodePort  
+Uses image:  
+image: mohaimen22/cmms -frontend:latest  
+Command:  
+kubectl apply -f k8s/frontend.yaml  
+ 
+k8s/ingress.yaml  
+Creates ingress routing, for example:  frontend route /  
+backend route /api  
+Command:  
+kubectl apply -f k8s/ingress.yaml  
+ 
+.github/workflows/ci -cd.yml  
+GitHub Actions pipeline.  
+It does:  
+checkout code  
+set up Java 17  
+build Spring Boot JAR  
+set up Docker Buildx  
+login to Docker Hub  
+build backend image  
+push backend image  
+build frontend image  
+push frontend image  
+ 
+3. Docker Commands  
+Check Docker is running  
+docker version  
+Check Docker disk usage  
+docker system df  
+Clean unused Docker data  
+Safe -ish cleanup:  
+docker system prune -a 
+More aggressive cleanup:  
+docker system prune -a --volumes  
+Careful: --volumes can remove unused database volumes.   
+Build backend image locally  
+From project root:  
+docker build -t pfe_p2 -cmms -backend:v8 ./identity -service  
+Build frontend image locally  
+From project root:  
+docker build -t pfe_p2 -cmms -frontend:v4 .  
+ 
+Build images inside Minikube Docker  
+This was useful for local development before Docker Hub.  
+minikube docker -env | Invoke -Expression  
+Then:  
+docker build -t pfe_p2 -cmms -backend:v8 ./identity -service  
+docker build -t pfe_p2 -cmms -frontend:v4 .  
+Check images:  
+docker images  
+ 
+Docker Hub images used  
+Final pushed images:  
+mohaimen22/cmms -backend:latest  
+mohaimen22/cmms -frontend:latest  
+ 
+4. Minikube Commands  
+Start Minikube  
+minikube start --driver=docker  
+If you need more resources:  
+minikube start --driver=docker --cpus=4 --memory=6144 --disk-size=30g  Check Minikube status  
+minikube status  
+Stop Minikube  
+minikube stop  
+Delete Minikube  
+minikube delete  
+Use only when you want to recreate the cluster.  
+ 
+Enable ingress  
+minikube addons enable ingress  
+Check ingress controller:  
+kubectl get pods -n ingress -nginx  
+ 
+Open frontend service  
+minikube service frontend -service -n cmms  
+Get URL only:  
+minikube service frontend -service -n cmms --url 
+ 
+5. Kubernetes Commands  
+Apply all manifests  
+kubectl apply -f k8s/  
+Or apply in order:  
+kubectl apply -f k8s/ namespace.yaml  
+kubectl apply -f k8s/secrets.yaml  
+kubectl apply -f k8s/configmap.yaml  
+kubectl apply -f k8s/postgres.yaml  
+kubectl apply -f k8s/backend.yaml  kubectl apply -f k8s/frontend.yaml  
+kubectl apply -f k8s/ingress.yaml  
+ 
+Check pods  
+kubectl get pods -n cmms  
+Expected final state:  
+cmms -backend       1/1 Running  
+cmms -backend       1/1 Running  
+cmms -frontend      1/1 Running  
+cmms -frontend      1/1 Running  
+postgres           1/1 Running  
+ 
+Check deployments  
+kubectl get deployments -n cmms  
+Expected:  
+cmms -backend     2/2  
+cmms -frontend    2/2  
+postgres         1/1  
+ 
+Check services  
+kubectl get svc -n cmms  
+Expected:  
+backend -service     ClusterIP   8081  
+frontend -service    NodePort    3000  
+postgres -service    ClusterIP   5432  
+ 
+Check ReplicaSets  
+kubectl get rs -n cmms  
+Useful during rollout.   
+Restart deployments  
+kubectl rollout restart deployment/cmms -backend -n cmms  
+kubectl rollout restart deployment/cmms -frontend -n cmms  
+ 
+Check rollout status  
+kubectl rollout status deployment/cmms -backend -n cmms  
+kubectl rollout status deployment/cmms -frontend -n cmms  
+kubectl rollout status deployment/postgres -n cmms  
+ 
+Update image manually  
+kubectl set image deployment/cmms -backend cmms -backend=mohaimen22/cmms -
+backend:latest -n cmms  
+kubectl set image deployment/cmms -frontend cmms -frontend=mohaimen22/cmms -
+frontend:latest -n cmms  
+ 
+Describe a broken pod  
+kubectl describe pod -n cmms POD_NAME  
+Example:  
+kubectl describe pod -n cmms cmms -backend -xxxx  
+This helped find:  
+couldn't find key BOOTSTRAP_ADMIN_PASSWORD in Secret cmms/postgres -secret  
+ 
+View backend logs  
+kubectl logs -n cmms -l app=cmms -backend --tail=100  
+Follow logs:  
+kubectl logs -n cmms -l app=cmms -backend --tail=100 -f 
+ View frontend logs  
+kubectl logs -n cmms -l app= cmms -frontend --tail=100  
+Follow logs:  
+kubectl logs -n cmms -l app=cmms -frontend --tail=100 -f 
+ 
+View Postgres logs  
+kubectl logs -n cmms deployment/postgres --tail=100  
+ 
+Port -forward backend  
+kubectl port -forward -n cmms svc/backend -service 8081:8081  
+Test backend:  
+curl http://localhost:8081  
+A 401 Unauthorized is okay. It means backend is alive and security is active.  
+ 
+Test login API  
+$body = @{  
+  email = "admin@hospital.com"  
+  password = "admin123456"  
+} | ConvertTo -Json  
+ 
+Invoke -RestMethod -Uri "http://localhost:8081/api/auth/login" `  
+  -Method POST `  
+  -ContentType "application/json" `  
+  -Body $body  
+Expected:  
+accessToken  
+ 
+Test backend service inside Kubernetes  kubectl run test -curl -n cmms --rm -it --image=curlimages/curl --restart=Never -- ` 
+  curl -i http://backend -service:8081  
+ 
+6. Git Commands  
+Check status  
+git status  
+Add safe files  
+git add .gitignore  
+git add Dockerfile  
+git add README.md  
+git add next.config.mjs  
+git add lib/api/client.ts  
+git add lib/api/tasks.ts  
+git add identity -service/.dockerignore  
+git add identity -service/Dockerfile  
+git add identity -service/src/main/java/com/cmms/identity/config/BootstrapAdminRunner.java  
+git add identity -service/src/main/java/com/cmms/identity/config/SecurityConfig.java  
+git add identity -service/src/main/java/com/cmms/ identity/config/RequestLoggingFilter.java  
+git add identity -service/src/main/resources/application.yml  
+git add .github/  
+git add k8s/backend.yaml  
+git add k8s/configmap.yaml  
+git add k8s/frontend.yaml  
+git add k8s/ingress.yaml  
+git add k8s/namespace.yaml  
+git add k8s/postgres.yaml  
+git add k8s/README.md  
+git add k8s/secrets.yaml.example  
+Do not add:  
+git add k8s/secrets.yaml  
+ 
+Commit  
+git commit -m "chore: prepare project for CI/CD and Docker registry"  or: 
+git commit -m "chore: use Docker Hub images for Kubernetes deployment"  
+Push  
+git push  
+ 
+7. GitHub Actions  
+Workflow location  
+.github/workflows/ci -cd.yml  
+GitHub Secrets Used  
+In GitHub:  
+Repository → Settings → Secrets and variables → Actions  
+Add:  
+DOCKERHUB_USERNAME  
+DOCKERHUB_TOKEN  
+Your Docker Hub token came from:  
+Docker Hub → Account Settings → Security → Personal Access Tokens  
+ 
+Pipeline behavior  
+On pull request:  
+build only  
+no Docker push  
+On push to main:  
+build backend JAR  
+build backend Docker image  
+push backend image  
+build frontend Docker image  
+push frontend image  
+ Images pushed  
+mohaimen22/cmms -backend:latest  
+mohaimen22/cmms -frontend:latest  
+ 
+8. Argo CD Commands  
+Install Argo CD  
+kubectl create namespace argocd  
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo -
+cd/stable/manifests/install.yaml  
+ 
+Check Argo CD pods  
+kubectl get pods -n argocd  
+ 
+Access Argo CD UI  
+kubectl port -forward svc/argocd -server -n argocd 8080:443  
+Open:  
+https://localhost:8080  
+ 
+Get Argo CD admin password  
+kubectl get secret argocd -initial -admin -secret -n argocd -o jsonpath="{.data.password}" | %{ 
+[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) }  
+Login:  
+Username: admin  
+Password: generated password  
+ 
+Argo CD Application Settings Used  Application Name: cmms  
+Project Name: default  
+Sync Policy: Automatic  
+Enabled:  
+Auto -Sync  
+Prune Resources  
+Self Heal  
+Set Deletion Finalizer  
+Auto -Create Namespace  
+Apply Out of Sync Only  
+Source:  
+Repository URL: https://github.com/mohaimen1234 -bit/PFE_P2.git  
+Revision: HEAD  
+Path: k8s  
+Destination:  
+Cluster URL: https://kubernetes.default.svc  
+Namespace: cmms  
+Directory recurse:  
+Disabled  
+ 
+Argo CD expected status  
+Sync Status: Synced  
+Health: Healthy  
+Last Sync: Sync OK  
+If Ingress shows Progressing, enable ingress:  
+minikube addons enable ingress  
+kubectl get pods -n ingress -nginx  
+kubectl get ingress -n cmms  
+ 
+9. Helm Commands  Check Helm  
+helm version  
+Add Prometheus repo  
+helm repo add prometheus -community https://prometheus -community.github.io/helm -charts  
+If already added:  
+already exists with the same configuration  
+That is fine.  
+Update repo  
+helm repo update  
+ 
+10. Prometheus and Grafana Installation  
+Create monitoring namespace  
+kubectl create namespace monitoring  
+If it already exists, that is fine.  
+ 
+Install kube -prometheus -stack  
+helm install monitoring prometheus -community/kube -prometheus -stack -n monitoring  
+This installs:  
+Prometheus  
+Grafana  
+Alertmanager  
+kube -state -metrics  
+node -exporter  
+Prometheus Operator  
+ 
+Check monitoring pods  
+kubectl get pods -n monitoring  Expected:  
+monitoring -grafana                     Running  
+monitoring -kube -prometheus -operator    Running  
+monitoring -kube -state -metrics          Running  
+monitoring -prometheus -node -exporter    Running  
+prometheus -monitoring...               Running  
+alertmanager -monitoring...             Running  
+ 
+If Grafana is pending  
+Check:  
+kubectl describe pod -n monitoring -l app.kubernetes.io/name=grafana  
+Events may show image pulling. Wait and retry:  
+kubectl get pods -n monitoring  
+ 
+11. Grafana Commands  
+Port -forward Grafana  
+kubectl port -forward -n monitoring svc/monitoring -grafana 3001:80  
+Open:  
+http://localhost:3001  
+ 
+Get Grafana password  
+kubectl get secret -n monitoring monitoring -grafana -o jsonpath="{.data.admin -password}" | %{ 
+[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) }  
+Login:  
+Username: admin  
+Password: password from command  
+ 
+Grafana dashboards used  In Grafana:  
+Dashboards → Kubernetes / Compute Resources / Namespace (Workloads)  
+Filter:  
+namespace = cmms  
+Useful dashboard:  
+Kubernetes / Compute Resources / Pod  
+Filter:  
+namespace = cmms  
+pod = cmms -backend -... 
+You showed:  
+cmms -backend  
+cmms -frontend  
+postgres  
+CPU requests  
+CPU limits  
+Running pods  
+ 
+12. Prometheus Commands  
+Port -forward Prometheus  
+kubectl port -forward -n monitoring svc/monitoring -kube -prometheus -prometheus 9090:9090  
+Open:  
+http://localhost:9090  
+ 
+Basic PromQL query  
+up 
+This shows which targets are up.  
+ 
+Kubernetes namespace query examples  CPU usage:  
+sum(rate(container_cpu_usage_seconds_total{namespace="cmms"}[5m])) by (pod)  
+Memory usage:  
+sum(container_memory_working_set_bytes{namespace="cmms"}) by (pod)  
+Pod status:  
+kube_pod_status_phase{namespace="cmms"}  
+ 
+13. Common Problems and Fixes  
+Problem: Docker storage full  
+Fix: 
+docker system prune -a 
+Then:  
+wsl --shutdown  
+Restart Docker Desktop.  
+ 
+Problem: Minikube API server broken  
+Fix: 
+minikube delete  
+wsl --shutdown  
+minikube start --driver=docker --kubernetes -version=v1.32.0  
+ 
+Problem: service not found  
+You used wrong service names earlier.  
+Correct services:  
+backend -service  
+frontend -service  
+postgres -service  Not:  
+cmms -backend  
+cmms -frontend  
+ 
+Problem: frontend login calls wrong URL  
+Bad:  
+localhost:8081 inside frontend pod  
+Good inside Kubernetes:  
+http://backend -service:8081  
+In next.config.mjs, backend proxy should point to:  
+http://backend -service:8081  
+ 
+Problem: browser login gives 403  
+Fix was backend CORS/security:  
+allowedOriginPatterns:  
+http://127.0.0.1:*  
+http://localhost:*  
+http://192.168.*.*:*  
+Also:  
+/api/auth/** permitAll  
+ 
+Problem: backend pod CreateContainerConfigError  
+Cause:  
+BOOTSTRAP_ADMIN_PASSWORD missing in postgres -secret  
+Fix: 
+kubectl apply -f k8s/secrets.yaml  
+kubectl rollout restart deployment/cmms -backend -n cmms   
+Problem: Argo CD app Progressing because of ingress  
+Fix: 
+minikube addons enable ingress  
+kubectl get pods -n ingress -nginx  
+kubectl get ingress -n cmms  
+ 
+Problem: Helm not recognized  
+Install Helm manually, then:  
+helm version  
+ 
+14. Final DevOps Status  
+You completed:  
+   Docker  
+   Kubernetes  
+   PostgreSQL on Kubernetes  
+   GitHub repository cleanup  
+   GitHub Actions CI/CD  
+   Docker Hub registry  
+   Argo CD GitOps  
+   Ingress  
+   Prometheus  
+   Grafana  
+Final architecture:  
+GitHub  
+  ↓ 
+GitHub Actions  
+  ↓ 
+Docker Hub  
+  ↓ 
+Kubernetes / Minikube    ↑ 
+Argo CD watches GitHub k8s/ folder  
+  ↓ 
+Prometheus collects metrics  
+  ↓ 
+Grafana displays dashboards  
+This is a complete DevOps cycle for your CMMS project.  
+ 

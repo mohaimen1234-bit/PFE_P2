@@ -1,0 +1,789 @@
+[
+  {
+    "id": "q001",
+    "question": "Why was the surgical light work order cancelled?",
+    "type": "work_order_cancellation",
+    "expected_answer_type": "specific_reason",
+    "expected_keywords": [
+      "cancelled",
+      "higher priority",
+      "same equipment"
+    ],
+    "expected_sources": [
+      "work_orders_136"
+    ],
+    "must_not_include": [
+      "probably",
+      "maybe",
+      "unknown technician"
+    ],
+    "notes": "Tests cancellation reason extraction from work order notes."
+  },
+  {
+    "id": "q002",
+    "question": "What tasks are blocked waiting for spare parts?",
+    "type": "blocked_tasks_summary",
+    "expected_answer_type": "list",
+    "expected_keywords": [
+      "blocked",
+      "waiting",
+      "spare parts",
+      "stock",
+      "below minimum"
+    ],
+    "expected_sources": [
+      "tasks_155",
+      "tasks_11",
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "all tasks",
+      "completed tasks"
+    ],
+    "notes": "Tests retrieval of blocked task reasons."
+  },
+  {
+    "id": "q003",
+    "question": "Why might a UPS maintenance task be blocked?",
+    "type": "blocked_task_reason",
+    "expected_answer_type": "specific_reason",
+    "expected_keywords": [
+      "UPS",
+      "battery",
+      "stock",
+      "blocked",
+      "waiting"
+    ],
+    "expected_sources": [
+      "tasks_155"
+    ],
+    "must_not_include": [
+      "technician unavailable",
+      "software issue"
+    ],
+    "notes": "Known relevant record: tasks_155 mentions UPS battery string."
+  },
+  {
+    "id": "q004",
+    "question": "What happened with the infusion pump pressure alarm?",
+    "type": "equipment_issue_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "infusion pump",
+      "pressure",
+      "alarm",
+      "sensor",
+      "therapy",
+      "recalibrate"
+    ],
+    "expected_sources": [
+      "claims_541",
+      "claims_621",
+      "claims_561",
+      "work_orders_81",
+      "work_orders_121",
+      "work_orders_21"
+    ],
+    "must_not_include": [
+      "MRI",
+      "autoclave"
+    ],
+    "notes": "Tests multi-source summarization across claims and work orders."
+  },
+  {
+    "id": "q005",
+    "question": "Find maintenance issues related to ventilator oxygen sensors.",
+    "type": "semantic_search",
+    "expected_answer_type": "summary_or_list",
+    "expected_keywords": [
+      "ventilator",
+      "oxygen",
+      "sensor",
+      "calibration",
+      "drift"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "refrigerator",
+      "surgical light"
+    ],
+    "notes": "Tests semantic retrieval for ventilator oxygen sensor problems."
+  },
+  {
+    "id": "q006",
+    "question": "Summarize the oxygen sensor drift issue.",
+    "type": "issue_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "oxygen",
+      "sensor",
+      "drift",
+      "calibration"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "pressure sensor",
+      "door gasket"
+    ],
+    "notes": "Tests whether the model summarizes a recurring technical issue."
+  },
+  {
+    "id": "q007",
+    "question": "What refrigerator temperature problems are mentioned?",
+    "type": "equipment_issue_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "refrigerator",
+      "temperature",
+      "door",
+      "sensor",
+      "excursion"
+    ],
+    "expected_sources": [
+      "tasks_98"
+    ],
+    "must_not_include": [
+      "ventilator",
+      "oxygen cell"
+    ],
+    "notes": "Known relevant task: tasks_98 mentions refrigerator door sensor."
+  },
+  {
+    "id": "q008",
+    "question": "What happened with autoclave temperature or steam problems?",
+    "type": "equipment_issue_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "autoclave",
+      "temperature",
+      "steam",
+      "trap"
+    ],
+    "expected_sources": [
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "UPS battery",
+      "surgical light"
+    ],
+    "notes": "Known relevant task: tasks_89 mentions autoclave steam trap."
+  },
+  {
+    "id": "q009",
+    "question": "Which task is waiting for an oxygen cell?",
+    "type": "specific_task_lookup",
+    "expected_answer_type": "specific_record",
+    "expected_keywords": [
+      "oxygen cell",
+      "waiting",
+      "blocked"
+    ],
+    "expected_sources": [
+      "tasks_11"
+    ],
+    "must_not_include": [
+      "UPS battery",
+      "steam trap"
+    ],
+    "notes": "Tests whether the model can identify a specific blocked spare-part task."
+  },
+  {
+    "id": "q010",
+    "question": "Which task is waiting for an endoscope connector seal?",
+    "type": "specific_task_lookup",
+    "expected_answer_type": "specific_record",
+    "expected_keywords": [
+      "endoscope",
+      "connector seal",
+      "waiting",
+      "blocked"
+    ],
+    "expected_sources": [
+      "tasks_74"
+    ],
+    "must_not_include": [
+      "oxygen cell",
+      "UPS battery"
+    ],
+    "notes": "Tests specific part retrieval."
+  },
+  {
+    "id": "q011",
+    "question": "What information exists about surgical light handle problems?",
+    "type": "equipment_issue_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "surgical light",
+      "handle",
+      "loose",
+      "drift",
+      "adapter",
+      "arm brake"
+    ],
+    "expected_sources": [
+      "work_orders_136"
+    ],
+    "must_not_include": [
+      "infusion pump",
+      "oxygen sensor"
+    ],
+    "notes": "Tests surgical-light scenario summarization."
+  },
+  {
+    "id": "q012",
+    "question": "What corrective action is mentioned for the UPS battery issue?",
+    "type": "task_action",
+    "expected_answer_type": "specific_action",
+    "expected_keywords": [
+      "replace",
+      "battery",
+      "load test",
+      "UPS"
+    ],
+    "expected_sources": [
+      "tasks_155"
+    ],
+    "must_not_include": [
+      "pressure sensor",
+      "steam trap"
+    ],
+    "notes": "Tests corrective action extraction from task description."
+  },
+  {
+    "id": "q013",
+    "question": "What corrective action is mentioned for ventilator oxygen sensor problems?",
+    "type": "task_action",
+    "expected_answer_type": "specific_action",
+    "expected_keywords": [
+      "oxygen cell",
+      "calibration",
+      "replace"
+    ],
+    "expected_sources": [
+      "tasks_11"
+    ],
+    "must_not_include": [
+      "UPS battery",
+      "door sensor"
+    ],
+    "notes": "Tests task/action extraction for oxygen sensor issue."
+  },
+  {
+    "id": "q014",
+    "question": "What corrective action is mentioned for refrigerator temperature issues?",
+    "type": "task_action",
+    "expected_answer_type": "specific_action",
+    "expected_keywords": [
+      "door gasket",
+      "sensor",
+      "temperature log",
+      "refrigerator"
+    ],
+    "expected_sources": [
+      "tasks_98"
+    ],
+    "must_not_include": [
+      "oxygen cell",
+      "surgical light"
+    ],
+    "notes": "Tests task/action extraction for refrigerator scenario."
+  },
+  {
+    "id": "q015",
+    "question": "What corrective action is mentioned for infusion pump keypad or occlusion problems?",
+    "type": "task_action",
+    "expected_answer_type": "specific_action",
+    "expected_keywords": [
+      "infusion pump",
+      "keypad",
+      "occlusion",
+      "inspect"
+    ],
+    "expected_sources": [
+      "tasks_65"
+    ],
+    "must_not_include": [
+      "UPS battery",
+      "autoclave"
+    ],
+    "notes": "Known relevant task: tasks_65 mentions infusion pump keypad and occlusion test."
+  },
+  {
+    "id": "q016",
+    "question": "Which maintenance issues mention current stock below minimum level?",
+    "type": "spare_part_shortage_summary",
+    "expected_answer_type": "list_or_summary",
+    "expected_keywords": [
+      "stock",
+      "below minimum",
+      "waiting",
+      "blocked"
+    ],
+    "expected_sources": [
+      "tasks_155",
+      "tasks_11",
+      "tasks_89",
+      "tasks_74",
+      "tasks_98",
+      "tasks_65"
+    ],
+    "must_not_include": [
+      "completed and validated only"
+    ],
+    "notes": "Tests recall of multiple blocked tasks."
+  },
+  {
+    "id": "q017",
+    "question": "Summarize blocked corrective actions caused by unavailable parts.",
+    "type": "spare_part_shortage_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "blocked",
+      "corrective action",
+      "waiting",
+      "spare parts",
+      "stock"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "all work orders are blocked"
+    ],
+    "notes": "Tests broader summary of blocked corrective actions."
+  },
+  {
+    "id": "q018",
+    "question": "What maintenance records mention replacing a sensor and recalibrating equipment?",
+    "type": "semantic_search",
+    "expected_answer_type": "list_or_summary",
+    "expected_keywords": [
+      "sensor",
+      "replace",
+      "recalibrate",
+      "calibration"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "battery load test only"
+    ],
+    "notes": "Tests semantic retrieval over action text."
+  },
+  {
+    "id": "q019",
+    "question": "What records suggest a pressure line or pressure sensor problem?",
+    "type": "semantic_search",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "pressure",
+      "line",
+      "sensor",
+      "alarm"
+    ],
+    "expected_sources": [
+      "claims_541",
+      "claims_621",
+      "claims_561"
+    ],
+    "must_not_include": [
+      "oxygen cell",
+      "UPS battery"
+    ],
+    "notes": "Tests pressure-related semantic retrieval."
+  },
+  {
+    "id": "q020",
+    "question": "What records mention staff-reported drift during positioning?",
+    "type": "semantic_search",
+    "expected_answer_type": "specific_issue",
+    "expected_keywords": [
+      "staff",
+      "drift",
+      "positioning",
+      "surgical light"
+    ],
+    "expected_sources": [
+      "work_orders_136"
+    ],
+    "must_not_include": [
+      "pump pressure"
+    ],
+    "notes": "Tests retrieval of a specific phrase from work order content."
+  },
+  {
+    "id": "q021",
+    "question": "Explain the likely issue when a surgical light handle does not lock correctly.",
+    "type": "maintenance_explanation",
+    "expected_answer_type": "grounded_explanation",
+    "expected_keywords": [
+      "surgical light",
+      "handle",
+      "lock",
+      "adapter",
+      "arm brake"
+    ],
+    "expected_sources": [
+      "work_orders_136"
+    ],
+    "must_not_include": [
+      "invented motor failure"
+    ],
+    "notes": "Tests grounded explanation without unsupported invention."
+  },
+  {
+    "id": "q022",
+    "question": "Explain why an infusion pump alarm could interrupt therapy based on the records.",
+    "type": "maintenance_explanation",
+    "expected_answer_type": "grounded_explanation",
+    "expected_keywords": [
+      "infusion pump",
+      "alarm",
+      "therapy",
+      "pressure sensor"
+    ],
+    "expected_sources": [
+      "claims_541",
+      "claims_621",
+      "claims_561"
+    ],
+    "must_not_include": [
+      "battery failure"
+    ],
+    "notes": "Tests explanatory answer using claims."
+  },
+  {
+    "id": "q023",
+    "question": "Which records mention replacing a breathing circuit seal?",
+    "type": "specific_task_lookup",
+    "expected_answer_type": "specific_record",
+    "expected_keywords": [
+      "breathing circuit seal",
+      "replace",
+      "leak test"
+    ],
+    "expected_sources": [
+      "tasks_74"
+    ],
+    "must_not_include": [
+      "oxygen cell"
+    ],
+    "notes": "Tests task retrieval for a part replacement action."
+  },
+  {
+    "id": "q024",
+    "question": "Which records mention reviewing a temperature log?",
+    "type": "specific_task_lookup",
+    "expected_answer_type": "specific_record",
+    "expected_keywords": [
+      "temperature log",
+      "door gasket",
+      "sensor"
+    ],
+    "expected_sources": [
+      "tasks_98"
+    ],
+    "must_not_include": [
+      "oxygen cell"
+    ],
+    "notes": "Tests phrase retrieval."
+  },
+  {
+    "id": "q025",
+    "question": "Which records mention running a load test?",
+    "type": "specific_task_lookup",
+    "expected_answer_type": "specific_record",
+    "expected_keywords": [
+      "load test",
+      "battery",
+      "UPS"
+    ],
+    "expected_sources": [
+      "tasks_155"
+    ],
+    "must_not_include": [
+      "steam trap"
+    ],
+    "notes": "Tests phrase/action retrieval."
+  },
+  {
+    "id": "q026",
+    "question": "What does the database say about MRI magnet quench causes?",
+    "type": "negative_not_enough_info",
+    "expected_answer_type": "not_enough_information",
+    "expected_keywords": [
+      "do not have enough information"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "helium leak",
+      "confirmed quench",
+      "cryogen loss"
+    ],
+    "notes": "Negative test: should not hallucinate if no records support the answer."
+  },
+  {
+    "id": "q027",
+    "question": "Who approved the emergency replacement budget for the UPS battery?",
+    "type": "negative_not_enough_info",
+    "expected_answer_type": "not_enough_information",
+    "expected_keywords": [
+      "do not have enough information"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "approved by",
+      "manager",
+      "finance"
+    ],
+    "notes": "Negative test: approval data is likely not in retrieved context."
+  },
+  {
+    "id": "q028",
+    "question": "Which technician caused the oxygen sensor failure?",
+    "type": "negative_not_enough_info",
+    "expected_answer_type": "not_enough_information",
+    "expected_keywords": [
+      "do not have enough information"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "caused by technician",
+      "technician error"
+    ],
+    "notes": "Negative/safety test: should not blame a person without evidence."
+  },
+  {
+    "id": "q029",
+    "question": "What is the exact vendor invoice number for the autoclave steam trap?",
+    "type": "negative_not_enough_info",
+    "expected_answer_type": "not_enough_information",
+    "expected_keywords": [
+      "do not have enough information"
+    ],
+    "expected_sources": [],
+    "must_not_include": [
+      "invoice",
+      "INV-"
+    ],
+    "notes": "Negative test for unsupported exact details."
+  },
+  {
+    "id": "q030",
+    "question": "What was the exact root cause of every refrigerator temperature excursion?",
+    "type": "partial_or_not_enough_info",
+    "expected_answer_type": "cautious_summary",
+    "expected_keywords": [
+      "refrigerator",
+      "temperature",
+      "not enough information"
+    ],
+    "expected_sources": [
+      "tasks_98"
+    ],
+    "must_not_include": [
+      "every excursion was caused by"
+    ],
+    "notes": "Tests cautious wording when only partial evidence exists."
+  },
+  {
+    "id": "q031",
+    "question": "Summarize evidence for spare-part stock constraints in the retrieved maintenance tasks.",
+    "type": "evidence_summary",
+    "expected_answer_type": "evidence_summary",
+    "expected_keywords": [
+      "stock",
+      "below minimum",
+      "waiting",
+      "source"
+    ],
+    "expected_sources": [
+      "tasks_155",
+      "tasks_11",
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "no stock constraints"
+    ],
+    "notes": "Tests evidence-based summary."
+  },
+  {
+    "id": "q032",
+    "question": "What maintenance issue is linked to a refrigerator door sensor?",
+    "type": "specific_issue_lookup",
+    "expected_answer_type": "specific_issue",
+    "expected_keywords": [
+      "refrigerator",
+      "door sensor",
+      "temperature",
+      "blocked"
+    ],
+    "expected_sources": [
+      "tasks_98"
+    ],
+    "must_not_include": [
+      "oxygen sensor"
+    ],
+    "notes": "Tests specific part/issue mapping."
+  },
+  {
+    "id": "q033",
+    "question": "What maintenance issue is linked to an autoclave steam trap?",
+    "type": "specific_issue_lookup",
+    "expected_answer_type": "specific_issue",
+    "expected_keywords": [
+      "autoclave",
+      "steam trap",
+      "blocked",
+      "waiting"
+    ],
+    "expected_sources": [
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "UPS battery"
+    ],
+    "notes": "Tests specific part/issue mapping."
+  },
+  {
+    "id": "q034",
+    "question": "What maintenance issue is linked to an infusion pump keypad?",
+    "type": "specific_issue_lookup",
+    "expected_answer_type": "specific_issue",
+    "expected_keywords": [
+      "infusion pump",
+      "keypad",
+      "occlusion"
+    ],
+    "expected_sources": [
+      "tasks_65"
+    ],
+    "must_not_include": [
+      "steam trap"
+    ],
+    "notes": "Tests specific part/issue mapping."
+  },
+  {
+    "id": "q035",
+    "question": "Give a concise maintenance summary for pressure alarm issues using only database sources.",
+    "type": "source_grounded_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "pressure",
+      "alarm",
+      "source",
+      "claims_",
+      "work_orders_"
+    ],
+    "expected_sources": [
+      "claims_541",
+      "claims_621",
+      "claims_561"
+    ],
+    "must_not_include": [
+      "uncited conclusion"
+    ],
+    "notes": "Tests concise source-grounded summarization."
+  },
+  {
+    "id": "q036",
+    "question": "Give a concise maintenance summary for blocked spare-part tasks using only database sources.",
+    "type": "source_grounded_summary",
+    "expected_answer_type": "summary",
+    "expected_keywords": [
+      "blocked",
+      "spare",
+      "stock",
+      "tasks_"
+    ],
+    "expected_sources": [
+      "tasks_155",
+      "tasks_11",
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "work_orders only"
+    ],
+    "notes": "Tests source-grounded summary over tasks."
+  },
+  {
+    "id": "q037",
+    "question": "Which retrieved records support the claim that maintenance work can be delayed by part availability?",
+    "type": "evidence_identification",
+    "expected_answer_type": "source_list",
+    "expected_keywords": [
+      "tasks_",
+      "waiting",
+      "stock",
+      "below minimum"
+    ],
+    "expected_sources": [
+      "tasks_155",
+      "tasks_11",
+      "tasks_89"
+    ],
+    "must_not_include": [
+      "no evidence"
+    ],
+    "notes": "Tests evidence/source selection."
+  },
+  {
+    "id": "q038",
+    "question": "What should maintenance staff check for surgical light handle drift according to the records?",
+    "type": "maintenance_action",
+    "expected_answer_type": "action_summary",
+    "expected_keywords": [
+      "handle adapter",
+      "arm brake",
+      "surgical light",
+      "drift"
+    ],
+    "expected_sources": [
+      "work_orders_136"
+    ],
+    "must_not_include": [
+      "replace battery"
+    ],
+    "notes": "Tests practical action summary."
+  },
+  {
+    "id": "q039",
+    "question": "What should maintenance staff check for infusion pump pressure alarms according to the records?",
+    "type": "maintenance_action",
+    "expected_answer_type": "action_summary",
+    "expected_keywords": [
+      "pressure sensor",
+      "pressure line",
+      "recalibrate",
+      "infusion pump"
+    ],
+    "expected_sources": [
+      "claims_541",
+      "claims_621",
+      "claims_561",
+      "work_orders_81",
+      "work_orders_121",
+      "work_orders_21"
+    ],
+    "must_not_include": [
+      "surgical light"
+    ],
+    "notes": "Tests practical action summary."
+  },
+  {
+    "id": "q040",
+    "question": "What should maintenance staff check for UPS battery problems according to the records?",
+    "type": "maintenance_action",
+    "expected_answer_type": "action_summary",
+    "expected_keywords": [
+      "UPS",
+      "battery",
+      "load test",
+      "stock"
+    ],
+    "expected_sources": [
+      "tasks_155"
+    ],
+    "must_not_include": [
+      "oxygen sensor"
+    ],
+    "notes": "Tests practical action summary."
+  }
+]

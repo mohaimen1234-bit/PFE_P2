@@ -1,0 +1,3958 @@
+[
+  {
+    "test": {
+      "id": "rag_good_001",
+      "expected_quality": "good",
+      "question": "Why was the surgical light work order cancelled?",
+      "expected_route": "RAG"
+    },
+    "response": {
+      "answer": "The work order **work_orders_136** was cancelled because the issue was merged into a higher priority work order for the same equipment. This is explicitly stated in the cancellation_notes for work_orders_136. \n\n**Source:** work_orders_136",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_136",
+        "work_orders_56",
+        "work_orders_76",
+        "claims_536",
+        "claims_596",
+        "claims_556",
+        "equipment_55",
+        "equipment_91",
+        "equipment_19"
+      ],
+      "selected_record_types": [
+        "work_orders",
+        "equipment",
+        "claims"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 233.856,
+      "debug_sources": [
+        {
+          "id": "work_orders_136",
+          "record_type": "work_orders",
+          "distance": 294.4520263671875,
+          "metadata": {
+            "updated_at": "2025-08-24 04:00:00",
+            "priority": "MEDIUM",
+            "actual_cost": "",
+            "record_id": "136",
+            "due_date": "2025-08-24 22:00:00",
+            "completed_at": "",
+            "status": "CANCELLED",
+            "record_type": "work_orders",
+            "created_at": "2025-08-22 06:00:00",
+            "claim_id": "136",
+            "estimated_cost": "465.81",
+            "equipment_id": "153",
+            "assigned_to_user_id": "7"
+          }
+        },
+        {
+          "id": "work_orders_56",
+          "record_type": "work_orders",
+          "distance": 324.19903564453125,
+          "metadata": {
+            "completed_at": "",
+            "assigned_to_user_id": "5",
+            "due_date": "2025-11-26 04:00:00",
+            "record_id": "56",
+            "priority": "CRITICAL",
+            "estimated_cost": "2392.38",
+            "equipment_id": "73",
+            "actual_cost": "",
+            "updated_at": "2025-11-26 04:00:00",
+            "created_at": "2025-11-25 23:00:00",
+            "claim_id": "56",
+            "record_type": "work_orders",
+            "status": "IN_PROGRESS"
+          }
+        },
+        {
+          "id": "work_orders_76",
+          "record_type": "work_orders",
+          "distance": 324.2550964355469,
+          "metadata": {
+            "updated_at": "2026-02-04 19:00:00",
+            "claim_id": "76",
+            "status": "ON_HOLD",
+            "completed_at": "",
+            "estimated_cost": "331.20",
+            "assigned_to_user_id": "8",
+            "due_date": "2026-02-07 10:00:00",
+            "created_at": "2026-02-04 13:00:00",
+            "record_id": "76",
+            "equipment_id": "53",
+            "priority": "MEDIUM",
+            "record_type": "work_orders",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "claims_536",
+          "record_type": "claims",
+          "distance": 375.9407653808594,
+          "metadata": {
+            "assigned_to_user_id": "",
+            "record_id": "536",
+            "equipment_id": "73",
+            "updated_at": "2026-04-23 01:00:00",
+            "status": "NEW",
+            "record_type": "claims",
+            "priority": "MEDIUM",
+            "created_at": "2026-04-22 00:00:00",
+            "department_id": "1",
+            "resolved_at": "",
+            "closed_at": ""
+          }
+        },
+        {
+          "id": "claims_596",
+          "record_type": "claims",
+          "distance": 378.1884460449219,
+          "metadata": {
+            "assigned_to_user_id": "7",
+            "resolved_at": "",
+            "status": "IN_PROGRESS",
+            "department_id": "7",
+            "created_at": "2025-09-15 12:00:00",
+            "record_type": "claims",
+            "record_id": "596",
+            "priority": "MEDIUM",
+            "equipment_id": "13",
+            "closed_at": "",
+            "updated_at": "2025-09-17 04:00:00"
+          }
+        },
+        {
+          "id": "claims_556",
+          "record_type": "claims",
+          "distance": 379.3056945800781,
+          "metadata": {
+            "resolved_at": "",
+            "status": "IN_PROGRESS",
+            "department_id": "7",
+            "closed_at": "",
+            "assigned_to_user_id": "2",
+            "priority": "MEDIUM",
+            "record_type": "claims",
+            "equipment_id": "53",
+            "updated_at": "2025-08-04 05:00:00",
+            "record_id": "556",
+            "created_at": "2025-08-03 20:00:00"
+          }
+        },
+        {
+          "id": "equipment_55",
+          "record_type": "equipment",
+          "distance": 444.0155334472656,
+          "metadata": {
+            "commissioning_date": "2018-04-29",
+            "status": "OPERATIONAL",
+            "record_id": "55",
+            "record_type": "equipment",
+            "purchase_date": "2018-03-15",
+            "warranty_end_date": "2021-03-14",
+            "department_id": "3",
+            "category_id": "10",
+            "model_id": "19"
+          }
+        },
+        {
+          "id": "equipment_91",
+          "record_type": "equipment",
+          "distance": 449.7167663574219,
+          "metadata": {
+            "model_id": "19",
+            "warranty_end_date": "2025-02-05",
+            "purchase_date": "2022-02-06",
+            "record_type": "equipment",
+            "record_id": "91",
+            "commissioning_date": "2022-03-19",
+            "status": "ARCHIVED",
+            "category_id": "10",
+            "department_id": "3"
+          }
+        },
+        {
+          "id": "equipment_19",
+          "record_type": "equipment",
+          "distance": 452.9814453125,
+          "metadata": {
+            "category_id": "10",
+            "record_type": "equipment",
+            "record_id": "19",
+            "department_id": "3",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2025-04-18",
+            "commissioning_date": "2022-06-07",
+            "purchase_date": "2022-04-19",
+            "model_id": "19"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 233.886
+    },
+    "distance_summary": {
+      "best_distance": 294.4520263671875,
+      "avg_distance": 380.33942328559027,
+      "worst_distance": 452.9814453125,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "weak"
+  },
+  {
+    "test": {
+      "id": "rag_good_002",
+      "expected_quality": "good",
+      "question": "What happened with the surgical light work order?",
+      "expected_route": "RAG"
+    },
+    "response": {
+      "answer": "The surgical light work orders (WOs) related to the issue were as follows:  \n- **WO 136** was **cancelled** because the problem was merged into a higher-priority work order for the same equipment.  \n- **WO 5",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_136",
+        "work_orders_56",
+        "work_orders_76",
+        "claims_536",
+        "claims_596",
+        "claims_556",
+        "equipment_55",
+        "equipment_91",
+        "equipment_19"
+      ],
+      "selected_record_types": [
+        "work_orders",
+        "equipment",
+        "claims"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.661,
+      "debug_sources": [
+        {
+          "id": "work_orders_136",
+          "record_type": "work_orders",
+          "distance": 277.6883544921875,
+          "metadata": {
+            "record_id": "136",
+            "completed_at": "",
+            "claim_id": "136",
+            "record_type": "work_orders",
+            "created_at": "2025-08-22 06:00:00",
+            "priority": "MEDIUM",
+            "equipment_id": "153",
+            "estimated_cost": "465.81",
+            "actual_cost": "",
+            "updated_at": "2025-08-24 04:00:00",
+            "status": "CANCELLED",
+            "assigned_to_user_id": "7",
+            "due_date": "2025-08-24 22:00:00"
+          }
+        },
+        {
+          "id": "work_orders_56",
+          "record_type": "work_orders",
+          "distance": 297.3740234375,
+          "metadata": {
+            "due_date": "2025-11-26 04:00:00",
+            "updated_at": "2025-11-26 04:00:00",
+            "record_id": "56",
+            "priority": "CRITICAL",
+            "created_at": "2025-11-25 23:00:00",
+            "record_type": "work_orders",
+            "completed_at": "",
+            "claim_id": "56",
+            "assigned_to_user_id": "5",
+            "equipment_id": "73",
+            "status": "IN_PROGRESS",
+            "estimated_cost": "2392.38",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "work_orders_76",
+          "record_type": "work_orders",
+          "distance": 298.286376953125,
+          "metadata": {
+            "status": "ON_HOLD",
+            "equipment_id": "53",
+            "claim_id": "76",
+            "record_id": "76",
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "created_at": "2026-02-04 13:00:00",
+            "estimated_cost": "331.20",
+            "assigned_to_user_id": "8",
+            "updated_at": "2026-02-04 19:00:00",
+            "priority": "MEDIUM",
+            "due_date": "2026-02-07 10:00:00",
+            "completed_at": ""
+          }
+        },
+        {
+          "id": "claims_536",
+          "record_type": "claims",
+          "distance": 370.4914855957031,
+          "metadata": {
+            "status": "NEW",
+            "resolved_at": "",
+            "created_at": "2026-04-22 00:00:00",
+            "priority": "MEDIUM",
+            "record_type": "claims",
+            "equipment_id": "73",
+            "department_id": "1",
+            "assigned_to_user_id": "",
+            "record_id": "536",
+            "updated_at": "2026-04-23 01:00:00",
+            "closed_at": ""
+          }
+        },
+        {
+          "id": "claims_596",
+          "record_type": "claims",
+          "distance": 372.5368957519531,
+          "metadata": {
+            "record_type": "claims",
+            "department_id": "7",
+            "closed_at": "",
+            "record_id": "596",
+            "priority": "MEDIUM",
+            "assigned_to_user_id": "7",
+            "status": "IN_PROGRESS",
+            "equipment_id": "13",
+            "resolved_at": "",
+            "created_at": "2025-09-15 12:00:00",
+            "updated_at": "2025-09-17 04:00:00"
+          }
+        },
+        {
+          "id": "claims_556",
+          "record_type": "claims",
+          "distance": 372.885009765625,
+          "metadata": {
+            "equipment_id": "53",
+            "updated_at": "2025-08-04 05:00:00",
+            "record_type": "claims",
+            "closed_at": "",
+            "record_id": "556",
+            "created_at": "2025-08-03 20:00:00",
+            "department_id": "7",
+            "status": "IN_PROGRESS",
+            "assigned_to_user_id": "2",
+            "resolved_at": "",
+            "priority": "MEDIUM"
+          }
+        },
+        {
+          "id": "equipment_55",
+          "record_type": "equipment",
+          "distance": 412.6412048339844,
+          "metadata": {
+            "record_id": "55",
+            "department_id": "3",
+            "status": "OPERATIONAL",
+            "commissioning_date": "2018-04-29",
+            "purchase_date": "2018-03-15",
+            "record_type": "equipment",
+            "model_id": "19",
+            "category_id": "10",
+            "warranty_end_date": "2021-03-14"
+          }
+        },
+        {
+          "id": "equipment_91",
+          "record_type": "equipment",
+          "distance": 420.76812744140625,
+          "metadata": {
+            "warranty_end_date": "2025-02-05",
+            "model_id": "19",
+            "category_id": "10",
+            "department_id": "3",
+            "purchase_date": "2022-02-06",
+            "record_type": "equipment",
+            "commissioning_date": "2022-03-19",
+            "record_id": "91",
+            "status": "ARCHIVED"
+          }
+        },
+        {
+          "id": "equipment_19",
+          "record_type": "equipment",
+          "distance": 424.7527160644531,
+          "metadata": {
+            "model_id": "19",
+            "purchase_date": "2022-04-19",
+            "record_type": "equipment",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2025-04-18",
+            "commissioning_date": "2022-06-07",
+            "category_id": "10",
+            "record_id": "19",
+            "department_id": "3"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.669
+    },
+    "distance_summary": {
+      "best_distance": 277.6883544921875,
+      "avg_distance": 360.8249104817708,
+      "worst_distance": 424.7527160644531,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "weak"
+  },
+  {
+    "test": {
+      "id": "rag_good_003",
+      "expected_quality": "good",
+      "question": "Explain the cancellation reason for the surgical light work order.",
+      "expected_route": "RAG"
+    },
+    "response": {
+      "answer": "The cancellation reason for the surgical light work order (Work Order 136) is that the issue was merged into a higher priority work order for the same equipment. This is explicitly stated in the cancellation notes",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_136",
+        "work_orders_56",
+        "work_orders_76",
+        "claims_536",
+        "claims_636",
+        "claims_596",
+        "equipment_55",
+        "equipment_91",
+        "equipment_19"
+      ],
+      "selected_record_types": [
+        "work_orders",
+        "equipment",
+        "claims"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.794,
+      "debug_sources": [
+        {
+          "id": "work_orders_136",
+          "record_type": "work_orders",
+          "distance": 272.6092834472656,
+          "metadata": {
+            "estimated_cost": "465.81",
+            "updated_at": "2025-08-24 04:00:00",
+            "equipment_id": "153",
+            "priority": "MEDIUM",
+            "created_at": "2025-08-22 06:00:00",
+            "record_id": "136",
+            "assigned_to_user_id": "7",
+            "claim_id": "136",
+            "completed_at": "",
+            "record_type": "work_orders",
+            "status": "CANCELLED",
+            "actual_cost": "",
+            "due_date": "2025-08-24 22:00:00"
+          }
+        },
+        {
+          "id": "work_orders_56",
+          "record_type": "work_orders",
+          "distance": 305.1139221191406,
+          "metadata": {
+            "status": "IN_PROGRESS",
+            "created_at": "2025-11-25 23:00:00",
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "claim_id": "56",
+            "priority": "CRITICAL",
+            "assigned_to_user_id": "5",
+            "completed_at": "",
+            "record_id": "56",
+            "equipment_id": "73",
+            "estimated_cost": "2392.38",
+            "updated_at": "2025-11-26 04:00:00",
+            "due_date": "2025-11-26 04:00:00"
+          }
+        },
+        {
+          "id": "work_orders_76",
+          "record_type": "work_orders",
+          "distance": 305.80596923828125,
+          "metadata": {
+            "actual_cost": "",
+            "updated_at": "2026-02-04 19:00:00",
+            "record_type": "work_orders",
+            "status": "ON_HOLD",
+            "completed_at": "",
+            "estimated_cost": "331.20",
+            "equipment_id": "53",
+            "assigned_to_user_id": "8",
+            "due_date": "2026-02-07 10:00:00",
+            "created_at": "2026-02-04 13:00:00",
+            "claim_id": "76",
+            "priority": "MEDIUM",
+            "record_id": "76"
+          }
+        },
+        {
+          "id": "claims_536",
+          "record_type": "claims",
+          "distance": 342.791015625,
+          "metadata": {
+            "resolved_at": "",
+            "department_id": "1",
+            "closed_at": "",
+            "equipment_id": "73",
+            "assigned_to_user_id": "",
+            "record_type": "claims",
+            "priority": "MEDIUM",
+            "status": "NEW",
+            "record_id": "536",
+            "updated_at": "2026-04-23 01:00:00",
+            "created_at": "2026-04-22 00:00:00"
+          }
+        },
+        {
+          "id": "claims_636",
+          "record_type": "claims",
+          "distance": 344.23846435546875,
+          "metadata": {
+            "record_type": "claims",
+            "record_id": "636",
+            "updated_at": "2026-03-24 16:00:00",
+            "created_at": "2026-03-23 15:00:00",
+            "resolved_at": "",
+            "assigned_to_user_id": "12",
+            "equipment_id": "133",
+            "priority": "MEDIUM",
+            "department_id": "6",
+            "status": "IN_PROGRESS",
+            "closed_at": ""
+          }
+        },
+        {
+          "id": "claims_596",
+          "record_type": "claims",
+          "distance": 344.510009765625,
+          "metadata": {
+            "record_type": "claims",
+            "assigned_to_user_id": "7",
+            "priority": "MEDIUM",
+            "updated_at": "2025-09-17 04:00:00",
+            "resolved_at": "",
+            "record_id": "596",
+            "department_id": "7",
+            "closed_at": "",
+            "created_at": "2025-09-15 12:00:00",
+            "status": "IN_PROGRESS",
+            "equipment_id": "13"
+          }
+        },
+        {
+          "id": "equipment_55",
+          "record_type": "equipment",
+          "distance": 424.7570495605469,
+          "metadata": {
+            "commissioning_date": "2018-04-29",
+            "record_type": "equipment",
+            "category_id": "10",
+            "model_id": "19",
+            "record_id": "55",
+            "status": "OPERATIONAL",
+            "department_id": "3",
+            "warranty_end_date": "2021-03-14",
+            "purchase_date": "2018-03-15"
+          }
+        },
+        {
+          "id": "equipment_91",
+          "record_type": "equipment",
+          "distance": 424.90203857421875,
+          "metadata": {
+            "record_type": "equipment",
+            "commissioning_date": "2022-03-19",
+            "model_id": "19",
+            "purchase_date": "2022-02-06",
+            "department_id": "3",
+            "status": "ARCHIVED",
+            "category_id": "10",
+            "warranty_end_date": "2025-02-05",
+            "record_id": "91"
+          }
+        },
+        {
+          "id": "equipment_19",
+          "record_type": "equipment",
+          "distance": 429.95751953125,
+          "metadata": {
+            "department_id": "3",
+            "purchase_date": "2022-04-19",
+            "category_id": "10",
+            "status": "OPERATIONAL",
+            "commissioning_date": "2022-06-07",
+            "warranty_end_date": "2025-04-18",
+            "record_type": "equipment",
+            "record_id": "19",
+            "model_id": "19"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.81
+    },
+    "distance_summary": {
+      "best_distance": 272.6092834472656,
+      "avg_distance": 354.9650302463108,
+      "worst_distance": 429.95751953125,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "weak"
+  },
+  {
+    "test": {
+      "id": "semantic_001",
+      "expected_quality": "medium",
+      "question": "Which records mention oxygen sensor drift?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "I do not have enough information in the database.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_104",
+        "work_orders_44",
+        "work_orders_184",
+        "claims_624",
+        "claims_644",
+        "claims_584",
+        "tasks_131",
+        "tasks_11",
+        "tasks_98",
+        "equipment_65"
+      ],
+      "selected_record_types": [
+        "claims",
+        "work_orders",
+        "tasks",
+        "equipment"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.885,
+      "debug_sources": [
+        {
+          "id": "work_orders_104",
+          "record_type": "work_orders",
+          "distance": 192.2815704345703,
+          "metadata": {
+            "updated_at": "2026-02-13 00:00:00",
+            "due_date": "2026-02-14 15:00:00",
+            "record_id": "104",
+            "completed_at": "",
+            "assigned_to_user_id": "27",
+            "actual_cost": "",
+            "priority": "LOW",
+            "equipment_id": "89",
+            "estimated_cost": "1607.91",
+            "record_type": "work_orders",
+            "status": "SCHEDULED",
+            "claim_id": "104",
+            "created_at": "2026-02-12 02:00:00"
+          }
+        },
+        {
+          "id": "work_orders_44",
+          "record_type": "work_orders",
+          "distance": 198.33541870117188,
+          "metadata": {
+            "estimated_cost": "1170.33",
+            "created_at": "2025-05-28 20:00:00",
+            "due_date": "2025-05-28 17:00:00",
+            "record_id": "44",
+            "completed_at": "",
+            "actual_cost": "",
+            "updated_at": "2025-05-29 03:00:00",
+            "status": "ON_HOLD",
+            "claim_id": "44",
+            "assigned_to_user_id": "4",
+            "equipment_id": "149",
+            "record_type": "work_orders",
+            "priority": "CRITICAL"
+          }
+        },
+        {
+          "id": "work_orders_184",
+          "record_type": "work_orders",
+          "distance": 199.12657165527344,
+          "metadata": {
+            "record_type": "work_orders",
+            "claim_id": "184",
+            "equipment_id": "9",
+            "actual_cost": "",
+            "assigned_to_user_id": "7",
+            "status": "SCHEDULED",
+            "estimated_cost": "1989.53",
+            "created_at": "2026-01-09 07:00:00",
+            "record_id": "184",
+            "completed_at": "",
+            "updated_at": "2026-01-11 02:00:00",
+            "priority": "CRITICAL",
+            "due_date": "2026-01-09 04:00:00"
+          }
+        },
+        {
+          "id": "claims_624",
+          "record_type": "claims",
+          "distance": 212.03533935546875,
+          "metadata": {
+            "equipment_id": "49",
+            "closed_at": "",
+            "priority": "LOW",
+            "record_type": "claims",
+            "resolved_at": "",
+            "created_at": "2025-09-27 10:00:00",
+            "department_id": "7",
+            "assigned_to_user_id": "",
+            "updated_at": "2025-09-28 05:00:00",
+            "status": "NEW",
+            "record_id": "624"
+          }
+        },
+        {
+          "id": "claims_644",
+          "record_type": "claims",
+          "distance": 213.82470703125,
+          "metadata": {
+            "equipment_id": "29",
+            "department_id": "5",
+            "updated_at": "2025-08-05 13:00:00",
+            "record_id": "644",
+            "created_at": "2025-08-03 21:00:00",
+            "record_type": "claims",
+            "assigned_to_user_id": "18",
+            "status": "IN_PROGRESS",
+            "priority": "CRITICAL",
+            "resolved_at": "",
+            "closed_at": ""
+          }
+        },
+        {
+          "id": "claims_584",
+          "record_type": "claims",
+          "distance": 215.71864318847656,
+          "metadata": {
+            "closed_at": "",
+            "record_id": "584",
+            "assigned_to_user_id": "",
+            "department_id": "7",
+            "resolved_at": "",
+            "equipment_id": "89",
+            "priority": "CRITICAL",
+            "status": "NEW",
+            "created_at": "2025-03-26 13:00:00",
+            "updated_at": "2025-03-27 09:00:00",
+            "record_type": "claims"
+          }
+        },
+        {
+          "id": "tasks_131",
+          "record_type": "tasks",
+          "distance": 353.487060546875,
+          "metadata": {
+            "assigned_to_user_id": "4",
+            "estimated_duration": "0.79",
+            "record_id": "131",
+            "wo_id": "44",
+            "record_type": "tasks",
+            "priority": "CRITICAL",
+            "completed_at": "",
+            "actual_duration": "",
+            "due_date": "2025-05-28 15:00:00",
+            "status": "BLOCKED"
+          }
+        },
+        {
+          "id": "tasks_11",
+          "record_type": "tasks",
+          "distance": 356.5890808105469,
+          "metadata": {
+            "due_date": "2025-09-30 10:00:00",
+            "wo_id": "4",
+            "actual_duration": "",
+            "priority": "CRITICAL",
+            "estimated_duration": "1.03",
+            "record_id": "11",
+            "assigned_to_user_id": "7",
+            "completed_at": "",
+            "record_type": "tasks",
+            "status": "BLOCKED"
+          }
+        },
+        {
+          "id": "tasks_98",
+          "record_type": "tasks",
+          "distance": 372.4970703125,
+          "metadata": {
+            "record_type": "tasks",
+            "estimated_duration": "2.33",
+            "assigned_to_user_id": "6",
+            "due_date": "2025-04-22 19:00:00",
+            "actual_duration": "",
+            "completed_at": "",
+            "record_id": "98",
+            "priority": "CRITICAL",
+            "wo_id": "33",
+            "status": "BLOCKED"
+          }
+        },
+        {
+          "id": "equipment_65",
+          "record_type": "equipment",
+          "distance": 422.9750061035156,
+          "metadata": {
+            "record_type": "equipment",
+            "department_id": "5",
+            "model_id": "29",
+            "warranty_end_date": "2028-03-02",
+            "purchase_date": "2024-03-03",
+            "category_id": "11",
+            "record_id": "65",
+            "commissioning_date": "2024-04-27",
+            "status": "OPERATIONAL"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.915
+    },
+    "distance_summary": {
+      "best_distance": 192.2815704345703,
+      "avg_distance": 273.68704681396486,
+      "worst_distance": 422.9750061035156,
+      "source_count_with_distance": 10
+    },
+    "distance_class_temp": "strong"
+  },
+  {
+    "test": {
+      "id": "semantic_002",
+      "expected_quality": "medium",
+      "question": "Which records mention pump seal leakage?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "The records mentioning pump seal leakage are:",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_19",
+        "work_orders_39",
+        "work_orders_59",
+        "claims_579",
+        "claims_539",
+        "claims_619",
+        "equipment_103",
+        "equipment_67",
+        "equipment_31"
+      ],
+      "selected_record_types": [
+        "equipment",
+        "claims",
+        "work_orders"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.658,
+      "debug_sources": [
+        {
+          "id": "work_orders_19",
+          "record_type": "work_orders",
+          "distance": 190.69482421875,
+          "metadata": {
+            "completed_at": "",
+            "estimated_cost": "447.86",
+            "priority": "MEDIUM",
+            "record_id": "19",
+            "claim_id": "19",
+            "status": "SCHEDULED",
+            "assigned_to_user_id": "4",
+            "due_date": "2025-07-06 11:00:00",
+            "equipment_id": "134",
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "updated_at": "2025-07-05 11:00:00",
+            "created_at": "2025-07-03 18:00:00"
+          }
+        },
+        {
+          "id": "work_orders_39",
+          "record_type": "work_orders",
+          "distance": 190.78314208984375,
+          "metadata": {
+            "priority": "LOW",
+            "estimated_cost": "2394.91",
+            "status": "ON_HOLD",
+            "updated_at": "2025-04-09 04:00:00",
+            "equipment_id": "114",
+            "actual_cost": "",
+            "assigned_to_user_id": "6",
+            "created_at": "2025-04-07 11:00:00",
+            "due_date": "2025-04-10 07:00:00",
+            "claim_id": "39",
+            "completed_at": "",
+            "record_type": "work_orders",
+            "record_id": "39"
+          }
+        },
+        {
+          "id": "work_orders_59",
+          "record_type": "work_orders",
+          "distance": 192.85171508789062,
+          "metadata": {
+            "status": "IN_PROGRESS",
+            "created_at": "2025-04-08 09:00:00",
+            "assigned_to_user_id": "28",
+            "record_type": "work_orders",
+            "due_date": "2025-04-11 04:00:00",
+            "completed_at": "",
+            "priority": "MEDIUM",
+            "equipment_id": "94",
+            "updated_at": "2025-04-09 01:00:00",
+            "record_id": "59",
+            "actual_cost": "",
+            "estimated_cost": "470.93",
+            "claim_id": "59"
+          }
+        },
+        {
+          "id": "claims_579",
+          "record_type": "claims",
+          "distance": 194.11660766601562,
+          "metadata": {
+            "closed_at": "",
+            "priority": "MEDIUM",
+            "equipment_id": "54",
+            "record_id": "579",
+            "resolved_at": "",
+            "department_id": "5",
+            "status": "CONVERTED_TO_WORK_ORDER",
+            "updated_at": "2025-04-09 06:00:00",
+            "assigned_to_user_id": "4",
+            "record_type": "claims",
+            "created_at": "2025-04-07 22:00:00"
+          }
+        },
+        {
+          "id": "claims_539",
+          "record_type": "claims",
+          "distance": 194.60162353515625,
+          "metadata": {
+            "department_id": "7",
+            "assigned_to_user_id": "3",
+            "updated_at": "2025-12-20 05:00:00",
+            "priority": "CRITICAL",
+            "record_id": "539",
+            "resolved_at": "",
+            "created_at": "2025-12-18 21:00:00",
+            "status": "CONVERTED_TO_WORK_ORDER",
+            "record_type": "claims",
+            "closed_at": "",
+            "equipment_id": "94"
+          }
+        },
+        {
+          "id": "claims_619",
+          "record_type": "claims",
+          "distance": 194.7462921142578,
+          "metadata": {
+            "closed_at": "",
+            "department_id": "7",
+            "equipment_id": "14",
+            "priority": "MEDIUM",
+            "updated_at": "2025-05-01 04:00:00",
+            "record_type": "claims",
+            "resolved_at": "",
+            "assigned_to_user_id": "15",
+            "status": "CONVERTED_TO_WORK_ORDER",
+            "created_at": "2025-04-30 14:00:00",
+            "record_id": "619"
+          }
+        },
+        {
+          "id": "equipment_103",
+          "record_type": "equipment",
+          "distance": 325.43682861328125,
+          "metadata": {
+            "warranty_end_date": "2021-01-25",
+            "category_id": "9",
+            "status": "OPERATIONAL",
+            "record_type": "equipment",
+            "purchase_date": "2018-01-26",
+            "record_id": "103",
+            "department_id": "7",
+            "commissioning_date": "2018-03-20",
+            "model_id": "31"
+          }
+        },
+        {
+          "id": "equipment_67",
+          "record_type": "equipment",
+          "distance": 325.8927001953125,
+          "metadata": {
+            "category_id": "9",
+            "commissioning_date": "2022-04-28",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2025-03-01",
+            "model_id": "31",
+            "record_type": "equipment",
+            "purchase_date": "2022-03-02",
+            "record_id": "67",
+            "department_id": "7"
+          }
+        },
+        {
+          "id": "equipment_31",
+          "record_type": "equipment",
+          "distance": 328.1753234863281,
+          "metadata": {
+            "model_id": "31",
+            "category_id": "9",
+            "record_type": "equipment",
+            "status": "OPERATIONAL",
+            "department_id": "7",
+            "record_id": "31",
+            "warranty_end_date": "2021-04-07",
+            "purchase_date": "2018-04-08",
+            "commissioning_date": "2018-06-08"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.663
+    },
+    "distance_summary": {
+      "best_distance": 190.69482421875,
+      "avg_distance": 237.47767300075955,
+      "worst_distance": 328.1753234863281,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "strong"
+  },
+  {
+    "test": {
+      "id": "semantic_003",
+      "expected_quality": "medium",
+      "question": "Which records mention compressor overheating?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "I do not have enough information in the database.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_66",
+        "work_orders_86",
+        "claims_566",
+        "claims_546",
+        "claims_646",
+        "work_orders_106",
+        "equipment_138",
+        "equipment_102",
+        "equipment_66"
+      ],
+      "selected_record_types": [
+        "equipment",
+        "claims",
+        "work_orders"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.877,
+      "debug_sources": [
+        {
+          "id": "work_orders_66",
+          "record_type": "work_orders",
+          "distance": 250.99551391601562,
+          "metadata": {
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "created_at": "2025-12-26 20:00:00",
+            "due_date": "2025-12-27 08:00:00",
+            "claim_id": "66",
+            "priority": "HIGH",
+            "assigned_to_user_id": "6",
+            "estimated_cost": "2309.15",
+            "status": "ON_HOLD",
+            "updated_at": "2025-12-28 19:00:00",
+            "record_id": "66",
+            "equipment_id": "143",
+            "completed_at": ""
+          }
+        },
+        {
+          "id": "work_orders_86",
+          "record_type": "work_orders",
+          "distance": 252.03526306152344,
+          "metadata": {
+            "updated_at": "2025-03-24 06:00:00",
+            "created_at": "2025-03-23 10:00:00",
+            "claim_id": "86",
+            "actual_cost": "",
+            "priority": "HIGH",
+            "record_type": "work_orders",
+            "assigned_to_user_id": "6",
+            "due_date": "2025-03-24 00:00:00",
+            "equipment_id": "123",
+            "status": "IN_PROGRESS",
+            "completed_at": "",
+            "estimated_cost": "1386.00",
+            "record_id": "86"
+          }
+        },
+        {
+          "id": "claims_566",
+          "record_type": "claims",
+          "distance": 252.32614135742188,
+          "metadata": {
+            "status": "CLOSED",
+            "created_at": "2026-04-22 08:00:00",
+            "department_id": "7",
+            "closed_at": "2026-04-25 08:00:00",
+            "record_id": "566",
+            "resolved_at": "2026-04-24 08:00:00",
+            "equipment_id": "123",
+            "assigned_to_user_id": "27",
+            "record_type": "claims",
+            "updated_at": "2026-04-23 07:00:00",
+            "priority": "HIGH"
+          }
+        },
+        {
+          "id": "claims_546",
+          "record_type": "claims",
+          "distance": 254.76077270507812,
+          "metadata": {
+            "updated_at": "2025-09-14 06:00:00",
+            "resolved_at": "",
+            "priority": "LOW",
+            "department_id": "2",
+            "record_id": "546",
+            "equipment_id": "143",
+            "created_at": "2025-09-13 22:00:00",
+            "assigned_to_user_id": "28",
+            "closed_at": "",
+            "status": "ASSIGNED",
+            "record_type": "claims"
+          }
+        },
+        {
+          "id": "claims_646",
+          "record_type": "claims",
+          "distance": 255.32669067382812,
+          "metadata": {
+            "department_id": "4",
+            "created_at": "2026-03-31 16:00:00",
+            "updated_at": "2026-03-31 18:00:00",
+            "record_type": "claims",
+            "status": "CLOSED",
+            "priority": "HIGH",
+            "assigned_to_user_id": "24",
+            "record_id": "646",
+            "closed_at": "2026-04-09 16:00:00",
+            "equipment_id": "43",
+            "resolved_at": "2026-04-08 16:00:00"
+          }
+        },
+        {
+          "id": "work_orders_106",
+          "record_type": "work_orders",
+          "distance": 255.57797241210938,
+          "metadata": {
+            "record_id": "106",
+            "due_date": "2026-03-20 09:00:00",
+            "assigned_to_user_id": "6",
+            "equipment_id": "103",
+            "record_type": "work_orders",
+            "priority": "HIGH",
+            "estimated_cost": "1094.79",
+            "status": "SCHEDULED",
+            "updated_at": "2026-03-20 10:00:00",
+            "created_at": "2026-03-19 21:00:00",
+            "actual_cost": "",
+            "claim_id": "106",
+            "completed_at": ""
+          }
+        },
+        {
+          "id": "equipment_138",
+          "record_type": "equipment",
+          "distance": 294.5304260253906,
+          "metadata": {
+            "model_id": "30",
+            "record_type": "equipment",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2025-04-19",
+            "commissioning_date": "2023-06-07",
+            "purchase_date": "2023-04-20",
+            "category_id": "7",
+            "record_id": "138",
+            "department_id": "7"
+          }
+        },
+        {
+          "id": "equipment_102",
+          "record_type": "equipment",
+          "distance": 298.6605529785156,
+          "metadata": {
+            "warranty_end_date": "2021-01-26",
+            "category_id": "7",
+            "record_type": "equipment",
+            "model_id": "30",
+            "record_id": "102",
+            "status": "OPERATIONAL",
+            "purchase_date": "2019-01-27",
+            "department_id": "7",
+            "commissioning_date": "2019-03-20"
+          }
+        },
+        {
+          "id": "equipment_66",
+          "record_type": "equipment",
+          "distance": 299.6209411621094,
+          "metadata": {
+            "department_id": "7",
+            "purchase_date": "2023-03-03",
+            "commissioning_date": "2023-04-28",
+            "category_id": "7",
+            "model_id": "30",
+            "record_type": "equipment",
+            "warranty_end_date": "2025-03-02",
+            "record_id": "66",
+            "status": "OPERATIONAL"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.903
+    },
+    "distance_summary": {
+      "best_distance": 250.99551391601562,
+      "avg_distance": 268.2038082546658,
+      "worst_distance": 299.6209411621094,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "weak"
+  },
+  {
+    "test": {
+      "id": "broad_001",
+      "expected_quality": "weak",
+      "question": "Why equipments are failing?",
+      "expected_route": "RAG"
+    },
+    "response": {
+      "answer": "I do not have enough information in the database.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_105",
+        "work_orders_5",
+        "work_orders_25",
+        "claims_645",
+        "claims_565",
+        "claims_545",
+        "equipment_106",
+        "equipment_71",
+        "equipment_70"
+      ],
+      "selected_record_types": [
+        "equipment",
+        "claims",
+        "work_orders"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 13.806,
+      "debug_sources": [
+        {
+          "id": "work_orders_105",
+          "record_type": "work_orders",
+          "distance": 327.3766174316406,
+          "metadata": {
+            "priority": "CRITICAL",
+            "equipment_id": "96",
+            "status": "SCHEDULED",
+            "claim_id": "105",
+            "created_at": "2026-01-22 06:00:00",
+            "record_type": "work_orders",
+            "due_date": "2026-01-22 12:00:00",
+            "assigned_to_user_id": "5",
+            "completed_at": "",
+            "estimated_cost": "2002.34",
+            "record_id": "105",
+            "updated_at": "2026-01-23 04:00:00",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "work_orders_5",
+          "record_type": "work_orders",
+          "distance": 332.864501953125,
+          "metadata": {
+            "due_date": "2026-03-20 22:00:00",
+            "created_at": "2026-03-20 15:00:00",
+            "completed_at": "",
+            "estimated_cost": "608.03",
+            "record_id": "5",
+            "assigned_to_user_id": "6",
+            "claim_id": "5",
+            "record_type": "work_orders",
+            "status": "ASSIGNED",
+            "updated_at": "2026-03-22 10:00:00",
+            "priority": "CRITICAL",
+            "equipment_id": "36",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "work_orders_25",
+          "record_type": "work_orders",
+          "distance": 333.26727294921875,
+          "metadata": {
+            "equipment_id": "16",
+            "estimated_cost": "1440.37",
+            "completed_at": "",
+            "record_id": "25",
+            "record_type": "work_orders",
+            "updated_at": "2026-04-29 03:00:00",
+            "claim_id": "25",
+            "priority": "CRITICAL",
+            "due_date": "2026-04-29 00:00:00",
+            "status": "ON_HOLD",
+            "assigned_to_user_id": "7",
+            "created_at": "2026-04-29 01:00:00",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "claims_645",
+          "record_type": "claims",
+          "distance": 339.95147705078125,
+          "metadata": {
+            "equipment_id": "36",
+            "department_id": "3",
+            "status": "RESOLVED",
+            "priority": "CRITICAL",
+            "assigned_to_user_id": "24",
+            "record_id": "645",
+            "record_type": "claims",
+            "closed_at": "",
+            "resolved_at": "2026-03-15 20:00:00",
+            "updated_at": "2026-03-13 23:00:00",
+            "created_at": "2026-03-13 20:00:00"
+          }
+        },
+        {
+          "id": "claims_565",
+          "record_type": "claims",
+          "distance": 341.3816833496094,
+          "metadata": {
+            "resolved_at": "2026-02-08 12:00:00",
+            "record_type": "claims",
+            "priority": "CRITICAL",
+            "updated_at": "2026-02-03 18:00:00",
+            "record_id": "565",
+            "created_at": "2026-02-02 12:00:00",
+            "equipment_id": "116",
+            "assigned_to_user_id": "4",
+            "department_id": "4",
+            "closed_at": "",
+            "status": "RESOLVED"
+          }
+        },
+        {
+          "id": "claims_545",
+          "record_type": "claims",
+          "distance": 342.14801025390625,
+          "metadata": {
+            "status": "QUALIFIED",
+            "priority": "CRITICAL",
+            "closed_at": "",
+            "department_id": "4",
+            "equipment_id": "136",
+            "updated_at": "2025-03-13 08:00:00",
+            "assigned_to_user_id": "12",
+            "record_id": "545",
+            "resolved_at": "",
+            "created_at": "2025-03-12 18:00:00",
+            "record_type": "claims"
+          }
+        },
+        {
+          "id": "equipment_106",
+          "record_type": "equipment",
+          "distance": 371.519775390625,
+          "metadata": {
+            "department_id": "4",
+            "record_id": "106",
+            "record_type": "equipment",
+            "purchase_date": "2023-01-22",
+            "category_id": "4",
+            "commissioning_date": "2023-03-19",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2026-01-21",
+            "model_id": "34"
+          }
+        },
+        {
+          "id": "equipment_71",
+          "record_type": "equipment",
+          "distance": 373.7508850097656,
+          "metadata": {
+            "record_type": "equipment",
+            "record_id": "71",
+            "category_id": "2",
+            "warranty_end_date": "2022-02-26",
+            "purchase_date": "2018-02-27",
+            "department_id": "2",
+            "commissioning_date": "2018-04-29",
+            "status": "OPERATIONAL",
+            "model_id": "35"
+          }
+        },
+        {
+          "id": "equipment_70",
+          "record_type": "equipment",
+          "distance": 374.1534118652344,
+          "metadata": {
+            "department_id": "4",
+            "category_id": "4",
+            "status": "OPERATIONAL",
+            "purchase_date": "2019-02-28",
+            "commissioning_date": "2019-04-29",
+            "model_id": "34",
+            "record_type": "equipment",
+            "warranty_end_date": "2022-02-27",
+            "record_id": "70"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 13.83
+    },
+    "distance_summary": {
+      "best_distance": 327.3766174316406,
+      "avg_distance": 348.4904039171007,
+      "worst_distance": 374.1534118652344,
+      "source_count_with_distance": 9
+    },
+    "distance_class_temp": "weak"
+  },
+  {
+    "test": {
+      "id": "broad_002",
+      "expected_quality": "weak",
+      "question": "Why are machines having problems?",
+      "expected_route": "RAG"
+    },
+    "response": {
+      "answer": "しだい\n\n\nThe machines are having problems due to several factors, many of which are related to **equipment failure**, **wear and tear**, **environmental conditions**, and **lack of maintenance**. Here's a breakdown of the key reasons:\n\n---\n\n### 1. **Equipment Failure**\n- **Predictive notes** indicate that many machines are experiencing **failure risks** due to:\n  - **Recent failures** (e.g., in CT scanners, ventilators, steam sterilizers, and anesthesia machines).\n  - **Meter trends** (e.g., temperature, pressure, flow) that show **increased risk** of failure.\n  - **Stock status** (e.g., **part shortages** or **low stock** for critical components like pump seals, oxygen cells, and oil separators).\n\n---\n\n### 2. **Wear and Tear**\n- Many machines are **aged** and have **excessive wear** on components like:\n  - **Pump seals** (e.g., in water booster pumps, mechanical seals).\n  - **Oxygen cells** (in ventilators, analyzers).\n  - **Door gaskets** (in medical refrigerators).\n  - **Cooling fans** (in CT scanners, air compressors).\n\n---\n\n### 3. **Environmental Factors**\n- **Environmental conditions** (e.g., temperature, humidity, vibration) can cause:\n  - **Mechanical stress** on components.\n  - **Corrosion** or **degradation** of parts.\n  - **Increased vibration** leading to **mount failures** (e.g., in air compressors, ventilators).\n\n---\n\n### 4. **Lack of Maintenance**\n- Some machines are **not being maintained** regularly, leading to:\n  - **Unscheduled failures** (e.g., in ventilators, CT scanners).\n  - **Increased vibration** and **pressure drops** (e.g., in air compressors).\n  - **Dr",
+      "route": "HYBRID",
+      "sql_intent": "spare_parts_below_min_stock",
+      "sql_result": [
+        {
+          "part_id": 112,
+          "sku": "SKU-00112",
+          "name": "Analyzer cuvette segment 112",
+          "category": "Consumables",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 896.06,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 176,
+          "sku": "SKU-00176",
+          "name": "Chiller pressure switch 176",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 94.03,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 16,
+          "sku": "SKU-00016",
+          "name": "Compressor oil separator 016",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 648.83,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 32,
+          "sku": "SKU-00032",
+          "name": "Flow sensor cartridge 032",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 74.88,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 156,
+          "sku": "SKU-00156",
+          "name": "Infusion pump keypad 156",
+          "category": "Electronics",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 548.77,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 90,
+          "sku": "SKU-00090",
+          "name": "MRI chiller glycol sensor 090",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 294.25,
+          "location": "Store-3-Shelf-A7",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 98,
+          "sku": "SKU-00098",
+          "name": "Oxygen cell 098",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 848.89,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 44,
+          "sku": "SKU-00044",
+          "name": "Printer roller kit 044",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 163.09,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 110,
+          "sku": "SKU-00110",
+          "name": "Pump seal kit 110",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 9,
+          "unit_cost": 202.84,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 99,
+          "sku": "SKU-00099",
+          "name": "Temperature probe PT100 099",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 6,
+          "unit_cost": 765.47,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 88,
+          "sku": "SKU-00088",
+          "name": "Bed side rail latch 088",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 3,
+          "unit_cost": 634.36,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 177,
+          "sku": "SKU-00177",
+          "name": "BMS relay output module 177",
+          "category": "Electrical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 949.6,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 33,
+          "sku": "SKU-00033",
+          "name": "Door gasket 033",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 74.75,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 11,
+          "sku": "SKU-00011",
+          "name": "Fan module 011",
+          "category": "Cooling",
+          "quantity_in_stock": 1,
+          "min_stock_level": 6,
+          "unit_cost": 711.69,
+          "location": "Store-4-Shelf-F12",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 154,
+          "sku": "SKU-00154",
+          "name": "HEPA filter H14 154",
+          "category": "Filters",
+          "quantity_in_stock": 1,
+          "min_stock_level": 5,
+          "unit_cost": 50.88,
+          "location": "Store-3-Shelf-E11",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 111,
+          "sku": "SKU-00111",
+          "name": "Network SFP module 111",
+          "category": "IT",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 815.04,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 132,
+          "sku": "SKU-00132",
+          "name": "Power supply board 132",
+          "category": "Electronics",
+          "quantity_in_stock": 1,
+          "min_stock_level": 7,
+          "unit_cost": 509.85,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 31,
+          "sku": "SKU-00031",
+          "name": "Pressure sensor kit 031",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 562.19,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 121,
+          "sku": "SKU-00121",
+          "name": "Pressure sensor kit 121",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 794.49,
+          "location": "Store-2-Shelf-B2",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 55,
+          "sku": "SKU-00055",
+          "name": "Refrigerator door sensor 055",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 305.84,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "MedSupply TN"
+        }
+      ],
+      "sources": [
+        "spare_parts_11",
+        "spare_parts_16",
+        "spare_parts_31",
+        "spare_parts_32",
+        "spare_parts_33",
+        "spare_parts_44",
+        "spare_parts_55",
+        "spare_parts_88",
+        "spare_parts_90",
+        "spare_parts_98",
+        "spare_parts_99",
+        "spare_parts_110",
+        "spare_parts_111",
+        "spare_parts_112",
+        "spare_parts_121",
+        "spare_parts_132",
+        "spare_parts_154",
+        "spare_parts_156",
+        "spare_parts_176",
+        "spare_parts_177",
+        "work_orders_441",
+        "work_orders_81",
+        "work_orders_42",
+        "work_orders_325",
+        "work_orders_406",
+        "work_orders_173",
+        "work_orders_33",
+        "work_orders_479",
+        "work_orders_98",
+        "work_orders_318",
+        "work_orders_219",
+        "work_orders_446",
+        "work_orders_44",
+        "work_orders_264",
+        "work_orders_388",
+        "work_orders_320",
+        "work_orders_481",
+        "work_orders_294",
+        "work_orders_438",
+        "work_orders_28"
+      ],
+      "selected_record_types": [
+        "spare_parts",
+        "part_usage",
+        "work_orders",
+        "tasks"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 12.64,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 12.67
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "broad_003",
+      "expected_quality": "weak",
+      "question": "What are the common maintenance problems?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "The common maintenance problems identified from the provided work orders include:\n\n1. **Sensor Drift/Issues**  \n   - **Oxygen Sensor Drift**: Ventilator and RO water system oxygen sensors show calibration discrepancies (e.g., 8% deviation), requiring replacement or recalibration.  \n   - **Temperature Excursions**: Medical refrigerators (e.g., in ventilators, steam sterilizers) experience temperature deviations (e.g., >8°C), necessitating sensor",
+      "route": "HYBRID",
+      "sql_intent": "spare_parts_below_min_stock",
+      "sql_result": [
+        {
+          "part_id": 112,
+          "sku": "SKU-00112",
+          "name": "Analyzer cuvette segment 112",
+          "category": "Consumables",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 896.06,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 176,
+          "sku": "SKU-00176",
+          "name": "Chiller pressure switch 176",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 94.03,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 16,
+          "sku": "SKU-00016",
+          "name": "Compressor oil separator 016",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 648.83,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 32,
+          "sku": "SKU-00032",
+          "name": "Flow sensor cartridge 032",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 74.88,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 156,
+          "sku": "SKU-00156",
+          "name": "Infusion pump keypad 156",
+          "category": "Electronics",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 548.77,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 90,
+          "sku": "SKU-00090",
+          "name": "MRI chiller glycol sensor 090",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 294.25,
+          "location": "Store-3-Shelf-A7",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 98,
+          "sku": "SKU-00098",
+          "name": "Oxygen cell 098",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 848.89,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 44,
+          "sku": "SKU-00044",
+          "name": "Printer roller kit 044",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 163.09,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 110,
+          "sku": "SKU-00110",
+          "name": "Pump seal kit 110",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 9,
+          "unit_cost": 202.84,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 99,
+          "sku": "SKU-00099",
+          "name": "Temperature probe PT100 099",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 6,
+          "unit_cost": 765.47,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 88,
+          "sku": "SKU-00088",
+          "name": "Bed side rail latch 088",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 3,
+          "unit_cost": 634.36,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 177,
+          "sku": "SKU-00177",
+          "name": "BMS relay output module 177",
+          "category": "Electrical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 949.6,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 33,
+          "sku": "SKU-00033",
+          "name": "Door gasket 033",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 74.75,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 11,
+          "sku": "SKU-00011",
+          "name": "Fan module 011",
+          "category": "Cooling",
+          "quantity_in_stock": 1,
+          "min_stock_level": 6,
+          "unit_cost": 711.69,
+          "location": "Store-4-Shelf-F12",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 154,
+          "sku": "SKU-00154",
+          "name": "HEPA filter H14 154",
+          "category": "Filters",
+          "quantity_in_stock": 1,
+          "min_stock_level": 5,
+          "unit_cost": 50.88,
+          "location": "Store-3-Shelf-E11",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 111,
+          "sku": "SKU-00111",
+          "name": "Network SFP module 111",
+          "category": "IT",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 815.04,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 132,
+          "sku": "SKU-00132",
+          "name": "Power supply board 132",
+          "category": "Electronics",
+          "quantity_in_stock": 1,
+          "min_stock_level": 7,
+          "unit_cost": 509.85,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 31,
+          "sku": "SKU-00031",
+          "name": "Pressure sensor kit 031",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 562.19,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 121,
+          "sku": "SKU-00121",
+          "name": "Pressure sensor kit 121",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 794.49,
+          "location": "Store-2-Shelf-B2",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 55,
+          "sku": "SKU-00055",
+          "name": "Refrigerator door sensor 055",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 305.84,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "MedSupply TN"
+        }
+      ],
+      "sources": [
+        "spare_parts_11",
+        "spare_parts_16",
+        "spare_parts_31",
+        "spare_parts_32",
+        "spare_parts_33",
+        "spare_parts_44",
+        "spare_parts_55",
+        "spare_parts_88",
+        "spare_parts_90",
+        "spare_parts_98",
+        "spare_parts_99",
+        "spare_parts_110",
+        "spare_parts_111",
+        "spare_parts_112",
+        "spare_parts_121",
+        "spare_parts_132",
+        "spare_parts_154",
+        "spare_parts_156",
+        "spare_parts_176",
+        "spare_parts_177",
+        "work_orders_441",
+        "work_orders_81",
+        "work_orders_42",
+        "work_orders_325",
+        "work_orders_406",
+        "work_orders_173",
+        "work_orders_33",
+        "work_orders_479",
+        "work_orders_98",
+        "work_orders_318",
+        "work_orders_219",
+        "work_orders_446",
+        "work_orders_44",
+        "work_orders_264",
+        "work_orders_388",
+        "work_orders_320",
+        "work_orders_481",
+        "work_orders_294",
+        "work_orders_438",
+        "work_orders_28"
+      ],
+      "selected_record_types": [
+        "spare_parts",
+        "part_usage",
+        "work_orders",
+        "tasks"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 12.592,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 12.611
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "sql_001",
+      "expected_quality": "sql",
+      "question": "Which spare parts are below minimum stock?",
+      "expected_route": "SQL"
+    },
+    "response": {
+      "answer": "The following spare parts are below minimum stock:\n- SKU-00112 — Analyzer cuvette segment 112 (current stock: 0, minimum stock: 3)\n- SKU-00176 — Chiller pressure switch 176 (current stock: 0, minimum stock: 3)\n- SKU-00016 — Compressor oil separator 016 (current stock: 0, minimum stock: 3)\n- SKU-00032 — Flow sensor cartridge 032 (current stock: 0, minimum stock: 3)\n- SKU-00156 — Infusion pump keypad 156 (current stock: 0, minimum stock: 7)\n- SKU-00090 — MRI chiller glycol sensor 090 (current stock: 0, minimum stock: 5)\n- SKU-00098 — Oxygen cell 098 (current stock: 0, minimum stock: 5)\n- SKU-00044 — Printer roller kit 044 (current stock: 0, minimum stock: 7)\n- SKU-00110 — Pump seal kit 110 (current stock: 0, minimum stock: 9)\n- SKU-00099 — Temperature probe PT100 099 (current stock: 0, minimum stock: 6)\n- SKU-00088 — Bed side rail latch 088 (current stock: 1, minimum stock: 3)\n- SKU-00177 — BMS relay output module 177 (current stock: 1, minimum stock: 4)\n- SKU-00033 — Door gasket 033 (current stock: 1, minimum stock: 4)\n- SKU-00011 — Fan module 011 (current stock: 1, minimum stock: 6)\n- SKU-00154 — HEPA filter H14 154 (current stock: 1, minimum stock: 5)\n- SKU-00111 — Network SFP module 111 (current stock: 1, minimum stock: 10)\n- SKU-00132 — Power supply board 132 (current stock: 1, minimum stock: 7)\n- SKU-00031 — Pressure sensor kit 031 (current stock: 1, minimum stock: 10)\n- SKU-00121 — Pressure sensor kit 121 (current stock: 1, minimum stock: 4)\n- SKU-00055 — Refrigerator door sensor 055 (current stock: 1, minimum stock: 10)\n\nAnswer based on the database query result.",
+      "route": "SQL",
+      "sql_intent": "spare_parts_below_min_stock",
+      "sql_result": [
+        {
+          "part_id": 112,
+          "sku": "SKU-00112",
+          "name": "Analyzer cuvette segment 112",
+          "category": "Consumables",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 896.06,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 176,
+          "sku": "SKU-00176",
+          "name": "Chiller pressure switch 176",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 94.03,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 16,
+          "sku": "SKU-00016",
+          "name": "Compressor oil separator 016",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 648.83,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 32,
+          "sku": "SKU-00032",
+          "name": "Flow sensor cartridge 032",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 74.88,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 156,
+          "sku": "SKU-00156",
+          "name": "Infusion pump keypad 156",
+          "category": "Electronics",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 548.77,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 90,
+          "sku": "SKU-00090",
+          "name": "MRI chiller glycol sensor 090",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 294.25,
+          "location": "Store-3-Shelf-A7",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 98,
+          "sku": "SKU-00098",
+          "name": "Oxygen cell 098",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 848.89,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 44,
+          "sku": "SKU-00044",
+          "name": "Printer roller kit 044",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 163.09,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 110,
+          "sku": "SKU-00110",
+          "name": "Pump seal kit 110",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 9,
+          "unit_cost": 202.84,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 99,
+          "sku": "SKU-00099",
+          "name": "Temperature probe PT100 099",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 6,
+          "unit_cost": 765.47,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 88,
+          "sku": "SKU-00088",
+          "name": "Bed side rail latch 088",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 3,
+          "unit_cost": 634.36,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 177,
+          "sku": "SKU-00177",
+          "name": "BMS relay output module 177",
+          "category": "Electrical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 949.6,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 33,
+          "sku": "SKU-00033",
+          "name": "Door gasket 033",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 74.75,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 11,
+          "sku": "SKU-00011",
+          "name": "Fan module 011",
+          "category": "Cooling",
+          "quantity_in_stock": 1,
+          "min_stock_level": 6,
+          "unit_cost": 711.69,
+          "location": "Store-4-Shelf-F12",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 154,
+          "sku": "SKU-00154",
+          "name": "HEPA filter H14 154",
+          "category": "Filters",
+          "quantity_in_stock": 1,
+          "min_stock_level": 5,
+          "unit_cost": 50.88,
+          "location": "Store-3-Shelf-E11",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 111,
+          "sku": "SKU-00111",
+          "name": "Network SFP module 111",
+          "category": "IT",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 815.04,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 132,
+          "sku": "SKU-00132",
+          "name": "Power supply board 132",
+          "category": "Electronics",
+          "quantity_in_stock": 1,
+          "min_stock_level": 7,
+          "unit_cost": 509.85,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 31,
+          "sku": "SKU-00031",
+          "name": "Pressure sensor kit 031",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 562.19,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 121,
+          "sku": "SKU-00121",
+          "name": "Pressure sensor kit 121",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 794.49,
+          "location": "Store-2-Shelf-B2",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 55,
+          "sku": "SKU-00055",
+          "name": "Refrigerator door sensor 055",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 305.84,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "MedSupply TN"
+        }
+      ],
+      "sources": [],
+      "selected_record_types": [],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 0.051,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 0.074
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "sql_002",
+      "expected_quality": "sql",
+      "question": "Show work orders by status.",
+      "expected_route": "SQL"
+    },
+    "response": {
+      "answer": "Work orders by status:\n- ON_HOLD: 108\n- VALIDATED: 77\n- CLOSED: 64\n- ASSIGNED: 63\n- SCHEDULED: 57\n- COMPLETED: 54\n- IN_PROGRESS: 50\n- CANCELLED: 27\n\nAnswer based on the database query result.",
+      "route": "SQL",
+      "sql_intent": "work_orders_by_status",
+      "sql_result": [
+        {
+          "status": "ON_HOLD",
+          "count": 108
+        },
+        {
+          "status": "VALIDATED",
+          "count": 77
+        },
+        {
+          "status": "CLOSED",
+          "count": 64
+        },
+        {
+          "status": "ASSIGNED",
+          "count": 63
+        },
+        {
+          "status": "SCHEDULED",
+          "count": 57
+        },
+        {
+          "status": "COMPLETED",
+          "count": 54
+        },
+        {
+          "status": "IN_PROGRESS",
+          "count": 50
+        },
+        {
+          "status": "CANCELLED",
+          "count": 27
+        }
+      ],
+      "sources": [],
+      "selected_record_types": [],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 0.06,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 0.078
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "hybrid_001",
+      "expected_quality": "hybrid",
+      "question": "Why do the top 3 equipment have the most claims?",
+      "expected_route": "HYBRID"
+    },
+    "response": {
+      "answer": "Summary of equipment with the most claims:\n- MRI scanner 008 (ASSET-04-0008) has 5 claims. Related records mainly show: Infusion pump pressure alarm - asset 008; Infusion pump pressure alarm - asset 008; Infusion pump pressure alarm - asset 008. Sources: claims_161, claims_321, claims_641, work_orders_161, work_orders_321, tasks_482.\n- UPS 015 (ASSET-08-0015) has 5 claims. Related records mainly show: Syringe pump occlusion warning - asset 015; Syringe pump occlusion warning - asset 015. Sources: claims_322, claims_482, work_orders_322, work_orders_482, tasks_485, tasks_964.\n- Network switch 022 (ASSET-12-0022) has 5 claims. Related records mainly show: Patient monitor false alarm - asset 022; Patient monitor false alarm - asset 022; Patient monitor false alarm - asset 022. Sources: claims_483, claims_3, claims_323, work_orders_483, work_orders_3, tasks_488.\n\nThe database shows the most-claimed equipment, but it does not necessarily prove one single root cause.",
+      "route": "HYBRID",
+      "sql_intent": "top_equipment_by_claims",
+      "sql_result": [
+        {
+          "equipment_id": 8,
+          "asset_code": "ASSET-04-0008",
+          "equipment_name": "MRI scanner 008",
+          "classification": "MRI scanner",
+          "category": "Imaging",
+          "model": "Philips Ingenia MRI 1.5T",
+          "criticality": "LOW",
+          "location": "Radiology CT Room",
+          "claim_count": 5
+        },
+        {
+          "equipment_id": 15,
+          "asset_code": "ASSET-08-0015",
+          "equipment_name": "UPS 015",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "APC Smart-UPS SRT",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "claim_count": 5
+        },
+        {
+          "equipment_id": 22,
+          "asset_code": "ASSET-12-0022",
+          "equipment_name": "Network switch 022",
+          "classification": "Network switch",
+          "category": "IT and Networked Devices",
+          "model": "Cisco Catalyst 9200",
+          "criticality": "LOW",
+          "location": "Chiller Plant",
+          "claim_count": 5
+        }
+      ],
+      "sources": [
+        "claims_322",
+        "claims_161",
+        "claims_483",
+        "claims_321",
+        "claims_641",
+        "claims_1",
+        "claims_3",
+        "claims_482",
+        "claims_323",
+        "work_orders_322",
+        "work_orders_161",
+        "work_orders_483",
+        "work_orders_321",
+        "work_orders_1",
+        "work_orders_3",
+        "work_orders_482",
+        "work_orders_323",
+        "work_orders_162",
+        "tasks_485",
+        "tasks_482",
+        "tasks_488",
+        "tasks_964",
+        "tasks_965",
+        "tasks_966",
+        "tasks_481",
+        "tasks_483",
+        "tasks_1447"
+      ],
+      "selected_record_types": [
+        "claims",
+        "work_orders",
+        "tasks"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 10.182,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 10.201
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "hybrid_002",
+      "expected_quality": "hybrid",
+      "question": "Why are overdue work orders delayed?",
+      "expected_route": "HYBRID"
+    },
+    "response": {
+      "answer": "The work orders are overdue according to the database.\nVisible factors in the work orders:\n- work_orders_424: WO 424: Ventilator oxygen sensor drift | status=SCHEDULED | due_date=2025-03-13T07:00:00 | predictive_outcome=NORMAL | notes=Prediction based on recent failures for equipment 89, meter trend and stock status. No immediate stock constraint detected.\n- work_orders_441: WO 441: Infusion pump pressure alarm | status=IN_PROGRESS | due_date=2025-03-14T15:00:00 | predictive_outcome=FAILURE_RISK | notes=Prediction based on recent failures for equipment 48, meter trend and stock status. No immediate stock constraint detected.\n- work_orders_185: WO 185: Anesthesia machine leak test fail | status=ASSIGNED | due_date=2025-03-17T13:00:00 | predictive_outcome=PART_SHORTAGE | notes=Prediction based on recent failures for equipment 16, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock.\n- work_orders_77: WO 77: Endoscopy processor leak | status=ON_HOLD | due_date=2025-03-19T03:00:00 | predictive_outcome=SLA_RISK | notes=Prediction based on recent failures for equipment 60, meter trend and stock status. No immediate stock constraint detected.\n- work_orders_81: WO 81: Infusion pump pressure alarm | status=IN_PROGRESS | due_date=2025-03-21T11:00:00 | predictive_outcome=FAILURE_RISK | notes=Prediction based on recent failures for equipment 88, meter trend and stock status. No immediate stock constraint detected.\nRelated blocked tasks:\n- tasks_290: Corrective action | blocked_reason=Waiting for Endoscope connector seal from spare parts store; current stock is below minimum level. | failure_reason=None\n- tasks_329: Corrective action | blocked_reason=Waiting for Autoclave steam trap from spare parts store; current stock is below minimum level. | failure_reason=None\n- tasks_692: Corrective action | blocked_reason=Waiting for Solenoid valve from spare parts store; current stock is below minimum level. | failure_reason=None\n- tasks_1385: Corrective action | blocked_reason=Waiting for Infusion pump keypad from spare parts store; current stock is below minimum level. | failure_reason=None\n- tasks_1067: Corrective action | blocked_reason=Waiting for LED surgical light handle from spare parts store; current stock is below minimum level. | failure_reason=None",
+      "route": "HYBRID",
+      "sql_intent": "overdue_work_orders",
+      "sql_result": [
+        {
+          "wo_id": 424,
+          "source_id": "work_orders_424",
+          "claim_id": 424,
+          "equipment_id": 89,
+          "asset_code": "ASSET-09-0089",
+          "equipment_name": "RO water system 089",
+          "classification": "RO water system",
+          "category": "Water Treatment",
+          "model": "Fresenius AquaBplus",
+          "criticality": "HIGH",
+          "location": "General Ward East",
+          "title": "WO 424: Ventilator oxygen sensor drift",
+          "description": "Work order created from claim 424. Scope: Replace oxygen cell and perform calibration. Symptoms: Ventilator oxygen concentration reading differs from calibrated analyzer by more than 8 percent. Alarm appears during pre-use check. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "SCHEDULED",
+          "priority": "CRITICAL",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-03-13T02:00:00",
+          "updated_at": "2025-03-14T17:00:00",
+          "due_date": "2025-03-13T07:00:00",
+          "planned_start": "2025-03-13T18:00:00",
+          "planned_end": "2025-03-13T21:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 89, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 441,
+          "source_id": "work_orders_441",
+          "claim_id": 441,
+          "equipment_id": 48,
+          "asset_code": "ASSET-06-0048",
+          "equipment_name": "Steam sterilizer 048",
+          "classification": "Steam sterilizer",
+          "category": "Sterilization",
+          "model": "Tuttnauer 5596",
+          "criticality": "LOW",
+          "location": "ER Resuscitation Bay 1",
+          "title": "WO 441: Infusion pump pressure alarm",
+          "description": "Work order created from claim 441. Scope: Replace pressure sensor and recalibrate pump. Symptoms: Infusion pump reports pressure sensor out of range during startup. Alarm appears after two minutes and interrupts therapy. Suspected blocked pressure line or faulty pressure sensor. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "CRITICAL",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-14T15:00:00",
+          "updated_at": "2025-03-16T11:00:00",
+          "due_date": "2025-03-14T15:00:00",
+          "planned_start": "2025-03-15T07:00:00",
+          "planned_end": "2025-03-15T09:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "FAILURE_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 48, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 185,
+          "source_id": "work_orders_185",
+          "claim_id": 185,
+          "equipment_id": 16,
+          "asset_code": "ASSET-08-0016",
+          "equipment_name": "UPS 016",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "Eaton 93E UPS",
+          "criticality": "LOW",
+          "location": "Chiller Plant",
+          "title": "WO 185: Anesthesia machine leak test fail",
+          "description": "Work order created from claim 185. Scope: Replace breathing circuit seal and repeat leak test. Symptoms: Anesthesia workstation fails low-pressure leak test before scheduled surgery. Bellows do not hold pressure. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ASSIGNED",
+          "priority": "CRITICAL",
+          "wo_type": "CORRECTIVE",
+          "created_at": "2025-03-17T14:00:00",
+          "updated_at": "2025-03-19T06:00:00",
+          "due_date": "2025-03-17T13:00:00",
+          "planned_start": "2025-03-18T13:00:00",
+          "planned_end": "2025-03-18T22:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "PART_SHORTAGE",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 16, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock."
+        },
+        {
+          "wo_id": 77,
+          "source_id": "work_orders_77",
+          "claim_id": 77,
+          "equipment_id": 60,
+          "asset_code": "ASSET-10-0060",
+          "equipment_name": "ICU bed 060",
+          "classification": "ICU bed",
+          "category": "Surgical Equipment",
+          "model": "Hillrom Progressa Bed",
+          "criticality": "LOW",
+          "location": "ER Resuscitation Bay 1",
+          "title": "WO 77: Endoscopy processor leak",
+          "description": "Work order created from claim 77. Scope: Replace connector seal and run leak test. Symptoms: Endoscopy processor leaks near connector manifold during reprocessing cycle. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "CRITICAL",
+          "wo_type": "REGULATORY",
+          "created_at": "2025-03-19T04:00:00",
+          "updated_at": "2025-03-20T03:00:00",
+          "due_date": "2025-03-19T03:00:00",
+          "planned_start": "2025-03-19T20:00:00",
+          "planned_end": "2025-03-20T01:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "SLA_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 60, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 81,
+          "source_id": "work_orders_81",
+          "claim_id": 81,
+          "equipment_id": 88,
+          "asset_code": "ASSET-08-0088",
+          "equipment_name": "UPS 088",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "Eaton 93E UPS",
+          "criticality": "LOW",
+          "location": "Chiller Plant",
+          "title": "WO 81: Infusion pump pressure alarm",
+          "description": "Work order created from claim 81. Scope: Replace pressure sensor and recalibrate pump. Symptoms: Infusion pump reports pressure sensor out of range during startup. Alarm appears after two minutes and interrupts therapy. Suspected blocked pressure line or faulty pressure sensor. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "HIGH",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-20T16:00:00",
+          "updated_at": "2025-03-20T19:00:00",
+          "due_date": "2025-03-21T11:00:00",
+          "planned_start": "2025-03-20T18:00:00",
+          "planned_end": "2025-03-20T20:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "FAILURE_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 88, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 334,
+          "source_id": "work_orders_334",
+          "claim_id": 334,
+          "equipment_id": 99,
+          "asset_code": "ASSET-03-0099",
+          "equipment_name": "Ventilator 099",
+          "classification": "Ventilator",
+          "category": "Ventilation and Anesthesia",
+          "model": "Hamilton C6 Ventilator",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 334: Chiller high discharge pressure",
+          "description": "Work order created from claim 334. Scope: Clean condenser coil, check pressure switch, verify refrigerant pressures. Symptoms: Main chiller trips on high discharge pressure during afternoon peak. Condenser coil is dirty. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "HIGH",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-03-22T04:00:00",
+          "updated_at": "2025-03-23T17:00:00",
+          "due_date": "2025-03-22T18:00:00",
+          "planned_start": "2025-03-22T21:00:00",
+          "planned_end": "2025-03-23T02:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 99, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 282,
+          "source_id": "work_orders_282",
+          "claim_id": 282,
+          "equipment_id": 55,
+          "asset_code": "ASSET-10-0055",
+          "equipment_name": "Surgical light 055",
+          "classification": "Surgical light",
+          "category": "Surgical Equipment",
+          "model": "Steris Harmony LED",
+          "criticality": "HIGH",
+          "location": "ICU Bed 08",
+          "title": "WO 282: Syringe pump occlusion warning",
+          "description": "Work order created from claim 282. Scope: Inspect drive mechanism, replace keypad if needed, run occlusion test. Symptoms: Syringe pump gives intermittent occlusion warning with no visible line blockage. Plunger movement is uneven and keypad response is delayed. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "MEDIUM",
+          "wo_type": "CORRECTIVE",
+          "created_at": "2025-03-21T01:00:00",
+          "updated_at": "2025-03-21T15:00:00",
+          "due_date": "2025-03-23T15:00:00",
+          "planned_start": "2025-03-21T13:00:00",
+          "planned_end": "2025-03-21T21:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "FAILURE_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 55, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 74,
+          "source_id": "work_orders_74",
+          "claim_id": 74,
+          "equipment_id": 39,
+          "asset_code": "ASSET-02-0039",
+          "equipment_name": "Patient monitor 039",
+          "classification": "Patient monitor",
+          "category": "Patient Monitoring",
+          "model": "Mindray BeneVision N15",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 74: Chiller high discharge pressure",
+          "description": "Work order created from claim 74. Scope: Clean condenser coil, check pressure switch, verify refrigerant pressures. Symptoms: Main chiller trips on high discharge pressure during afternoon peak. Condenser coil is dirty. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "HIGH",
+          "wo_type": "PREVENTIVE",
+          "created_at": "2025-03-23T04:00:00",
+          "updated_at": "2025-03-23T12:00:00",
+          "due_date": "2025-03-23T17:00:00",
+          "planned_start": "2025-03-23T21:00:00",
+          "planned_end": "2025-03-24T05:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "SLA_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 39, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 86,
+          "source_id": "work_orders_86",
+          "claim_id": 86,
+          "equipment_id": 123,
+          "asset_code": "ASSET-08-0123",
+          "equipment_name": "UPS 123",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "APC Smart-UPS SRT",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 86: CT scanner gantry overheating",
+          "description": "Work order created from claim 86. Scope: Clean filters, inspect gantry fan and verify cooling airflow. Symptoms: CT gantry temperature warning appears after high-volume scan session. Cooling fan noise increased. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "HIGH",
+          "wo_type": "CORRECTIVE",
+          "created_at": "2025-03-23T10:00:00",
+          "updated_at": "2025-03-24T06:00:00",
+          "due_date": "2025-03-24T00:00:00",
+          "planned_start": "2025-03-24T01:00:00",
+          "planned_end": "2025-03-24T06:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 123, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 190,
+          "source_id": "work_orders_190",
+          "claim_id": 190,
+          "equipment_id": 51,
+          "asset_code": "ASSET-08-0051",
+          "equipment_name": "UPS 051",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "APC Smart-UPS SRT",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 190: Autoclave temperature not reached",
+          "description": "Work order created from claim 190. Scope: Replace steam trap and validate Bowie-Dick test. Symptoms: Sterilizer cycle aborts because chamber temperature does not reach setpoint. Steam trap discharge is irregular. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "SCHEDULED",
+          "priority": "CRITICAL",
+          "wo_type": "PREVENTIVE",
+          "created_at": "2025-03-24T02:00:00",
+          "updated_at": "2025-03-25T09:00:00",
+          "due_date": "2025-03-24T05:00:00",
+          "planned_start": "2025-03-25T01:00:00",
+          "planned_end": "2025-03-25T03:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "PART_SHORTAGE",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 51, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock."
+        },
+        {
+          "wo_id": 325,
+          "source_id": "work_orders_325",
+          "claim_id": 325,
+          "equipment_id": 36,
+          "asset_code": "ASSET-10-0036",
+          "equipment_name": "Electrosurgical generator 036",
+          "classification": "Electrosurgical generator",
+          "category": "Surgical Equipment",
+          "model": "Medtronic Valleylab FT10",
+          "criticality": "LOW",
+          "location": "ER Resuscitation Bay 1",
+          "title": "WO 325: Anesthesia machine leak test fail",
+          "description": "Work order created from claim 325. Scope: Replace breathing circuit seal and repeat leak test. Symptoms: Anesthesia workstation fails low-pressure leak test before scheduled surgery. Bellows do not hold pressure. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "LOW",
+          "wo_type": "REGULATORY",
+          "created_at": "2025-03-22T01:00:00",
+          "updated_at": "2025-03-23T11:00:00",
+          "due_date": "2025-03-24T18:00:00",
+          "planned_start": "2025-03-22T12:00:00",
+          "planned_end": "2025-03-22T21:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "PART_SHORTAGE",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 36, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock."
+        },
+        {
+          "wo_id": 356,
+          "source_id": "work_orders_356",
+          "claim_id": 356,
+          "equipment_id": 93,
+          "asset_code": "ASSET-12-0093",
+          "equipment_name": "Label printer 093",
+          "classification": "Label printer",
+          "category": "IT and Networked Devices",
+          "model": "Zebra ZD420 Label Printer",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 356: Surgical light handle loose",
+          "description": "Work order created from claim 356. Scope: Replace handle adapter and adjust arm brake. Symptoms: Surgical light sterile handle does not lock correctly. Staff reports drift during positioning. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "MEDIUM",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-22T11:00:00",
+          "updated_at": "2025-03-23T04:00:00",
+          "due_date": "2025-03-25T03:00:00",
+          "planned_start": "2025-03-23T11:00:00",
+          "planned_end": "2025-03-23T19:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 93, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 260,
+          "source_id": "work_orders_260",
+          "claim_id": 260,
+          "equipment_id": 61,
+          "asset_code": "ASSET-06-0061",
+          "equipment_name": "Instrument washer 061",
+          "classification": "Instrument washer",
+          "category": "Sterilization",
+          "model": "Miele PG8582 Washer",
+          "criticality": "HIGH",
+          "location": "ICU Bed 08",
+          "title": "WO 260: Network switch port flapping",
+          "description": "Work order created from claim 260. Scope: Replace SFP module, check patch cord, document switch logs. Symptoms: Network switch serving lab analyzers shows repeated port flapping and packet loss. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ASSIGNED",
+          "priority": "LOW",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-03-25T18:00:00",
+          "updated_at": "2025-03-27T18:00:00",
+          "due_date": "2025-03-28T17:00:00",
+          "planned_start": "2025-03-26T14:00:00",
+          "planned_end": "2025-03-26T18:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "PART_SHORTAGE",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 61, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock."
+        },
+        {
+          "wo_id": 462,
+          "source_id": "work_orders_462",
+          "claim_id": 462,
+          "equipment_id": 35,
+          "asset_code": "ASSET-02-0035",
+          "equipment_name": "EEG system 035",
+          "classification": "EEG system",
+          "category": "Patient Monitoring",
+          "model": "Nihon Kohden EEG-1200",
+          "criticality": "HIGH",
+          "location": "General Ward East",
+          "title": "WO 462: Syringe pump occlusion warning",
+          "description": "Work order created from claim 462. Scope: Inspect drive mechanism, replace keypad if needed, run occlusion test. Symptoms: Syringe pump gives intermittent occlusion warning with no visible line blockage. Plunger movement is uneven and keypad response is delayed. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "CRITICAL",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-29T00:00:00",
+          "updated_at": "2025-03-30T09:00:00",
+          "due_date": "2025-03-28T20:00:00",
+          "planned_start": "2025-03-29T17:00:00",
+          "planned_end": "2025-03-30T02:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "SLA_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 35, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 231,
+          "source_id": "work_orders_231",
+          "claim_id": 231,
+          "equipment_id": 18,
+          "asset_code": "ASSET-11-0018",
+          "equipment_name": "Medical refrigerator 018",
+          "classification": "Medical refrigerator",
+          "category": "Cold Chain",
+          "model": "Thermo TSX Refrigerator",
+          "criticality": "LOW",
+          "location": "ER Resuscitation Bay 1",
+          "title": "WO 231: Instrument washer dosing failure",
+          "description": "Work order created from claim 231. Scope: Inspect dosing pump, replace tubing, verify chemical concentration. Symptoms: Washer-disinfector detergent dosing alarm appears mid-cycle. Chemical container is not empty. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "CRITICAL",
+          "wo_type": "REGULATORY",
+          "created_at": "2025-03-30T00:00:00",
+          "updated_at": "2025-03-30T17:00:00",
+          "due_date": "2025-03-29T21:00:00",
+          "planned_start": "2025-03-30T08:00:00",
+          "planned_end": "2025-03-30T10:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "SLA_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 18, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 406,
+          "source_id": "work_orders_406",
+          "claim_id": 406,
+          "equipment_id": 123,
+          "asset_code": "ASSET-08-0123",
+          "equipment_name": "UPS 123",
+          "classification": "UPS",
+          "category": "Power Systems",
+          "model": "APC Smart-UPS SRT",
+          "criticality": "HIGH",
+          "location": "Blood Bank",
+          "title": "WO 406: CT scanner gantry overheating",
+          "description": "Work order created from claim 406. Scope: Clean filters, inspect gantry fan and verify cooling airflow. Symptoms: CT gantry temperature warning appears after high-volume scan session. Cooling fan noise increased. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "IN_PROGRESS",
+          "priority": "CRITICAL",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-31T15:00:00",
+          "updated_at": "2025-04-02T08:00:00",
+          "due_date": "2025-03-31T20:00:00",
+          "planned_start": "2025-03-31T22:00:00",
+          "planned_end": "2025-04-01T00:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 123, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 110,
+          "source_id": "work_orders_110",
+          "claim_id": 110,
+          "equipment_id": 131,
+          "asset_code": "ASSET-10-0131",
+          "equipment_name": "Transport stretcher 131",
+          "classification": "Transport stretcher",
+          "category": "Surgical Equipment",
+          "model": "Stryker Power-PRO XT",
+          "criticality": "HIGH",
+          "location": "General Ward East",
+          "title": "WO 110: Autoclave temperature not reached",
+          "description": "Work order created from claim 110. Scope: Replace steam trap and validate Bowie-Dick test. Symptoms: Sterilizer cycle aborts because chamber temperature does not reach setpoint. Steam trap discharge is irregular. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "CRITICAL",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-04-01T02:00:00",
+          "updated_at": "2025-04-01T22:00:00",
+          "due_date": "2025-04-01T06:00:00",
+          "planned_start": "2025-04-02T01:00:00",
+          "planned_end": "2025-04-02T06:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "PART_SHORTAGE",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 131, meter trend and stock status. Spare part risk detected: expected component may be below minimum stock."
+        },
+        {
+          "wo_id": 97,
+          "source_id": "work_orders_97",
+          "claim_id": 97,
+          "equipment_id": 40,
+          "asset_code": "ASSET-02-0040",
+          "equipment_name": "Patient monitor 040",
+          "classification": "Patient monitor",
+          "category": "Patient Monitoring",
+          "model": "Philips IntelliVue MX450",
+          "criticality": "LOW",
+          "location": "Chiller Plant",
+          "title": "WO 97: Endoscopy processor leak",
+          "description": "Work order created from claim 97. Scope: Replace connector seal and run leak test. Symptoms: Endoscopy processor leaks near connector manifold during reprocessing cycle. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ON_HOLD",
+          "priority": "HIGH",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-03-31T19:00:00",
+          "updated_at": "2025-04-01T14:00:00",
+          "due_date": "2025-04-01T07:00:00",
+          "planned_start": "2025-04-01T04:00:00",
+          "planned_end": "2025-04-01T12:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "SLA_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 40, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 359,
+          "source_id": "work_orders_359",
+          "claim_id": 359,
+          "equipment_id": 114,
+          "asset_code": "ASSET-03-0114",
+          "equipment_name": "Anesthesia workstation 114",
+          "classification": "Anesthesia workstation",
+          "category": "Ventilation and Anesthesia",
+          "model": "GE Aisys CS2",
+          "criticality": "LOW",
+          "location": "ER Resuscitation Bay 1",
+          "title": "WO 359: Booster pump seal leak",
+          "description": "Work order created from claim 359. Scope: Replace pump seal kit and verify pressure stability. Symptoms: Water booster pump mechanical seal is leaking and pump cycles more frequently. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ASSIGNED",
+          "priority": "MEDIUM",
+          "wo_type": "INSPECTION",
+          "created_at": "2025-03-30T22:00:00",
+          "updated_at": "2025-04-01T11:00:00",
+          "due_date": "2025-04-02T19:00:00",
+          "planned_start": "2025-03-31T11:00:00",
+          "planned_end": "2025-03-31T18:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "NORMAL",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 114, meter trend and stock status. No immediate stock constraint detected."
+        },
+        {
+          "wo_id": 273,
+          "source_id": "work_orders_273",
+          "claim_id": 273,
+          "equipment_id": 152,
+          "asset_code": "ASSET-04-0152",
+          "equipment_name": "MRI scanner 152",
+          "classification": "MRI scanner",
+          "category": "Imaging",
+          "model": "Philips Ingenia MRI 1.5T",
+          "criticality": "LOW",
+          "location": "Radiology CT Room",
+          "title": "WO 273: Medical refrigerator temperature excursion",
+          "description": "Work order created from claim 273. Scope: Inspect door gasket, verify sensor, review temperature log. Symptoms: Medical refrigerator temperature exceeded 8C for 45 minutes overnight. Door sensor event recorded. Required checks: verify safety, isolate equipment if needed, document measurements, update spare part usage and restore service.",
+          "status": "ASSIGNED",
+          "priority": "LOW",
+          "wo_type": "CALIBRATION",
+          "created_at": "2025-03-31T06:00:00",
+          "updated_at": "2025-03-31T23:00:00",
+          "due_date": "2025-04-03T03:00:00",
+          "planned_start": "2025-03-31T11:00:00",
+          "planned_end": "2025-03-31T21:00:00",
+          "completed_at": null,
+          "cancellation_notes": null,
+          "completion_notes": null,
+          "validation_notes": null,
+          "predictive_outcome": "FAILURE_RISK",
+          "predictive_outcome_notes": "Prediction based on recent failures for equipment 152, meter trend and stock status. No immediate stock constraint detected."
+        }
+      ],
+      "sources": [
+        "work_orders_424",
+        "work_orders_441",
+        "work_orders_185",
+        "work_orders_77",
+        "work_orders_81",
+        "work_orders_334",
+        "work_orders_282",
+        "work_orders_74",
+        "work_orders_86",
+        "work_orders_190",
+        "work_orders_325",
+        "work_orders_356",
+        "work_orders_260",
+        "work_orders_462",
+        "work_orders_231",
+        "work_orders_406",
+        "work_orders_110",
+        "work_orders_97",
+        "work_orders_359",
+        "work_orders_273",
+        "claims_110",
+        "claims_406",
+        "claims_97",
+        "claims_273",
+        "claims_359",
+        "claims_231",
+        "claims_462",
+        "claims_260",
+        "claims_190",
+        "claims_86",
+        "claims_74",
+        "claims_356",
+        "claims_325",
+        "claims_334",
+        "claims_282",
+        "claims_81",
+        "claims_77",
+        "claims_185",
+        "claims_441",
+        "claims_424",
+        "tasks_290",
+        "tasks_329",
+        "tasks_692",
+        "tasks_1385",
+        "tasks_1067",
+        "tasks_974",
+        "tasks_221",
+        "tasks_230",
+        "tasks_328",
+        "tasks_330",
+        "tasks_1216",
+        "tasks_1217",
+        "tasks_1218",
+        "tasks_691",
+        "tasks_693",
+        "tasks_1384",
+        "tasks_1386",
+        "tasks_568",
+        "tasks_569",
+        "tasks_570",
+        "tasks_229",
+        "tasks_231",
+        "tasks_553",
+        "tasks_554",
+        "tasks_555",
+        "tasks_1321",
+        "tasks_1322",
+        "tasks_1323",
+        "tasks_1270",
+        "tasks_1271"
+      ],
+      "selected_record_types": [
+        "claims",
+        "work_orders",
+        "tasks"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 10.636,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 10.666
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "hybrid_003",
+      "expected_quality": "hybrid",
+      "question": "Why are spare parts below minimum stock affecting maintenance?",
+      "expected_route": "HYBRID"
+    },
+    "response": {
+      "answer": "The spare parts below minimum stock are affecting maintenance due to predictive alerts indicating potential shortages. Key reasons include:\n\n1. **Predictive Alerts**:  \n   - Work orders (e.g., WO 325,",
+      "route": "HYBRID",
+      "sql_intent": "spare_parts_below_min_stock",
+      "sql_result": [
+        {
+          "part_id": 112,
+          "sku": "SKU-00112",
+          "name": "Analyzer cuvette segment 112",
+          "category": "Consumables",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 896.06,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 176,
+          "sku": "SKU-00176",
+          "name": "Chiller pressure switch 176",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 94.03,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 16,
+          "sku": "SKU-00016",
+          "name": "Compressor oil separator 016",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 648.83,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 32,
+          "sku": "SKU-00032",
+          "name": "Flow sensor cartridge 032",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 3,
+          "unit_cost": 74.88,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 156,
+          "sku": "SKU-00156",
+          "name": "Infusion pump keypad 156",
+          "category": "Electronics",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 548.77,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 90,
+          "sku": "SKU-00090",
+          "name": "MRI chiller glycol sensor 090",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 294.25,
+          "location": "Store-3-Shelf-A7",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 98,
+          "sku": "SKU-00098",
+          "name": "Oxygen cell 098",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 5,
+          "unit_cost": 848.89,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 44,
+          "sku": "SKU-00044",
+          "name": "Printer roller kit 044",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 7,
+          "unit_cost": 163.09,
+          "location": "Store-1-Shelf-C9",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 110,
+          "sku": "SKU-00110",
+          "name": "Pump seal kit 110",
+          "category": "Mechanical",
+          "quantity_in_stock": 0,
+          "min_stock_level": 9,
+          "unit_cost": 202.84,
+          "location": "Store-3-Shelf-C3",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 99,
+          "sku": "SKU-00099",
+          "name": "Temperature probe PT100 099",
+          "category": "Sensors",
+          "quantity_in_stock": 0,
+          "min_stock_level": 6,
+          "unit_cost": 765.47,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 88,
+          "sku": "SKU-00088",
+          "name": "Bed side rail latch 088",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 3,
+          "unit_cost": 634.36,
+          "location": "Store-1-Shelf-E5",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 177,
+          "sku": "SKU-00177",
+          "name": "BMS relay output module 177",
+          "category": "Electrical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 949.6,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 33,
+          "sku": "SKU-00033",
+          "name": "Door gasket 033",
+          "category": "Mechanical",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 74.75,
+          "location": "Store-2-Shelf-D10",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 11,
+          "sku": "SKU-00011",
+          "name": "Fan module 011",
+          "category": "Cooling",
+          "quantity_in_stock": 1,
+          "min_stock_level": 6,
+          "unit_cost": 711.69,
+          "location": "Store-4-Shelf-F12",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 154,
+          "sku": "SKU-00154",
+          "name": "HEPA filter H14 154",
+          "category": "Filters",
+          "quantity_in_stock": 1,
+          "min_stock_level": 5,
+          "unit_cost": 50.88,
+          "location": "Store-3-Shelf-E11",
+          "supplier": "MedSupply TN"
+        },
+        {
+          "part_id": 111,
+          "sku": "SKU-00111",
+          "name": "Network SFP module 111",
+          "category": "IT",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 815.04,
+          "location": "Store-4-Shelf-D4",
+          "supplier": "Global Healthcare Spares"
+        },
+        {
+          "part_id": 132,
+          "sku": "SKU-00132",
+          "name": "Power supply board 132",
+          "category": "Electronics",
+          "quantity_in_stock": 1,
+          "min_stock_level": 7,
+          "unit_cost": 509.85,
+          "location": "Store-1-Shelf-A1",
+          "supplier": "North Africa Medical"
+        },
+        {
+          "part_id": 31,
+          "sku": "SKU-00031",
+          "name": "Pressure sensor kit 031",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 562.19,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "Biomed Parts Europe"
+        },
+        {
+          "part_id": 121,
+          "sku": "SKU-00121",
+          "name": "Pressure sensor kit 121",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 4,
+          "unit_cost": 794.49,
+          "location": "Store-2-Shelf-B2",
+          "supplier": "OEM Authorized Distributor"
+        },
+        {
+          "part_id": 55,
+          "sku": "SKU-00055",
+          "name": "Refrigerator door sensor 055",
+          "category": "Sensors",
+          "quantity_in_stock": 1,
+          "min_stock_level": 10,
+          "unit_cost": 305.84,
+          "location": "Store-4-Shelf-B8",
+          "supplier": "MedSupply TN"
+        }
+      ],
+      "sources": [
+        "spare_parts_11",
+        "spare_parts_16",
+        "spare_parts_31",
+        "spare_parts_32",
+        "spare_parts_33",
+        "spare_parts_44",
+        "spare_parts_55",
+        "spare_parts_88",
+        "spare_parts_90",
+        "spare_parts_98",
+        "spare_parts_99",
+        "spare_parts_110",
+        "spare_parts_111",
+        "spare_parts_112",
+        "spare_parts_121",
+        "spare_parts_132",
+        "spare_parts_154",
+        "spare_parts_156",
+        "spare_parts_176",
+        "spare_parts_177",
+        "work_orders_441",
+        "work_orders_81",
+        "work_orders_42",
+        "work_orders_325",
+        "work_orders_406",
+        "work_orders_173",
+        "work_orders_33",
+        "work_orders_479",
+        "work_orders_98",
+        "work_orders_318",
+        "work_orders_219",
+        "work_orders_446",
+        "work_orders_44",
+        "work_orders_264",
+        "work_orders_388",
+        "work_orders_320",
+        "work_orders_481",
+        "work_orders_294",
+        "work_orders_438",
+        "work_orders_28"
+      ],
+      "selected_record_types": [
+        "spare_parts",
+        "part_usage",
+        "work_orders",
+        "tasks"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 10.675,
+      "debug_sources": null,
+      "_client_elapsed_seconds": 10.695
+    },
+    "distance_summary": {
+      "best_distance": null,
+      "avg_distance": null,
+      "worst_distance": null,
+      "source_count_with_distance": 0
+    },
+    "distance_class_temp": "no_distance"
+  },
+  {
+    "test": {
+      "id": "bad_001",
+      "expected_quality": "bad",
+      "question": "Why did the football team lose the match?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "I do not have enough information in the database. The provided records are related to maintenance work orders for medical equipment, not sports matches or football team performance data.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_85",
+        "work_orders_105",
+        "work_orders_170"
+      ],
+      "selected_record_types": [
+        "work_orders"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 10.65,
+      "debug_sources": [
+        {
+          "id": "work_orders_85",
+          "record_type": "work_orders",
+          "distance": 448.7818908691406,
+          "metadata": {
+            "completed_at": "",
+            "created_at": "2025-11-18 17:00:00",
+            "record_id": "85",
+            "due_date": "2025-11-18 23:00:00",
+            "priority": "CRITICAL",
+            "status": "CANCELLED",
+            "estimated_cost": "2047.50",
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "updated_at": "2025-11-20 13:00:00",
+            "claim_id": "85",
+            "equipment_id": "116",
+            "assigned_to_user_id": "7"
+          }
+        },
+        {
+          "id": "work_orders_105",
+          "record_type": "work_orders",
+          "distance": 451.66534423828125,
+          "metadata": {
+            "updated_at": "2026-01-23 04:00:00",
+            "priority": "CRITICAL",
+            "actual_cost": "",
+            "estimated_cost": "2002.34",
+            "claim_id": "105",
+            "assigned_to_user_id": "5",
+            "record_type": "work_orders",
+            "status": "SCHEDULED",
+            "record_id": "105",
+            "equipment_id": "96",
+            "created_at": "2026-01-22 06:00:00",
+            "due_date": "2026-01-22 12:00:00",
+            "completed_at": ""
+          }
+        },
+        {
+          "id": "work_orders_170",
+          "record_type": "work_orders",
+          "distance": 454.2924499511719,
+          "metadata": {
+            "record_type": "work_orders",
+            "claim_id": "170",
+            "estimated_cost": "2392.40",
+            "equipment_id": "71",
+            "completed_at": "",
+            "assigned_to_user_id": "8",
+            "actual_cost": "",
+            "record_id": "170",
+            "priority": "CRITICAL",
+            "created_at": "2025-03-18 10:00:00",
+            "due_date": "2025-03-18 06:00:00",
+            "status": "CANCELLED",
+            "updated_at": "2025-03-19 22:00:00"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 10.677
+    },
+    "distance_summary": {
+      "best_distance": 448.7818908691406,
+      "avg_distance": 451.57989501953125,
+      "worst_distance": 454.2924499511719,
+      "source_count_with_distance": 3
+    },
+    "distance_class_temp": "bad"
+  },
+  {
+    "test": {
+      "id": "bad_002",
+      "expected_quality": "bad",
+      "question": "Explain the history of ancient Rome.",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "I do not have enough information in the database to explain the history of ancient Rome. The provided database context focuses on equipment maintenance records, work orders, and claims related to medical devices, which do not include historical or archaeological data about ancient Rome.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "equipment_44",
+        "equipment_8",
+        "claims_549",
+        "work_orders_109",
+        "work_orders_49",
+        "equipment_80",
+        "work_orders_9",
+        "claims_629",
+        "claims_509",
+        "tasks_26"
+      ],
+      "selected_record_types": [
+        "claims",
+        "work_orders",
+        "tasks",
+        "equipment"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 11.775,
+      "debug_sources": [
+        {
+          "id": "equipment_44",
+          "record_type": "equipment",
+          "distance": 453.14898681640625,
+          "metadata": {
+            "record_id": "44",
+            "purchase_date": "2021-03-25",
+            "department_id": "4",
+            "model_id": "8",
+            "category_id": "4",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2025-03-24",
+            "record_type": "equipment",
+            "commissioning_date": "2021-04-28"
+          }
+        },
+        {
+          "id": "equipment_8",
+          "record_type": "equipment",
+          "distance": 463.1116943359375,
+          "metadata": {
+            "record_id": "8",
+            "model_id": "8",
+            "warranty_end_date": "2029-04-28",
+            "record_type": "equipment",
+            "commissioning_date": "2025-06-06",
+            "category_id": "4",
+            "purchase_date": "2025-04-29",
+            "department_id": "4",
+            "status": "OPERATIONAL"
+          }
+        },
+        {
+          "id": "claims_549",
+          "record_type": "claims",
+          "distance": 463.2859802246094,
+          "metadata": {
+            "resolved_at": "2026-04-29 16:00:00",
+            "updated_at": "2026-04-26 13:00:00",
+            "department_id": "2",
+            "record_id": "549",
+            "equipment_id": "4",
+            "created_at": "2026-04-25 16:00:00",
+            "closed_at": "",
+            "priority": "MEDIUM",
+            "assigned_to_user_id": "26",
+            "status": "RESOLVED",
+            "record_type": "claims"
+          }
+        },
+        {
+          "id": "work_orders_109",
+          "record_type": "work_orders",
+          "distance": 463.4594421386719,
+          "metadata": {
+            "claim_id": "109",
+            "record_type": "work_orders",
+            "created_at": "2026-02-08 22:00:00",
+            "completed_at": "2026-02-09 20:00:00",
+            "status": "CLOSED",
+            "record_id": "109",
+            "due_date": "2026-02-11 14:00:00",
+            "equipment_id": "124",
+            "actual_cost": "407.74",
+            "assigned_to_user_id": "27",
+            "updated_at": "2026-02-10 03:00:00",
+            "priority": "MEDIUM",
+            "estimated_cost": "1016.98"
+          }
+        },
+        {
+          "id": "work_orders_49",
+          "record_type": "work_orders",
+          "distance": 463.5877685546875,
+          "metadata": {
+            "estimated_cost": "1239.07",
+            "priority": "CRITICAL",
+            "created_at": "2025-10-10 17:00:00",
+            "record_id": "49",
+            "status": "SCHEDULED",
+            "updated_at": "2025-10-12 04:00:00",
+            "actual_cost": "",
+            "claim_id": "49",
+            "record_type": "work_orders",
+            "equipment_id": "24",
+            "completed_at": "",
+            "due_date": "2025-10-10 18:00:00",
+            "assigned_to_user_id": "28"
+          }
+        },
+        {
+          "id": "equipment_80",
+          "record_type": "equipment",
+          "distance": 464.47918701171875,
+          "metadata": {
+            "record_id": "80",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2029-02-15",
+            "purchase_date": "2025-02-16",
+            "model_id": "8",
+            "record_type": "equipment",
+            "category_id": "4",
+            "department_id": "4",
+            "commissioning_date": "2025-03-18"
+          }
+        },
+        {
+          "id": "work_orders_9",
+          "record_type": "work_orders",
+          "distance": 465.20556640625,
+          "metadata": {
+            "equipment_id": "64",
+            "record_type": "work_orders",
+            "updated_at": "2026-03-01 06:00:00",
+            "due_date": "2026-03-03 16:00:00",
+            "actual_cost": "",
+            "record_id": "9",
+            "created_at": "2026-02-28 20:00:00",
+            "completed_at": "",
+            "assigned_to_user_id": "6",
+            "estimated_cost": "1482.32",
+            "status": "ON_HOLD",
+            "priority": "MEDIUM",
+            "claim_id": "9"
+          }
+        },
+        {
+          "id": "claims_629",
+          "record_type": "claims",
+          "distance": 465.68505859375,
+          "metadata": {
+            "department_id": "6",
+            "resolved_at": "2025-10-22 20:00:00",
+            "equipment_id": "84",
+            "priority": "MEDIUM",
+            "record_type": "claims",
+            "updated_at": "2025-10-20 06:00:00",
+            "closed_at": "",
+            "created_at": "2025-10-18 20:00:00",
+            "assigned_to_user_id": "21",
+            "status": "RESOLVED",
+            "record_id": "629"
+          }
+        },
+        {
+          "id": "claims_509",
+          "record_type": "claims",
+          "distance": 467.200927734375,
+          "metadata": {
+            "priority": "MEDIUM",
+            "equipment_id": "44",
+            "record_id": "509",
+            "resolved_at": "2026-02-22 09:00:00",
+            "updated_at": "2026-02-21 19:00:00",
+            "department_id": "4",
+            "status": "RESOLVED",
+            "created_at": "2026-02-21 09:00:00",
+            "record_type": "claims",
+            "closed_at": "",
+            "assigned_to_user_id": "5"
+          }
+        },
+        {
+          "id": "tasks_26",
+          "record_type": "tasks",
+          "distance": 475.4855651855469,
+          "metadata": {
+            "record_type": "tasks",
+            "priority": "MEDIUM",
+            "estimated_duration": "1.17",
+            "record_id": "26",
+            "completed_at": "",
+            "status": "BLOCKED",
+            "actual_duration": "",
+            "due_date": "2026-03-03 14:00:00",
+            "wo_id": "9",
+            "assigned_to_user_id": "6"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 11.801
+    },
+    "distance_summary": {
+      "best_distance": 453.14898681640625,
+      "avg_distance": 464.4650177001953,
+      "worst_distance": 475.4855651855469,
+      "source_count_with_distance": 10
+    },
+    "distance_class_temp": "bad"
+  },
+  {
+    "test": {
+      "id": "bad_003",
+      "expected_quality": "bad",
+      "question": "What is the best recipe for chocolate cake?",
+      "expected_route": null
+    },
+    "response": {
+      "answer": "I do not have enough information in the database regarding recipes for chocolate cake. The provided context focuses on maintenance records, equipment status, and work orders related to medical devices, not culinary recipes. For recipe suggestions, please consult a cooking database or culinary resources.",
+      "route": "RAG",
+      "sql_intent": null,
+      "sql_result": null,
+      "sources": [
+        "work_orders_48",
+        "work_orders_108",
+        "work_orders_68",
+        "tasks_23",
+        "tasks_143",
+        "claims_551",
+        "claims_511",
+        "claims_631",
+        "equipment_48",
+        "equipment_84"
+      ],
+      "selected_record_types": [
+        "claims",
+        "work_orders",
+        "tasks",
+        "equipment"
+      ],
+      "model": "qwen3:1.7b",
+      "latency_seconds": 11.437,
+      "debug_sources": [
+        {
+          "id": "work_orders_48",
+          "record_type": "work_orders",
+          "distance": 438.5717468261719,
+          "metadata": {
+            "record_type": "work_orders",
+            "assigned_to_user_id": "27",
+            "estimated_cost": "2428.87",
+            "record_id": "48",
+            "updated_at": "2025-07-10 12:00:00",
+            "completed_at": "",
+            "status": "ON_HOLD",
+            "created_at": "2025-07-09 07:00:00",
+            "due_date": "2025-07-09 19:00:00",
+            "priority": "HIGH",
+            "equipment_id": "17",
+            "claim_id": "48",
+            "actual_cost": ""
+          }
+        },
+        {
+          "id": "work_orders_108",
+          "record_type": "work_orders",
+          "distance": 439.0274963378906,
+          "metadata": {
+            "priority": "HIGH",
+            "record_id": "108",
+            "actual_cost": "",
+            "record_type": "work_orders",
+            "assigned_to_user_id": "5",
+            "claim_id": "108",
+            "status": "IN_PROGRESS",
+            "due_date": "2025-07-04 19:00:00",
+            "completed_at": "",
+            "updated_at": "2025-07-05 10:00:00",
+            "estimated_cost": "1824.60",
+            "equipment_id": "117",
+            "created_at": "2025-07-04 05:00:00"
+          }
+        },
+        {
+          "id": "work_orders_68",
+          "record_type": "work_orders",
+          "distance": 439.6555480957031,
+          "metadata": {
+            "assigned_to_user_id": "7",
+            "completed_at": "",
+            "actual_cost": "",
+            "record_id": "68",
+            "claim_id": "68",
+            "updated_at": "2025-09-14 11:00:00",
+            "estimated_cost": "967.00",
+            "created_at": "2025-09-13 15:00:00",
+            "priority": "HIGH",
+            "due_date": "2025-09-14 09:00:00",
+            "status": "CANCELLED",
+            "equipment_id": "157",
+            "record_type": "work_orders"
+          }
+        },
+        {
+          "id": "tasks_23",
+          "record_type": "tasks",
+          "distance": 450.5060119628906,
+          "metadata": {
+            "estimated_duration": "2.50",
+            "record_id": "23",
+            "actual_duration": "",
+            "priority": "HIGH",
+            "due_date": "2025-05-13 05:00:00",
+            "completed_at": "",
+            "wo_id": "8",
+            "record_type": "tasks",
+            "status": "BLOCKED",
+            "assigned_to_user_id": "8"
+          }
+        },
+        {
+          "id": "tasks_143",
+          "record_type": "tasks",
+          "distance": 451.16656494140625,
+          "metadata": {
+            "assigned_to_user_id": "27",
+            "priority": "HIGH",
+            "actual_duration": "",
+            "status": "BLOCKED",
+            "estimated_duration": "1.71",
+            "record_id": "143",
+            "wo_id": "48",
+            "due_date": "2025-07-09 17:00:00",
+            "completed_at": "",
+            "record_type": "tasks"
+          }
+        },
+        {
+          "id": "claims_551",
+          "record_type": "claims",
+          "distance": 456.3020324707031,
+          "metadata": {
+            "created_at": "2026-03-08 02:00:00",
+            "record_id": "551",
+            "equipment_id": "18",
+            "closed_at": "",
+            "assigned_to_user_id": "12",
+            "resolved_at": "",
+            "updated_at": "2026-03-08 20:00:00",
+            "priority": "HIGH",
+            "record_type": "claims",
+            "department_id": "5",
+            "status": "REJECTED"
+          }
+        },
+        {
+          "id": "claims_511",
+          "record_type": "claims",
+          "distance": 459.4007873535156,
+          "metadata": {
+            "status": "REJECTED",
+            "created_at": "2026-03-12 21:00:00",
+            "closed_at": "",
+            "assigned_to_user_id": "15",
+            "updated_at": "2026-03-14 17:00:00",
+            "record_id": "511",
+            "equipment_id": "58",
+            "department_id": "7",
+            "resolved_at": "",
+            "priority": "CRITICAL",
+            "record_type": "claims"
+          }
+        },
+        {
+          "id": "claims_631",
+          "record_type": "claims",
+          "distance": 459.7309265136719,
+          "metadata": {
+            "assigned_to_user_id": "3",
+            "created_at": "2025-05-28 10:00:00",
+            "department_id": "5",
+            "resolved_at": "",
+            "closed_at": "",
+            "equipment_id": "98",
+            "updated_at": "2025-05-29 13:00:00",
+            "status": "REJECTED",
+            "record_id": "631",
+            "record_type": "claims",
+            "priority": "HIGH"
+          }
+        },
+        {
+          "id": "equipment_48",
+          "record_type": "equipment",
+          "distance": 462.505615234375,
+          "metadata": {
+            "purchase_date": "2025-03-20",
+            "category_id": "6",
+            "commissioning_date": "2025-04-27",
+            "status": "OPERATIONAL",
+            "warranty_end_date": "2027-03-20",
+            "department_id": "6",
+            "model_id": "12",
+            "record_id": "48",
+            "record_type": "equipment"
+          }
+        },
+        {
+          "id": "equipment_84",
+          "record_type": "equipment",
+          "distance": 466.0487365722656,
+          "metadata": {
+            "department_id": "6",
+            "record_id": "84",
+            "commissioning_date": "2021-03-19",
+            "category_id": "6",
+            "purchase_date": "2021-02-13",
+            "status": "OPERATIONAL",
+            "model_id": "12",
+            "record_type": "equipment",
+            "warranty_end_date": "2023-02-13"
+          }
+        }
+      ],
+      "_client_elapsed_seconds": 11.441
+    },
+    "distance_summary": {
+      "best_distance": 438.5717468261719,
+      "avg_distance": 452.2915466308594,
+      "worst_distance": 466.0487365722656,
+      "source_count_with_distance": 10
+    },
+    "distance_class_temp": "bad"
+  }
+]

@@ -46,3 +46,10 @@ k8s/secrets.yaml
 
 # Temporary files
 scratch/
+
+# Python
+rag-service/.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
